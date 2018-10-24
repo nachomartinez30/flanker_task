@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.TreeWillExpandListener;
+
+import backend.HiloPrincipal;
+
 import javax.swing.JLabel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -35,15 +38,15 @@ import java.util.TimerTask;
 public class Index extends JFrame implements KeyListener {
 
 	private JPanel contentPane;
-	private static JLabel contenedor_top;
-	private static JLabel contenedor_left_2;
-	private static JLabel contenedor_bot;
-	private static JLabel contenedor_right;
-	private static JLabel distractor_top;
-	private static JLabel distractor_left;
-	private static JLabel distractor_bot;
-	private static JLabel distractor_right;
-	private static JLabel cruz_centro;
+	public static JLabel contenedor_top;
+	public static JLabel contenedor_left_2;
+	public static JLabel contenedor_bot;
+	public static JLabel contenedor_right;
+	public static JLabel distractor_top;
+	public static JLabel distractor_left;
+	public static JLabel distractor_bot;
+	public static JLabel distractor_right;
+	public static JLabel cruz_centro;
 
 	/**
 	 * Launch the application.
@@ -70,6 +73,7 @@ public class Index extends JFrame implements KeyListener {
 			@Override
 			public void keyPressed(KeyEvent event) {
 				int flecha = event.getExtendedKeyCode();
+				System.out.println("flecha"+flecha);
 
 			}
 		});
@@ -84,7 +88,10 @@ public class Index extends JFrame implements KeyListener {
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				iniciarSesion();
+				HiloPrincipal principal = new HiloPrincipal(contenedor_top, contenedor_left_2, contenedor_bot,
+						contenedor_right, distractor_top, distractor_left, distractor_bot, distractor_right,
+						cruz_centro);
+				principal.run();
 			}
 		});
 		contentPane.add(panel, BorderLayout.CENTER);
@@ -262,497 +269,497 @@ public class Index extends JFrame implements KeyListener {
 		// TODO Auto-generated method stub
 
 	}
-
-	public static void crearImagenesAzules(int no_imagen) {
-		System.out.println("ensayo Azul");
-		String contenedor = "/img/contenedor.png";
-
-		/* REACTIVOS */
-		String contenedor_ovalo = "/img/ovalo_contenedor_azul.png";
-		String contenedor_circulo = "/img/circulo_contenedor_azul.png";
-
-		/* DISTRACTORES */
-		String distractor_ovalo = "/img/dis_azul_ovalo.png";
-		String distractor_circulo = "/img/dis_azul_cirulo.png";
-
-		switch (no_imagen) {
-		case 1:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 2:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			break;
-
-		case 3:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 4:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 5:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 6:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			distractor_right.setIcon(null);
-			break;
-
-		case 7:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 8:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 9:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 10:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			break;
-
-		case 11:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 12:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 13:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 14:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			distractor_right.setIcon(null);
-			break;
-
-		case 15:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 16:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 17:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			break;
-
-		case 18:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 19:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 20:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 21:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_right.setIcon(null);
-			break;
-
-		case 22:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 23:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 24:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 25:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 26:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_right.setIcon(null);
-			break;
-
-		case 27:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 28:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 29:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 30:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			break;
-
-		case 31:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		case 32:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		default:
-			/* CONTENEDORES */
-			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-			/* DISTRACTORES */
-			distractor_top.setIcon(null);
-			distractor_bot.setIcon(null);
-			distractor_left.setIcon(null);
-			distractor_right.setIcon(null);
-			break;
-
-		}
-
-	}
-
-	public static void iniciarSesion() {
-
-		int[] ensayo = numeroAleatorio(32);
-		int numero_ensayo;
-		try {
-
-			for (int i = 0; i < ensayo.length; i++) {
-				
-				numero_ensayo = ensayo[i];
-				crearImagenesAzules(numero_ensayo);
-				System.out.println(numero_ensayo);
-				Thread.sleep(1000);
-			}
-
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	private static int[] numeroAleatorio(int n) {
-		// n =numeros aleatorios
-		int k = n; // auxiliar;
-		int[] numeros = new int[n];
-		int[] resultado = new int[n];
-		Random rnd = new Random();
-		int res;
-
-		// se rellena una matriz ordenada del 1 al 31(1..n)
-		for (int i = 0; i < n; i++) {
-			numeros[i] = i + 1;
-		}
-
-		for (int i = 0; i < n; i++) {
-			res = rnd.nextInt(k);
-			resultado[i] = numeros[res];
-			numeros[res] = numeros[k - 1];
-			k--;
-
-		}
-		// se imprime el resultado;
-
-		return resultado;
-
-	}
+//
+//	public static void crearImagenesAzules(int no_imagen) {
+//		System.out.println("ensayo Azul");
+//		String contenedor = "/img/contenedor.png";
+//
+//		/* REACTIVOS */
+//		String contenedor_ovalo = "/img/ovalo_contenedor_azul.png";
+//		String contenedor_circulo = "/img/circulo_contenedor_azul.png";
+//
+//		/* DISTRACTORES */
+//		String distractor_ovalo = "/img/dis_azul_ovalo.png";
+//		String distractor_circulo = "/img/dis_azul_cirulo.png";
+//
+//		switch (no_imagen) {
+//		case 1:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 2:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			break;
+//
+//		case 3:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 4:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 5:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 6:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 7:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 8:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 9:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 10:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			break;
+//
+//		case 11:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 12:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 13:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 14:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 15:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 16:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 17:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			break;
+//
+//		case 18:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 19:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 20:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 21:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 22:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 23:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 24:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 25:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 26:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 27:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 28:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 29:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 30:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			break;
+//
+//		case 31:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		case 32:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		default:
+//			/* CONTENEDORES */
+//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
+//			/* DISTRACTORES */
+//			distractor_top.setIcon(null);
+//			distractor_bot.setIcon(null);
+//			distractor_left.setIcon(null);
+//			distractor_right.setIcon(null);
+//			break;
+//
+//		}
+//
+//	}
+//
+//	public static void iniciarSesion() {
+//
+//		int[] ensayo = numeroAleatorio(32);
+//		int numero_ensayo;
+//		try {
+//
+//			for (int i = 0; i < ensayo.length; i++) {
+//
+//				numero_ensayo = ensayo[i];
+//				crearImagenesAzules(numero_ensayo);
+//				System.out.println(numero_ensayo);
+//				Thread.sleep(1000);
+//			}
+//
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
+//
+//	private static int[] numeroAleatorio(int n) {
+//		// n =numeros aleatorios
+//		int k = n; // auxiliar;
+//		int[] numeros = new int[n];
+//		int[] resultado = new int[n];
+//		Random rnd = new Random();
+//		int res;
+//
+//		// se rellena una matriz ordenada del 1 al 31(1..n)
+//		for (int i = 0; i < n; i++) {
+//			numeros[i] = i + 1;
+//		}
+//
+//		for (int i = 0; i < n; i++) {
+//			res = rnd.nextInt(k);
+//			resultado[i] = numeros[res];
+//			numeros[res] = numeros[k - 1];
+//			k--;
+//
+//		}
+//		// se imprime el resultado;
+//
+//		return resultado;
+//
+//	}
 
 }

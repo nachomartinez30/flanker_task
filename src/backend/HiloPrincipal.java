@@ -3,6 +3,7 @@ package backend;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -39,8 +40,35 @@ public class HiloPrincipal extends SwingWorker<Integer, String> {
 
 	@Override
 	protected Integer doInBackground() throws Exception {
-		// TODO Auto-generated method stub
-		Thread.sleep(6000);
+		int[] ensayo = numeroAleatorio(32);
+
+		Timer timer = new Timer();
+
+		// for (int i = 0; i < ensayo.length; i++) {
+
+		TimerTask task = new TimerTask() {
+			int i = 0;
+			int numero_ensayo;
+
+			@Override
+			public void run() {
+				i++;
+				numero_ensayo = ensayo[i];
+				crearImagenesAzules(numero_ensayo);
+				System.out.println(numero_ensayo);
+				System.out.println("i="+i);
+				if(i>=31) {
+					timer.cancel();
+					timer.purge();
+					System.out.println("terminó");
+				}
+			}
+		};
+
+		timer.schedule(task, 10, 6000);
+		
+		
+
 		return null;
 	}
 
@@ -56,7 +84,9 @@ public class HiloPrincipal extends SwingWorker<Integer, String> {
 		String distractor_ovalo = "/img/dis_azul_ovalo.png";
 		String distractor_circulo = "/img/dis_azul_cirulo.png";
 
+		
 		switch (no_imagen) {
+		
 		case 1:
 			/* CONTENEDORES */
 			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
@@ -490,34 +520,9 @@ public class HiloPrincipal extends SwingWorker<Integer, String> {
 
 	}
 
-	public static void iniciarSesion() {
 
-		int[] ensayo = numeroAleatorio(32);
 
-		Timer timer = new Timer();
-
-		// for (int i = 0; i < ensayo.length; i++) {
-
-		TimerTask task = new TimerTask() {
-			int i = 0;
-			int numero_ensayo;
-
-			@Override
-			public void run() {
-				i++;
-				numero_ensayo = ensayo[i];
-				crearImagenesAzules(numero_ensayo);
-				System.out.println(numero_ensayo);
-			}
-		};
-
-		timer.schedule(task, 10, 6000);
-
-		// }
-
-	}
-
-	private static int[] numeroAleatorio(int n) {
+	public int[] numeroAleatorio(int n) {
 		// n =numeros aleatorios
 		int k = n; // auxiliar;
 		int[] numeros = new int[n];
