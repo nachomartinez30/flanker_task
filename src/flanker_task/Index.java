@@ -88,10 +88,7 @@ public class Index extends JFrame implements KeyListener {
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				HiloPrincipal principal = new HiloPrincipal(contenedor_top, contenedor_left_2, contenedor_bot,
-						contenedor_right, distractor_top, distractor_left, distractor_bot, distractor_right,
-						cruz_centro);
-				principal.run();
+				
 			}
 		});
 		contentPane.add(panel, BorderLayout.CENTER);
