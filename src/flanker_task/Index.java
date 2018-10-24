@@ -48,6 +48,23 @@ public class Index extends JFrame implements KeyListener {
 	public static JLabel distractor_right;
 	public static JLabel cruz_centro;
 
+	public static JLabel label;
+	public static JLabel label_1;
+	public static JLabel label_2;
+	public static JLabel label_3;
+	public static JLabel label_5;
+	public static JLabel label_4;
+	public static JLabel label_6;
+	public static JLabel label_7;
+	public static JLabel lblNewLabel;
+	public static JLabel label_8;
+	public static JLabel lblNewLabel_1;
+	public static JLabel lblNewLabel_2;
+	public static JLabel lblNewLabel_3;
+	public static JLabel lblNewLabel_4;
+	public static JLabel label_9;
+	public static JLabel label_10;
+
 	/**
 	 * Launch the application.
 	 */
@@ -72,8 +89,18 @@ public class Index extends JFrame implements KeyListener {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent event) {
-				int flecha = event.getExtendedKeyCode();
-				System.out.println("flecha"+flecha);
+				int tecla = event.getExtendedKeyCode();
+				System.out.println("flecha=" + tecla);
+				if (tecla == 10) {
+
+					HiloPrincipal principal = new HiloPrincipal(contenedor_top, contenedor_left_2, contenedor_bot,
+							contenedor_right, distractor_top, distractor_left, distractor_bot, distractor_right,
+							cruz_centro, label, label_1, label_2, label_3, label_5, label_4, label_6, label_7,
+							lblNewLabel, label_8, lblNewLabel_1, lblNewLabel_2, lblNewLabel_3, lblNewLabel_4, label_9,
+							label_10);
+
+					principal.run();
+				}
 
 			}
 		});
@@ -88,19 +115,19 @@ public class Index extends JFrame implements KeyListener {
 		panel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+
 			}
 		});
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(5, 7, 0, 0));
 
-		JLabel label = new JLabel((String) null);
+		label = new JLabel((String) null);
 		label.setBorder(null);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBackground(Color.BLACK);
 		panel.add(label);
 
-		JLabel label_1 = new JLabel("");
+		label_1 = new JLabel("");
 		label_1.setBorder(null);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setBackground(Color.BLACK);
@@ -113,25 +140,25 @@ public class Index extends JFrame implements KeyListener {
 		distractor_top.setBackground(Color.BLACK);
 		panel.add(distractor_top);
 
-		JLabel label_8 = new JLabel("");
-		label_8.setBorder(null);
-		label_8.setHorizontalAlignment(SwingConstants.CENTER);
-		label_8.setBackground(Color.BLACK);
-		panel.add(label_8);
+		label_2 = new JLabel("");
+		label_2.setBorder(null);
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setBackground(Color.BLACK);
+		panel.add(label_2);
 
-		JLabel label_7 = new JLabel("");
-		label_7.setBorder(null);
-		label_7.setHorizontalAlignment(SwingConstants.CENTER);
-		label_7.setBackground(Color.BLACK);
-		panel.add(label_7);
+		label_3 = new JLabel("");
+		label_3.setBorder(null);
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setBackground(Color.BLACK);
+		panel.add(label_3);
 
-		JLabel label_6 = new JLabel("");
-		label_6.setBorder(null);
-		label_6.setHorizontalAlignment(SwingConstants.CENTER);
-		label_6.setBackground(Color.BLACK);
-		panel.add(label_6);
+		label_5 = new JLabel("");
+		label_5.setBorder(null);
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setBackground(Color.BLACK);
+		panel.add(label_5);
 
-		JLabel label_4 = new JLabel("");
+		label_4 = new JLabel("");
 		label_4.setBorder(null);
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setBackground(Color.BLACK);
@@ -140,23 +167,23 @@ public class Index extends JFrame implements KeyListener {
 		contenedor_top = new JLabel("");
 		contenedor_top.setVerticalAlignment(SwingConstants.BOTTOM);
 		// lblBackground.setIcon(new ImageIcon());
-		contenedor_top.setIcon(new ImageIcon(Index.class.getResource("/img/contenedor.png")));
+		contenedor_top.setIcon(null);
 		contenedor_top.setBorder(null);
 		contenedor_top.setHorizontalAlignment(SwingConstants.CENTER);
 		contenedor_top.setBackground(Color.WHITE);
 		panel.add(contenedor_top);
 
-		JLabel label_9 = new JLabel("");
-		label_9.setBorder(null);
-		label_9.setHorizontalAlignment(SwingConstants.CENTER);
-		label_9.setBackground(Color.BLACK);
-		panel.add(label_9);
+		label_6 = new JLabel("");
+		label_6.setBorder(null);
+		label_6.setHorizontalAlignment(SwingConstants.CENTER);
+		label_6.setBackground(Color.BLACK);
+		panel.add(label_6);
 
-		JLabel label_11 = new JLabel("");
-		label_11.setBorder(null);
-		label_11.setHorizontalAlignment(SwingConstants.CENTER);
-		label_11.setBackground(Color.BLACK);
-		panel.add(label_11);
+		label_7 = new JLabel("");
+		label_7.setBorder(null);
+		label_7.setHorizontalAlignment(SwingConstants.CENTER);
+		label_7.setBackground(Color.BLACK);
+		panel.add(label_7);
 
 		distractor_left = new JLabel("");
 		distractor_left.setBorder(null);
@@ -165,7 +192,7 @@ public class Index extends JFrame implements KeyListener {
 		panel.add(distractor_left);
 
 		contenedor_left_2 = new JLabel("");
-		contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource("/img/contenedor.png")));
+		contenedor_left_2.setIcon(null);
 		contenedor_left_2.setHorizontalTextPosition(SwingConstants.RIGHT);
 		contenedor_left_2.setBorder(null);
 		contenedor_left_2.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -190,7 +217,7 @@ public class Index extends JFrame implements KeyListener {
 
 		contenedor_right = new JLabel("");
 		contenedor_right.setHorizontalAlignment(SwingConstants.LEFT);
-		contenedor_right.setIcon(new ImageIcon(Index.class.getResource("/img/contenedor.png")));
+		contenedor_right.setIcon(null);
 		contenedor_right.setBorder(null);
 		panel.add(contenedor_right);
 
@@ -199,39 +226,39 @@ public class Index extends JFrame implements KeyListener {
 		distractor_right.setBorder(null);
 		panel.add(distractor_right);
 
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setBorder(null);
-		panel.add(lblNewLabel_2);
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setBorder(null);
+		panel.add(lblNewLabel);
 
-		JLabel label_12 = new JLabel("");
-		label_12.setBorder(null);
-		label_12.setHorizontalAlignment(SwingConstants.CENTER);
-		label_12.setBackground(Color.BLACK);
-		panel.add(label_12);
+		label_8 = new JLabel("");
+		label_8.setBorder(null);
+		label_8.setHorizontalAlignment(SwingConstants.CENTER);
+		label_8.setBackground(Color.BLACK);
+		panel.add(label_8);
 
 		contenedor_bot = new JLabel("");
 		contenedor_bot.setVerticalAlignment(SwingConstants.TOP);
-		contenedor_bot.setIcon(new ImageIcon(Index.class.getResource("/img/contenedor.png")));
+		contenedor_bot.setIcon(null);
 		contenedor_bot.setBorder(null);
 		contenedor_bot.setHorizontalAlignment(SwingConstants.CENTER);
 		contenedor_bot.setBackground(Color.BLACK);
 		panel.add(contenedor_bot);
 
-		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBorder(null);
+		panel.add(lblNewLabel_1);
+
+		lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setBorder(null);
+		panel.add(lblNewLabel_2);
+
+		lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setBorder(null);
 		panel.add(lblNewLabel_3);
 
-		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setBorder(null);
 		panel.add(lblNewLabel_4);
-
-		JLabel lblNewLabel_5 = new JLabel("");
-		lblNewLabel_5.setBorder(null);
-		panel.add(lblNewLabel_5);
-
-		JLabel lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setBorder(null);
-		panel.add(lblNewLabel_7);
 
 		distractor_bot = new JLabel("");
 		distractor_bot.setHorizontalAlignment(SwingConstants.CENTER);
@@ -240,13 +267,13 @@ public class Index extends JFrame implements KeyListener {
 		distractor_bot.setBorder(null);
 		panel.add(distractor_bot);
 
-		JLabel label_15 = new JLabel("");
-		label_15.setBorder(null);
-		panel.add(label_15);
+		label_9 = new JLabel("");
+		label_9.setBorder(null);
+		panel.add(label_9);
 
-		JLabel label_16 = new JLabel("");
-		label_16.setBorder(null);
-		panel.add(label_16);
+		label_10 = new JLabel("");
+		label_10.setBorder(null);
+		panel.add(label_10);
 	}
 
 	@Override
@@ -266,497 +293,4 @@ public class Index extends JFrame implements KeyListener {
 		// TODO Auto-generated method stub
 
 	}
-//
-//	public static void crearImagenesAzules(int no_imagen) {
-//		System.out.println("ensayo Azul");
-//		String contenedor = "/img/contenedor.png";
-//
-//		/* REACTIVOS */
-//		String contenedor_ovalo = "/img/ovalo_contenedor_azul.png";
-//		String contenedor_circulo = "/img/circulo_contenedor_azul.png";
-//
-//		/* DISTRACTORES */
-//		String distractor_ovalo = "/img/dis_azul_ovalo.png";
-//		String distractor_circulo = "/img/dis_azul_cirulo.png";
-//
-//		switch (no_imagen) {
-//		case 1:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 2:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			break;
-//
-//		case 3:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 4:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 5:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 6:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 7:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 8:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 9:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 10:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			break;
-//
-//		case 11:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 12:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 13:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 14:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 15:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 16:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_ovalo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_circulo)));
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 17:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			break;
-//
-//		case 18:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 19:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 20:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 21:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 22:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 23:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 24:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 25:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 26:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 27:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 28:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 29:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 30:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			break;
-//
-//		case 31:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		case 32:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor_circulo)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(new ImageIcon(Index.class.getResource(distractor_ovalo)));
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		default:
-//			/* CONTENEDORES */
-//			contenedor_top.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_bot.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_right.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			contenedor_left_2.setIcon(new ImageIcon(Index.class.getResource(contenedor)));
-//			/* DISTRACTORES */
-//			distractor_top.setIcon(null);
-//			distractor_bot.setIcon(null);
-//			distractor_left.setIcon(null);
-//			distractor_right.setIcon(null);
-//			break;
-//
-//		}
-//
-//	}
-//
-//	public static void iniciarSesion() {
-//
-//		int[] ensayo = numeroAleatorio(32);
-//		int numero_ensayo;
-//		try {
-//
-//			for (int i = 0; i < ensayo.length; i++) {
-//
-//				numero_ensayo = ensayo[i];
-//				crearImagenesAzules(numero_ensayo);
-//				System.out.println(numero_ensayo);
-//				Thread.sleep(1000);
-//			}
-//
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		}
-//
-//	}
-//
-//	private static int[] numeroAleatorio(int n) {
-//		// n =numeros aleatorios
-//		int k = n; // auxiliar;
-//		int[] numeros = new int[n];
-//		int[] resultado = new int[n];
-//		Random rnd = new Random();
-//		int res;
-//
-//		// se rellena una matriz ordenada del 1 al 31(1..n)
-//		for (int i = 0; i < n; i++) {
-//			numeros[i] = i + 1;
-//		}
-//
-//		for (int i = 0; i < n; i++) {
-//			res = rnd.nextInt(k);
-//			resultado[i] = numeros[res];
-//			numeros[res] = numeros[k - 1];
-//			k--;
-//
-//		}
-//		// se imprime el resultado;
-//
-//		return resultado;
-//
-//	}
-
 }
