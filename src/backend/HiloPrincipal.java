@@ -3,6 +3,7 @@ package backend;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
@@ -25,41 +26,66 @@ public class HiloPrincipal extends SwingWorker<Integer, String> {
 	protected Integer doInBackground() throws Exception {
 
 		int[] ensayo = numeroAleatorio(32);
+		try {
+			for (int j = 0; j < ensayo.length; j++) {
 
-		Timer timer = new Timer();
+				System.out.println("numero ensayo" + ensayo[j]);
+				/* 6 segundos */
+				Thread.sleep(6 * 1000);
+				etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/cruz.png")));
+				System.out.println("cruz.png");
 
-		// for (int i = 0; i < ensayo.length; i++) {
+				/* aleatorio 1 a 3 segundos */
+				Thread.sleep(3 * 1000);
+				etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/pantalla_azul.png")));
+				System.out.println("pantalla_azul.png");
 
-		TimerTask tarea = new TimerTask() {
-			int i = 0;
-			int numero_ensayo;
+				/* duracion 1 segundos */
+				Thread.sleep(1 * 1000);
+				etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/contornos.png")));
+				System.out.println("contornos.png");
 
-			@Override
-			public void run() {
-				System.out.println("i=" + i);
-				if (i == 0) {
-					etiqueta_principal.setIcon(new ImageIcon("/img/cruz.png"));
-					if (interrupcion(4) == true) {
-						crearImagenesAzules(0);
-					}
-				} else {
-					numero_ensayo = ensayo[i];
-					crearImagenesAzules(numero_ensayo);
-					System.out.println(numero_ensayo);
-					System.out.println("i=" + i);
-
-					if (i >= 31) {
-						timer.cancel();
-						timer.purge();
-						System.out.println("terminó");
-					}
-				}
-				i++;
-
+				/* 1 segundo */
+				System.out.println("ensayo no "+j);
 			}
-		};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		timer.schedule(tarea, 10, 6000);
+//		Timer timer = new Timer();
+//
+//		// for (int i = 0; i < ensayo.length; i++) {
+//
+//		TimerTask tarea = new TimerTask() {
+//			int i = 0;
+//			int numero_ensayo;
+//
+//			@Override
+//			public void run() {
+//				System.out.println("i=" + i);
+//				if (i == 0) {
+//					etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/cruz.png")));
+//					if (interrupcion(4) == true) {
+//						crearImagenesAzules(0);
+//					}
+//				} else {
+//					numero_ensayo = ensayo[i];
+//					crearImagenesAzules(numero_ensayo);
+//					System.out.println(numero_ensayo);
+//					System.out.println("i=" + i);
+//
+//					if (i >= 31) {
+//						timer.cancel();
+//						timer.purge();
+//						System.out.println("terminó");
+//					}
+//				}
+//				i++;
+//
+//			}
+//		};
+//
+//		timer.schedule(tarea, 10, 6000);
 
 		return null;
 	}
