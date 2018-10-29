@@ -36,30 +36,38 @@ public class HiloPrincipal extends SwingWorker<Integer, String> {
 
 			@Override
 			public void run() {
-				System.out.println("i=" + i);
-				if (i == 0) {
-					etiqueta_principal.setIcon(new ImageIcon("/img/cruz.png"));
-					if (interrupcion(4) == true) {
-						crearImagenesAzules(0);
-					}
-				} else {
+				try {
+					int numero_random = (int) (Math.random() * 3) + 1;
+					etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/cruz.png")));
+					System.out.println("numero "+numero_random);
+					Thread.sleep(numero_random * 1000);
+					
+					etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/pantalla_azul.png")));
 					numero_ensayo = ensayo[i];
+					Thread.sleep(1 * 1000);
+					
+					etiqueta_principal.setIcon(new ImageIcon(Index.class.getResource("/img/contornos.png")));
+					Thread.sleep(1 * 1000);
 					crearImagenesAzules(numero_ensayo);
-					System.out.println(numero_ensayo);
-					System.out.println("i=" + i);
 
 					if (i >= 31) {
 						timer.cancel();
 						timer.purge();
 						System.out.println("terminó");
 					}
+
+					i++;
+
+					Thread.sleep(6 * 1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-				i++;
 
 			}
 		};
 
-		timer.schedule(tarea, 10, 6000);
+		timer.schedule(tarea, 10, 11 * 1000);
 
 		return null;
 	}
@@ -82,10 +90,7 @@ public class HiloPrincipal extends SwingWorker<Integer, String> {
 			resultado[i] = numeros[res];
 			numeros[res] = numeros[k - 1];
 			k--;
-
 		}
-		// se imprime el resultado;
-		// System.out.println("El resultado de la matriz es:");
 
 		return resultado;
 
