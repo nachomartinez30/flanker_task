@@ -3,35 +3,39 @@
 <head>
 	<title></title>
 </head>
-<body>
+<body onkeypress="iniciarSesion()">
 	<div align="center">
-		<img id="pantalla_principal">
+		<img  id="pantalla_principal">
 	</div>
 </body>
 <script type="text/javascript">
 	var label = document.getElementById('pantalla_principal')
-	var i = 0
-	var intervalo= 1000;
-	if(i%2==0)
-	{
-		intervalo = 6000;
+
+
+	function iniciarSesion () {
+		console.log('cruz')
+		label.src = "img/cruz.png";
+		sleep(2000);
+		console.log('pantalla azul')
+		label.src = "img/pantalla_azul.png";
+		sleep(5000);
+		console.log('A_1')
+		label.src = "img/azul/A_1.png";
+		sleep(3000);
+		console.log('A_3');
+		label.src = "img/azul/A_3.png";
 	}
 	
-	setInterval(cambioImagen, intervalo);
 
-	function cambioImagen() {
-		
-		console.log('antes de la cruz')
-		console.log('I='+i)
-		console.log('intervalo='+intervalo)
-		if(i%2==0){
-			label.src = "img/cruz.png";
-		}else{
-			setTimeout(console.log('cruz'),1*1000)
-			label.src = "img/pantalla_azul.png";
+	function sleep(milliseconds) {
+		var start = new Date().getTime();
+		for (var i = 0; i < 1e7; i++) {
+			if ((new Date().getTime() - start) > milliseconds){
+				break;
+			}
 		}
-		i++
-	}	
+	}
+	
 </script>
 
 </html>
