@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onkeypress="checkKeyPressed(event)">
+	<div align="center">
+		<img id="pantalla_principal">
+	</div>
+</body>
+<script type="text/javascript">
+
+	var segundos=4000;
+
+	var label = document.getElementById('pantalla_principal');
+	var lista_imagenes = ['./img/cruz.png',
+	'./img/pantalla_azul.png',
+	'./img/contornos.png',
+	'./img/azul/A_12.png',
+	'./img/cruz.png',
+	'./img/pantalla_azul.png',
+	'./img/contornos.png',
+	'./img/azul/A_12.png'
+	];
+	function iniciarSesion(iterador) {
+		console.log('iterador='+iterador);
+		if(iterador == undefined){
+			console.log('iterado en INICIO');
+			segundos= numeroAleatorio()*1000;
+		}
+		if(iterador == 2){
+			console.log('iterado en 1');
+			segundos = 6000;
+		}
+		
+		console.log('SEGUNDOS ='+segundos);
+		var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
+		label.src = lista_imagenes[iterador]; // asignar el path al src
+		// llamada recursiva con timer
+		setTimeout(function() {
+			if(iterador < lista_imagenes.length-1){ // romper la recursión si se llega a la ultima imagen
+				iniciarSesion(iterador+1);
+			}
+		}, segundos);
+	}
+
+	function checkKeyPressed(event) {
+		var event = window.event ? window.event : e;
+		console.log(event.keyCode)
+		if(event.keyCode == 13){
+			iniciarSesion();
+		}
+	}
+
+
+	function numeroAleatorio() {
+		let numero = Math.round(Math.random() * (3 - 1) + 1);
+		return numero;
+	}
+
+</script>
+
+</html>
