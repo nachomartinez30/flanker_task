@@ -23,8 +23,8 @@
     var contador_ensayos = 0;
 
     function iniciarSesion(iterador) {
-        contador_ensayos++;
-        // console.log("CONTADOR ENSAYO="+contador_ensayos);
+
+        console.log("CONTADOR ENSAYO="+contador_ensayos);
         console.log('numero de imagen='+num_imagen);
         switch (num_imagen) {
             case 0:/*cruz*/
@@ -236,6 +236,7 @@
                 num_imagen = -1;
                 console.log('ensayo');
                 segundos = 6000
+                contador_ensayos++;
                 break;
         }
         num_imagen++;
