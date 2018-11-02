@@ -1,62 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
 </head>
 <body onkeypress="checkKeyPressed(event)">
-	<div align="center">
-		<img id="pantalla_principal">
-	</div>
+<div align="center">
+    <img id="pantalla_principal">
+</div>
 </body>
 <script type="text/javascript">
 
-	var segundos=4000;
+    var segundos = 4000;
 
-	var label = document.getElementById('pantalla_principal');
-	var lista_imagenes = ['./img/cruz.png',
-	'./img/pantalla_azul.png',
-	'./img/contornos.png',
-	'./img/azul/A_12.png',
-	'./img/cruz.png',
-	'./img/pantalla_azul.png',
-	'./img/contornos.png',
-	'./img/azul/A_12.png'
-	];
-	function iniciarSesion(iterador) {
-		console.log('iterador='+iterador);
-		if(iterador == undefined){
-			console.log('iterado en INICIO');
-			segundos= numeroAleatorio()*1000;
-		}
-		if(iterador == 2){
-			console.log('iterado en 1');
-			segundos = 6000;
-		}
-		
-		console.log('SEGUNDOS ='+segundos);
-		var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
-		label.src = lista_imagenes[iterador]; // asignar el path al src
-		// llamada recursiva con timer
-		setTimeout(function() {
-			if(iterador < lista_imagenes.length-1){ // romper la recursión si se llega a la ultima imagen
-				iniciarSesion(iterador+1);
-			}
-		}, segundos);
-	}
+    var label = document.getElementById('pantalla_principal');
+    var lista_imagenes = new Array();
+    var arreglo_ensayos = new Array();
+    // var lista_imagenes = ['./img/cruz.png',
+    //     './img/pantalla_azul.png',
+    //     './img/contornos.png',
+    //     './img/azul/A_12.png',
+    //     './img/cruz.png',
+    //     './img/pantalla_azul.png',
+    //     './img/contornos.png',
+    //     './img/azul/A_12.png'
+    // ];
 
-	function checkKeyPressed(event) {
-		var event = window.event ? window.event : e;
-		console.log(event.keyCode)
-		if(event.keyCode == 13){
-			iniciarSesion();
-		}
-	}
+    function iniciarSesion(iterador) {
+        console.log('iterador=' + iterador);
+        if (iterador == undefined) {
+            console.log('iterado en INICIO');
+            segundos = numeroAleatorio() * 1000;
+        }
+        if (iterador == 2) {
+            console.log('iterado en 1');
+            segundos = 6000;
+        }
+
+        console.log('SEGUNDOS =' + segundos);
+        var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
+        label.src = lista_imagenes[iterador]; // asignar el path al src
 
 
-	function numeroAleatorio() {
-		let numero = Math.round(Math.random() * (3 - 1) + 1);
-		return numero;
-	}
+        // llamada recursiva con timer
+        setTimeout(function () {
+            if (iterador < lista_imagenes.length - 1) { // romper la recursión si se llega a la ultima imagen
+                iniciarSesion(iterador + 1);
+            }
+        }, segundos);
+    }
+
+    function checkKeyPressed(event) {
+        var event = window.event ? window.event : e;
+        console.log(event.keyCode)
+        if (event.keyCode == 13) {
+            iniciarSesion();
+        }
+    }
+
+    function insertarEn(array, valor, posicion)/*AUTHOR ArtEze*/ {
+        var inicio = array.slice(0, posicion)
+        var medio = valor
+        var fin = array.slice(posicion)
+        var resultado = inicio.concat(medio).concat(fin)
+        return resultado
+    }
+
+    function aleatoriosNoRepetidos(cantidad) /*AUTHOR ArtEze*/ {
+        var array = []
+        for (var i = 0; i < cantidad; i++) {
+            array = insertarEn(array, i, Math.random() * (cantidad + 1))
+        }
+        return array
+    }
+
+
+    function crearArregloImagenes(color) {
+        let numero_ensayos_azules = aleatoriosNoRepetidos(32);
+        let i = 0;
+        let prefijo;
+
+        if (color === 'azul') {
+            prefijo = 'A';
+        }
+        if (color === 'verde') {
+            prefijo = 'V';
+        }
+
+        numero_ensayos_azules.forEach(function () {
+            if (numero_ensayos_azules[i] === 0) {
+                lista_imagenes.push(prefijo + '_32');
+                console.log(prefijo + '_32');
+            } else {
+                lista_imagenes.push(prefijo + '_' + numero_ensayos_azules[i]);
+                console.log(prefijo + '_' + numero_ensayos_azules[i]);
+            }
+            i++;
+        }, numero_ensayos_azules)
+
+    }
+
+    function combinarArreglos() {
+        let i = 0;
+
+
+        crearArregloImagenes('azul');
+        crearArregloImagenes('verde');
+        arreglo_ensayos = lista_imagenes.sort(function() {return Math.random() - 0.5});
+        console.log('ARREGLO FINAL')
+        arreglo_ensayos.forEach( function() {
+        	console.log(arreglo_ensayos[i])
+        	i++;
+        },arreglo_ensayos);
+    }
+
 
 </script>
 
