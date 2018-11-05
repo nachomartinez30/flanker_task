@@ -3,4 +3,13 @@
 	width: 100%;
 	margin: 0 auto;
 	max-width: 1360px;
+	height: 100vh;
+}
+label
+{
+	margin-bottom: 0!important;
+}
+.checklist img
+{
+	max-height: 200px;
 }

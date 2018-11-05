@@ -14,10 +14,10 @@
 <div align="center">
     <div hidden id="div_encuesta" class="checklist">
         <div class="radio row">
-            <h4>Selecciona con un clic las opciones que describen como te sentiste en la realización de la tarea. Tienes
+            <h3>Selecciona con un clic las opciones que describen como te sentiste en la realización de la tarea. Tienes
                 2 minutos para responder. Después de contestar espera las siguientes indicaciones.No Pulses ninguna
                 tecla
-            </h4>
+            </h3>
             <label class="offset-1 col-md-2">
                 <img src="img/encuesta/fila1_1.png" class="img-fluid"><br>
                 <input type="radio" name="psico">
@@ -96,7 +96,7 @@
     var date_fin;
     var tiempo_inicio;
     var tiempo_fin;
-    var segundos = 8000;
+    var segundos = 10*60000/*8000*/;
 
     var listado_primera_fase = ['./img/pantalla_negra.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_3.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_1.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_19.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_21.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_26.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_27.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_32.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_12.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_20.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_17.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_30.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_29.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_11.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_24.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_21.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_4.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_8.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_4.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_15.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_22.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_9.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_19.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_20.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_26.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_24.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_32.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_14.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_2.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_25.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_17.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_5.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_18.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_15.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_5.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_18.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_23.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_29.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_6.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_7.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_13.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_1.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_22.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_11.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_7.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_6.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_14.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_28.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_8.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_23.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_16.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_30.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_13.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_31.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_25.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_27.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_12.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_31.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_10.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_9.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_10.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_2.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_3.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_16.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_28.png', 'imagen_encuesta']
 
@@ -336,19 +336,27 @@
 
         console.log('SEGUNDOS =' + segundos);
         var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
-        if (iterador === 257) {/*TERMINÓ PRIMERA FASE*/
+
+        /*TERMINÓ PRIMERA FASE*/
+        if (iterador === 257) {
+            segundos = 120000;
             label.src = '';
             encuesta.removeAttribute('hidden');
         } else {
-            label.src = listado_primera_fase[iterador]; // asignar el path al src
+            if (iterador === 258) {/*MODIFICAR ESTA PARTE*/
+                label.src = './img/pantalla_negra.png';
+            } else {
+                label.src = listado_primera_fase[iterador]; // asignar el path al src
+            }
         }
-        // console.log("SEGUNDOS" + segundos);
+
+        console.log("SEGUNDOS" + segundos);
         // llamada recursiva con timer
         setTimeout(function () {
             if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima imagen
                 iniciarSesion(iterador + 1);
             }
-        }, /*segundos*/100);
+        }, segundos/*100*/);
     }
 
     function checkKeyPressed(event) {
@@ -360,9 +368,7 @@
         console.log("tiempo respuesta=" + tiempo_final);
         console.log(event.keyCode)
 
-
         if (event.keyCode == 13) {
-
             console.log('inició');
             iniciarSesion();
         }
