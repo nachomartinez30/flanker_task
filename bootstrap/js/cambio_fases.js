@@ -484,200 +484,7 @@ function iniciarSesion(iterador) {
         switch (num_imagen) {
             case 0:/*cruz*/
                 console.log('cruz');
-                switch (contador_ensayos) {
-                    case 1:
-                        segundos = 3000
-                        break;
-                    case 2:
-                        segundos = 3000
-                        break;
-                    case 3:
-                        segundos = 1000
-                        break;
-                    case 4:
-                        segundos = 2000
-                        break;
-                    case 5:
-                        segundos = 1000
-                        break;
-                    case 6:
-                        segundos = 3000
-                        break;
-                    case 7:
-                        segundos = 3000
-                        break;
-                    case 8:
-                        segundos = 2000
-                        break;
-                    case 9:
-                        segundos = 1000
-                        break;
-                    case 10:
-                        segundos = 1000
-                        break;
-                    case 11:
-                        segundos = 3000
-                        break;
-                    case 12:
-                        segundos = 2000
-                        break;
-                    case 13:
-                        segundos = 2000
-                        break;
-                    case 14:
-                        segundos = 2000
-                        break;
-                    case 15:
-                        segundos = 3000
-                        break;
-                    case 16:
-                        segundos = 1000
-                        break;
-                    case 17:
-                        segundos = 3000
-                        break;
-                    case 18:
-                        segundos = 1000
-                        break;
-                    case 19:
-                        segundos = 2000
-                        break;
-                    case 20:
-                        segundos = 1000
-                        break;
-                    case 21:
-                        segundos = 1000
-                        break;
-                    case 22:
-                        segundos = 3000
-                        break;
-                    case 23:
-                        segundos = 1000
-                        break;
-                    case 24:
-                        segundos = 3000
-                        break;
-                    case 25:
-                        segundos = 1000
-                        break;
-                    case 26:
-                        segundos = 3000
-                        break;
-                    case 27:
-                        segundos = 1000
-                        break;
-                    case 28:
-                        segundos = 1000
-                        break;
-                    case 29:
-                        segundos = 1000
-                        break;
-                    case 30:
-                        segundos = 3000
-                        break;
-                    case 31:
-                        segundos = 1000
-                        break;
-                    case 32:
-                        segundos = 2000
-                        break;
-                    case 33:
-                        segundos = 2000
-                        break;
-                    case 34:
-                        segundos = 3000
-                        break;
-                    case 35:
-                        segundos = 1000
-                        break;
-                    case 36:
-                        segundos = 3000
-                        break;
-                    case 37:
-                        segundos = 2000
-                        break;
-                    case 38:
-                        segundos = 2000
-                        break;
-                    case 39:
-                        segundos = 1000
-                        break;
-                    case 40:
-                        segundos = 2000
-                        break;
-                    case 41:
-                        segundos = 3000
-                        break;
-                    case 42:
-                        segundos = 1000
-                        break;
-                    case 43:
-                        segundos = 2000
-                        break;
-                    case 44:
-                        segundos = 3000
-                        break;
-                    case 45:
-                        segundos = 1000
-                        break;
-                    case 46:
-                        segundos = 3000
-                        break;
-                    case 47:
-                        segundos = 2000
-                        break;
-                    case 48:
-                        segundos = 1000
-                        break;
-                    case 49:
-                        segundos = 1000
-                        break;
-                    case 50:
-                        segundos = 1000
-                        break;
-                    case 51:
-                        segundos = 2000
-                        break;
-                    case 52:
-                        segundos = 2000
-                        break;
-                    case 53:
-                        segundos = 3000
-                        break;
-                    case 54:
-                        segundos = 1000
-                        break;
-                    case 55:
-                        segundos = 2000
-                        break;
-                    case 56:
-                        segundos = 1000
-                        break;
-                    case 57:
-                        segundos = 2000
-                        break;
-                    case 58:
-                        segundos = 1000
-                        break;
-                    case 59:
-                        segundos = 1000
-                        break;
-                    case 60:
-                        segundos = 3000
-                        break;
-                    case 61:
-                        segundos = 1000
-                        break;
-                    case 62:
-                        segundos = 3000
-                        break;
-                    case 63:
-                        segundos = 2000
-                        break;
-                    case 64:
-                        segundos = 2000
-                        break;
-                }
+                asignarTiempoPorEnsayo(contador_ensayos);
                 break;
             case 1:/*pantalla color*/
                 console.log('color');
@@ -691,12 +498,12 @@ function iniciarSesion(iterador) {
                 date_inicio = new Date();
                 tiempo_inicio = date_inicio.getTime();
                 num_imagen = -1;
-                console.log('ensayo');
                 segundos = 6000
                 contador_ensayos++;
+                console.log("***-------FIN ENSAYO-------***");
                 break;
         }
-
+        num_imagen++;
     }
 
     var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
@@ -704,7 +511,7 @@ function iniciarSesion(iterador) {
     /*TERMINÓ PRIMERA FASE*/
     switch (iterador) {
         case 257:/*MUESTRA PRIMERA ENCUESTA MANEKINS*/
-            num_imagen=0;
+            num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 120000;
             /*QUITA LA ULTIMA IMAGEN*/
@@ -713,11 +520,11 @@ function iniciarSesion(iterador) {
             encuesta.removeAttribute('hidden');
             break;
         case 258:/*INSTRUCCIONES 1 DE FASE 2*/
+            num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             /*frm_encuesta.submit();*/
             enviarEncuesta(1);
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            fila_1 = document.getElementById('ra')
             segundos = 120000;
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
@@ -725,20 +532,21 @@ function iniciarSesion(iterador) {
             instrucciones_2_fase.removeAttribute('hidden');
             break;
         case 259:/*PANTALLA NEGRA SEGUNDA FASE*/
+            num_imagen = 0;
             segundos = 10 * 60000;
             label.src = listado_primera_fase[iterador];
             break;
         default:
-            num_imagen++;
             label.src = listado_primera_fase[iterador]; // asignar el path al src
             break;
     }
     /*TESTING*/
-   /* if (iterador == 257) {
-        segundos = 8000
-    } else {
-        segundos = 100;
-    }*/
+    /*if (iterador == 257) {
+            segundos = 8000
+        } else {
+            segundos = 100;
+        }
+      */
     /*TESTING*/
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -794,4 +602,204 @@ function enviarEncuesta(fase) {
             console.log('encuesta enviada');
         }
     });
+}
+
+
+
+function asignarTiempoPorEnsayo(contador_ensayos) {
+    switch (contador_ensayos) {
+        case 1:
+            segundos = 3000
+            break;
+        case 2:
+            segundos = 3000
+            break;
+        case 3:
+            segundos = 1000
+            break;
+        case 4:
+            segundos = 2000
+            break;
+        case 5:
+            segundos = 1000
+            break;
+        case 6:
+            segundos = 3000
+            break;
+        case 7:
+            segundos = 3000
+            break;
+        case 8:
+            segundos = 2000
+            break;
+        case 9:
+            segundos = 1000
+            break;
+        case 10:
+            segundos = 1000
+            break;
+        case 11:
+            segundos = 3000
+            break;
+        case 12:
+            segundos = 2000
+            break;
+        case 13:
+            segundos = 2000
+            break;
+        case 14:
+            segundos = 2000
+            break;
+        case 15:
+            segundos = 3000
+            break;
+        case 16:
+            segundos = 1000
+            break;
+        case 17:
+            segundos = 3000
+            break;
+        case 18:
+            segundos = 1000
+            break;
+        case 19:
+            segundos = 2000
+            break;
+        case 20:
+            segundos = 1000
+            break;
+        case 21:
+            segundos = 1000
+            break;
+        case 22:
+            segundos = 3000
+            break;
+        case 23:
+            segundos = 1000
+            break;
+        case 24:
+            segundos = 3000
+            break;
+        case 25:
+            segundos = 1000
+            break;
+        case 26:
+            segundos = 3000
+            break;
+        case 27:
+            segundos = 1000
+            break;
+        case 28:
+            segundos = 1000
+            break;
+        case 29:
+            segundos = 1000
+            break;
+        case 30:
+            segundos = 3000
+            break;
+        case 31:
+            segundos = 1000
+            break;
+        case 32:
+            segundos = 2000
+            break;
+        case 33:
+            segundos = 2000
+            break;
+        case 34:
+            segundos = 3000
+            break;
+        case 35:
+            segundos = 1000
+            break;
+        case 36:
+            segundos = 3000
+            break;
+        case 37:
+            segundos = 2000
+            break;
+        case 38:
+            segundos = 2000
+            break;
+        case 39:
+            segundos = 1000
+            break;
+        case 40:
+            segundos = 2000
+            break;
+        case 41:
+            segundos = 3000
+            break;
+        case 42:
+            segundos = 1000
+            break;
+        case 43:
+            segundos = 2000
+            break;
+        case 44:
+            segundos = 3000
+            break;
+        case 45:
+            segundos = 1000
+            break;
+        case 46:
+            segundos = 3000
+            break;
+        case 47:
+            segundos = 2000
+            break;
+        case 48:
+            segundos = 1000
+            break;
+        case 49:
+            segundos = 1000
+            break;
+        case 50:
+            segundos = 1000
+            break;
+        case 51:
+            segundos = 2000
+            break;
+        case 52:
+            segundos = 2000
+            break;
+        case 53:
+            segundos = 3000
+            break;
+        case 54:
+            segundos = 1000
+            break;
+        case 55:
+            segundos = 2000
+            break;
+        case 56:
+            segundos = 1000
+            break;
+        case 57:
+            segundos = 2000
+            break;
+        case 58:
+            segundos = 1000
+            break;
+        case 59:
+            segundos = 1000
+            break;
+        case 60:
+            segundos = 3000
+            break;
+        case 61:
+            segundos = 1000
+            break;
+        case 62:
+            segundos = 3000
+            break;
+        case 63:
+            segundos = 2000
+            break;
+        case 64:
+            segundos = 2000
+            break;
+    }
+
 }
