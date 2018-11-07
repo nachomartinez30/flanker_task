@@ -20,65 +20,65 @@
             <form id="frm_encuesta" action="./encuesta.php" method="post">
                 <label class="offset-1 col-md-2">
                     <img src="img/encuesta/fila1_1.png" class="img-fluid"><br>
-                    <input type="radio" name="psico" value="1">
+                    <input type="radio" name="psico_1" value="1">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila1_2.png" class="img-fluid"><br>
-                    <input type="radio" name="psico" value="2">
+                    <input type="radio" name="psico_1" value="2">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila1_3.png" class="img-fluid"><br>
-                    <input type="radio" name="psico" value="3">
+                    <input type="radio" name="psico_1" value="3">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila1_4.png" class="img-fluid"><br>
-                    <input type="radio" name="psico" value="4">
+                    <input type="radio" name="psico_1" value="4">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila1_5.png" class="img-fluid"><br>
-                    <input type="radio" name="psico" value="5">
+                    <input type="radio" name="psico_1" value="5">
                 </label>
                 <!--Fila 2-->
                 <label class="offset-1 col-md-2">
                     <img src="img/encuesta/fila2_1.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-2" value="1">
+                    <input type="radio" name="psico_2" value="1">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila2_2.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-2" value="2">
+                    <input type="radio" name="psico_2" value="2">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila2_3.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-2" value="3">
+                    <input type="radio" name="psico_2" value="3">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila2_4.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-2" value="4">
+                    <input type="radio" name="psico_2" value="4">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila2_5.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-2" value="5">
+                    <input type="radio" name="psico_2" value="5">
                 </label>
                 <!--Fila 3-->
                 <label class="offset-1 col-md-2">
                     <img src="img/encuesta/fila3_1.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-3" value="1">
+                    <input type="radio" name="psico_3" value="1">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila3_2.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-3" value="2">
+                    <input type="radio" name="psico_3" value="2">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila3_3.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-3" value="3">
+                    <input type="radio" name="psico_3" value="3">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila3_4.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-3" value="4">
+                    <input type="radio" name="psico_3" value="4">
                 </label>
                 <label class="col-md-2">
                     <img src="img/encuesta/fila3_5.png" class="img-fluid"><br>
-                    <input type="radio" name="psico-3" value="5">
+                    <input type="radio" name="psico_3" value="5">
                 </label>
             </form>
         </div>
@@ -362,7 +362,7 @@
             case 258:/*INSTRUCCIONES 1 DE FASE 2*/
                 /*ENVIAR DATOS ENCUESTA MANEKIN*/
                 /*frm_encuesta.submit();*/
-                enviarEncuesta();
+                enviarEncuesta(1);
                 /*DURACION INSTRUCCIONES 2 MINUTOS*/
                 fila_1 = document.getElementById('ra')
                 segundos = 120000;
@@ -380,11 +380,11 @@
                 break;
         }
         /*TESTING*/
-        if (iterador == 257) {
+        /*if (iterador == 257) {
             segundos = 8000
         } else {
             segundos = 100;
-        }
+        }*/
         /*TESTING*/
 
         console.log('***DURACION SEGUNDOS =' + segundos);
@@ -428,13 +428,15 @@
     }
 
 
-    function enviarEncuesta() {
+    function enviarEncuesta(fase) {
+        let fila_1 = $('input[name=psico_1]:checked').val();
+        let fila_2 = $('input[name=psico_2]:checked').val();
+        let fila_3 = $('input[name=psico_3]:checked').val();
         $.ajax({
             type: 'post',
-            url: './encuesta.php',
+            url: './encuesta.php?fase='+fase+'&fila_1=' + fila_1 + '&fila_2=' + fila_2 + '&fila_3=' + fila_3,
             data: $('frm_encuesta').serialize(),
             success: function () {
-                frm_encuesta.submit();
                 console.log('encuesta enviada');
             }
         });

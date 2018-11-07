@@ -5,5 +5,8 @@
  * Time: 12:50 PM
  */
 
-//echo "hI";
-var_dump($_POST);
+var_dump($_GET);
+$fase=$_GET['fase'];
+$fila_1=$_GET['fila_1'];
+$fila_2=$_GET['fila_2'];
+$fila_3=$_GET['fila_3'];
