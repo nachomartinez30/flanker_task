@@ -610,9 +610,9 @@ function iniciarSesion(iterador) {
             break;
     }
     /*TESTING*/
-    if (iterador <= 259) {
+    /*if (iterador <= 259) {
         segundos = 100
-    }
+    }*/
     /*TESTING*/
 
     console.log('***DURACION SEGUNDOS =' + segundos);
