@@ -541,11 +541,11 @@ function iniciarSesion(iterador) {
             break;
     }
     /*TESTING*/
-    if (iterador == 257) {
+    /*if (iterador == 257) {
             segundos = 8000
         } else {
             segundos = 100;
-        }
+        }*/
     /*TESTING*/
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -597,8 +597,8 @@ function enviarEncuesta(fase) {
         type: 'post',
         url: 'encuesta?fase=' + fase + '&fila_1=' + fila_1 + '&fila_2=' + fila_2 + '&fila_3=' + fila_3,
         data: $('frm_encuesta').serialize(),
-        success: function () {
-            console.log('encuesta enviada');
+        success: function (res) {
+            console.log("Resultado encuesta="+res);
         }
     });
 }

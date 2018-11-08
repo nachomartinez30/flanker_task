@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Encuesta_model extends CI_Model {
+class Encuesta_model extends CI_Model
+{
 
-	function getEncuesta() {
-        $query = $this->db->query("SELECT * FROM encuestas");
-		return $query->result();
-	}
+    function InsertEncuesta($data)
+    {
+        $resupuesta = $this->db->insert('encuestas', $data);
+        return $resupuesta;
+    }
 
 }
 
