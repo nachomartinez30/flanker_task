@@ -541,12 +541,11 @@ function iniciarSesion(iterador) {
             break;
     }
     /*TESTING*/
-    /*if (iterador == 257) {
+    if (iterador == 257) {
             segundos = 8000
         } else {
             segundos = 100;
         }
-      */
     /*TESTING*/
 
     console.log('***DURACION SEGUNDOS =' + segundos);

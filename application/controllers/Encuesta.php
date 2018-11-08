@@ -6,7 +6,12 @@ class Encuesta extends CI_Controller
 
     public function index()
     {
+        $this->load->model('encuesta_model');
         var_dump($_GET);
+        echo "PRUEBA BASE DE DATOS";
+
+        $resultado = $this->encuesta_model->getEncuesta();
+        var_dump($resultado);
     }
 
 }
