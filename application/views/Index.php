@@ -87,13 +87,8 @@
     <img id="pantalla_principal" src="./img/pantalla_negra.png">
     <div id="encuesta" class="container">
     </div>
-    <div hidden class="container" id="div_instrucciones_fase_2">
-        <h1>A continuación las imágenes cambiaran de color, pero tu deberás seguir contestando como hasta ahora. Si tu
-            respuesta es incorrecta escucharás un sonido por un segundo y una cruz aparecerá; si respondes correctamente
-            verás una señal que así lo indicará.
-            En seguida verás una pantalla negra, trata de fijar la mirada den la cruz y relajarte hasta que la tarea
-            comience.
-        </h1>
+    <div hidden class="container" id="div_instrucciones">
+
     </div>
 </div>
 </body>

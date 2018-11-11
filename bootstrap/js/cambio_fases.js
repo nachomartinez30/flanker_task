@@ -1,5 +1,5 @@
 var encuesta = document.getElementById('div_encuesta');
-var instrucciones_2_fase = document.getElementById('div_instrucciones_fase_2')
+var instrucciones = document.getElementById('div_instrucciones');
 
 var date_inicio;
 var date_fin;
@@ -7,8 +7,6 @@ var tiempo_inicio;
 var tiempo_fin;
 var segundos = /*10*60000*/8000;
 
-/*RESPUESTAS ENCUESTA MANEKINS*/
-var frm_encuesta = document.getElementById('frm_encuesta');
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
@@ -527,10 +525,269 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_5.png'
-    /*FINAL SEGUNDA ETAPA*/
-    ,'final_segunda_fase_ENCUESTA'
-    ,'imagenes_instrucciones_2_fase'
-    ,'./img/pantalla_negra.png'
+    /*FINAL SEGUNDA FASE*/
+    , 'final_segunda_fase_ENCUESTA'
+    , 'imagenes_instrucciones_2_fase'
+    , './img/pantalla_negra.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_14.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_25.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_30.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_11.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_28.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_10.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_23.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_1.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_1.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_26.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_14.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_24.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_16.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_13.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_20.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_6.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_12.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_3.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_19.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_23.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_31.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_32.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_4.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_21.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_6.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_13.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_20.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_15.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_5.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_17.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_11.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_29.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_30.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_5.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_31.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_27.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_32.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_29.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_3.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_2.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_9.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_7.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_28.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_16.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_18.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_15.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_22.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_25.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_24.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_8.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_17.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_26.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_19.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_9.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_7.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_10.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_22.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_21.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_18.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_4.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_27.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/azul/A_2.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_8.png'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    , './img/1_3_fase/verdes/V_12.png',
+    'final_segunda_fase_ENCUESTA',
+    'imagenes_instrucciones_2_fase',
+    './img/pantalla_negra.png'
 ]
 
 // var listado_tercera_fase = ['./img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_14.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_25.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_30.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_11.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_28.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_10.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_23.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_1.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_1.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_26.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_14.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_24.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_16.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_13.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_20.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_6.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_12.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_3.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_19.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_23.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_31.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_32.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_4.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_21.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_6.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_13.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_20.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_15.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_5.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_17.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_11.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_29.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_30.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_5.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_31.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_27.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_32.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_29.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_3.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_2.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_9.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_7.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_28.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_16.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_18.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_15.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_22.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_25.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_24.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_8.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_17.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_26.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_19.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_9.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_7.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_10.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_22.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_21.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_18.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_4.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_27.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_azul.png', './img/1_3_fase/contornos.png', './img/1_3_fase/azul/A_2.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_8.png', './img/1_3_fase/cruz.png', './img/1_3_fase/pantalla_verde.png', './img/1_3_fase/contornos.png', './img/1_3_fase/verdes/V_12.png']
@@ -548,7 +805,7 @@ function iniciarSesion(iterador) {
     console.log('numero de imagen=' + num_imagen);
     console.log('IMAGEN=' + listado_primera_fase[iterador]);
     if (iterador != undefined)/*CRUZ NEGRA*/{
-        segundos = 4000;
+        segundos = 2000;
         switch (num_imagen) {
             case 0:/*cruz*/
                 console.log('cruz');
@@ -578,6 +835,7 @@ function iniciarSesion(iterador) {
 
     /*TERMINÓ PRIMERA FASE*/
     switch (iterador) {
+        /***********************************************************FASE 1*****************************************************/
         case 257:/*MUESTRA PRIMERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
@@ -590,19 +848,87 @@ function iniciarSesion(iterador) {
         case 258:/*INSTRUCCIONES 1 DE FASE 2*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
-            /*frm_encuesta.submit();*/
             enviarEncuesta(1);
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 120000;
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones_2_fase.removeAttribute('hidden');
+            instrucciones.innerHTML = ' <h1>A continuación las imágenes cambiaran de color, pero tu deberás seguir contestando' +
+                ' como hasta ahora. Si tu\n' +
+                'respuesta es incorrecta escucharás un sonido por un segundo y una cruz aparecerá; si respondes ' +
+                'correctamente verás una señal que así lo indicará.\n' +
+                'En seguida verás una pantalla negra, trata de fijar la mirada den la cruz y relajarte hasta que la tarea\n' +
+                'comience.\n' +
+                '</h1>';
+            instrucciones.removeAttribute('hidden');
             break;
         case 259:/*PANTALLA NEGRA SEGUNDA FASE*/
-            instrucciones_2_fase.setAttribute('hidden', 'true');
+            instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
-            segundos = 10 * 60000;
+            segundos = 120000;
+            label.src = listado_primera_fase[iterador];
+            break;
+        /***********************************************************FASE 2*****************************************************/
+        case 518:/*ENCUESTA SEGUNDA FASE*/
+            num_imagen = 0;
+            /*DURACION INSTRUCCIONES 2 MINUTOS*/
+            segundos = 120000;
+            /*QUITA LA ULTIMA IMAGEN*/
+            label.src = '';
+            /*MUESTRA LA ENCUESTA*/
+            encuesta.removeAttribute('hidden');
+            break;
+        case 519:/*INSTRUCCIONES  DE FASE 3*/
+            num_imagen = 0;
+            /*ENVIAR DATOS ENCUESTA MANEKIN*/
+            enviarEncuesta(2);
+            /*DURACION INSTRUCCIONES 2 MINUTOS*/
+            segundos = 120000;
+            /*ESCONDE ENCUESTA MANEKINS*/
+            encuesta.setAttribute('hidden', 'true');
+            /*MUESTRA INSTRUCCIONES FASE 2*/
+            instrucciones.innerHTML = '<h1>\n' +
+                'La tarea volverá a ser igual que al inicio. no habrá señales que indiquen si tu respuesta fue correcta. \n' +
+                'Trata de contestar lo mejor que puedas. En sesguida verás una pantalla negra, trata de fijar la mirada \n' +
+                'en la cruz y relajarte hasta que la tarea comience.\n' +
+                '</h1>'
+            instrucciones.removeAttribute('hidden');
+            break;
+        case 520:/*PANTALLA NEGRA SEGUNDA FASE*/
+            instrucciones.setAttribute('hidden', 'true');
+            num_imagen = 0;
+            segundos = 120000;
+            label.src = listado_primera_fase[iterador];
+            break;
+        /***********************************************************FASE 3*****************************************************/
+        case 775:/*TERCERA ENCUESTA MANEKINS*/
+            num_imagen = 0;
+            /*DURACION INSTRUCCIONES 2 MINUTOS*/
+            segundos = 120000;
+            /*QUITA LA ULTIMA IMAGEN*/
+            label.src = '';
+            /*MUESTRA LA ENCUESTA*/
+            encuesta.removeAttribute('hidden');
+            break;
+        case 776:/*INSTRUCCIONES DE FASE 3*/
+            num_imagen = 0;
+            /*ENVIAR DATOS ENCUESTA MANEKIN*/
+            enviarEncuesta(3);
+            /*DURACION INSTRUCCIONES 2 MINUTOS*/
+            segundos = 120000;
+            /*ESCONDE ENCUESTA MANEKINS*/
+            encuesta.setAttribute('hidden', 'true');
+            /*MUESTRA INSTRUCCIONES FASE 2*/
+            instrucciones.innerHTML = '<h1>La tarea ha terminado. En seguida verás una pantalla negra, trata de fijar la' +
+                ' mirada en la cruz y relajarte. No te muevas ni desconectes los sensores hasta que el investigador' +
+                'te lo indique</h1>';
+            instrucciones.removeAttribute('hidden');
+            break;
+        case 777:/*PANTALLA NEGRA SEGUNDA FASE*/
+            instrucciones.setAttribute('hidden', 'true');
+            num_imagen = 0;
+            segundos = 120000;
             label.src = listado_primera_fase[iterador];
             break;
         default:
@@ -610,8 +936,8 @@ function iniciarSesion(iterador) {
             break;
     }
     /*TESTING*/
-    /*if (iterador <= 259) {
-        segundos = 100
+    /*if (iterador < 774) {
+        segundos = 10
     }*/
     /*TESTING*/
 
@@ -655,7 +981,6 @@ function aleatoriosNoRepetidos(cantidad) /*AUTHOR ArtEze*/ {
     return array
 }
 
-
 function enviarEncuesta(fase) {
     let fila_1 = $('input[name=psico_1]:checked').val();
     let fila_2 = $('input[name=psico_2]:checked').val();
@@ -670,11 +995,10 @@ function enviarEncuesta(fase) {
     });
 }
 
-
 function asignarTiempoPorEnsayo(contador_ensayos) {
     switch (contador_ensayos) {
         case 1:
-            segundos = 3000
+            segundos = 2000
             break;
         case 2:
             segundos = 3000
@@ -867,7 +1191,7 @@ function asignarTiempoPorEnsayo(contador_ensayos) {
             break;
         /*FASE 2*/
         case 65:
-            segundos = 3000;
+            segundos = 2000;
             break;
         case 66:
             segundos = 3000;
