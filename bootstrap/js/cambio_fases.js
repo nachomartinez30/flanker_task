@@ -1,12 +1,17 @@
 var encuesta = document.getElementById('div_encuesta');
 var instrucciones = document.getElementById('div_instrucciones');
+var sesionIniciada = false;
+var sonido_error = document.getElementById('sonidoError');
+var nombre_ensayo;
 var fase = 1;
+
+var intentosRespuesta = 0;
 
 var date_inicio;
 var date_fin;
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = /*10*60000*/8000;
+var segundos = /*10 * 60000*/8000;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
@@ -820,10 +825,19 @@ function iniciarSesion(iterador) {
             case 3:/*ensayo*/
                 date_inicio = new Date();
                 tiempo_inicio = date_inicio.getTime();
+                /*EXTRACCION IMAGEN FASE 2*/
+                if (fase === 2) {
+                    let aux = listado_primera_fase[iterador];
+                    nombre_ensayo = aux.substr(21, aux.length);
+                    console.log(nombre_ensayo);
+                }
                 num_imagen = -1;
-                segundos = 6000
+                segundos = 6000;
                 contador_ensayos++;
+
                 console.log("***-------FIN ENSAYO-------***");
+                /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
+                intentosRespuesta = 0;
                 break;
         }
         num_imagen++;
@@ -831,9 +845,9 @@ function iniciarSesion(iterador) {
 
     var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
 
-    /*TERMINÓ PRIMERA FASE*/
+    /*ENCUESTAS Y PANTALLAS NEGRAS*/
     switch (iterador) {
-        /***********************************************************FASE 1*****************************************************/
+        /***********************************************************FINAL FASE 1*****************************************************/
         case 257:/*MUESTRA PRIMERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
@@ -868,7 +882,7 @@ function iniciarSesion(iterador) {
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
             break;
-        /***********************************************************FASE 2*****************************************************/
+        /***********************************************************FINAL FASE 2*****************************************************/
         case 518:/*ENCUESTA SEGUNDA FASE*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
@@ -901,7 +915,7 @@ function iniciarSesion(iterador) {
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
             break;
-        /***********************************************************FASE 3*****************************************************/
+        /***********************************************************FINAL FASE 3*****************************************************/
         case 775:/*TERCERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
@@ -930,15 +944,19 @@ function iniciarSesion(iterador) {
             num_imagen = 0;
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
+            /*REINICIO DE LA SESION*/
+            sesionIniciada = fasle;
             break;
         default:
             label.src = listado_primera_fase[iterador]; // asignar el path al src
             break;
     }
+
+
     /*TESTING*/
-    if (iterador < 775) {
+    /*if (iterador < 261) {
         segundos = 10
-    }
+    }*/
     /*TESTING*/
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -952,17 +970,33 @@ function iniciarSesion(iterador) {
 
 function checkKeyPressed(event) {
     var event = window.event ? window.event : e;
+
+
+    if (sesionIniciada === true) {
+        checkTiempoRespuesta();
+        /*SI ES LA SEGUNDA FASE CHECA RESPUESTAS*/
+        if (fase === 2) {
+            checkRespuestasFase2(event.key, nombre_ensayo);
+        }
+    }
+    /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
+    if (event.key === 'Enter' && sesionIniciada === false) {
+        console.log('inició');
+        sesionIniciada = true;
+        iniciarSesion();
+    }
+}
+
+function checkTiempoRespuesta() {
+    intentosRespuesta++;
     date_fin = new Date();
     tiempo_fin = date_fin.getTime()
     let tiempo_final = tiempo_fin - tiempo_inicio;
 
-    console.log("tiempo respuesta=" + tiempo_final);
-    console.log(event.keyCode)
 
-    if (event.keyCode == 13) {
-        console.log('inició');
-        iniciarSesion();
-    }
+    console.log("tiempo respuesta=" + tiempo_final);
+    console.log('intento respuesta=' + intentosRespuesta);
+    console.log("Tecla=" + event.keyCode)
 }
 
 function insertarEn(array, valor, posicion)/*AUTHOR ArtEze*/ {
@@ -985,6 +1019,7 @@ function enviarEncuesta(fase) {
     let fila_1 = $('input[name=psico_1]:checked').val();
     let fila_2 = $('input[name=psico_2]:checked').val();
     let fila_3 = $('input[name=psico_3]:checked').val();
+
     $.ajax({
         type: 'post',
         url: 'encuesta?fase=' + fase + '&fila_1=' + fila_1 + '&fila_2=' + fila_2 + '&fila_3=' + fila_3,
@@ -1577,4 +1612,585 @@ function asignarTiempoPorEnsayo(contador_ensayos) {
             break;
     }
 
+}
+
+function checkRespuestasFase2(tecla, imagen) {
+    switch (imagen) {
+        case 'AA_1.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AA_4.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DA_3.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DN_2.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NA_1.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NA_4.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AA_2.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DA_1.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DA_4.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DN_3.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NA_2.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AA_3.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DA_2.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DN_1.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'DN_4.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NA_3.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAD_1.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAD_4.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAI_3.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AND_2.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ANI_1.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ANI_4.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAD_2.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAI_1.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAI_4.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AND_3.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ANI_2.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAD_3.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AAI_2.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AND_1.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'AND_4.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ANI_3.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_3.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_6.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_1.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_4.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_7.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_1.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_4.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_7.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_2.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_5.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_8.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_2.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_5.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SA_8.png':
+            if (tecla === '4') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_3.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'SN_6.png':
+            if (tecla === '6') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_1.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_4.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_7.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_2.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_5.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_8.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_2.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_5.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_8.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_3.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_6.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_3.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'ACS_6.png':
+            if (tecla === '8') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_1.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_4.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+        case 'NCS_7.png':
+            if (tecla === '2') {
+                console.log('RESPUESTA CORRECTA!')
+            } else {
+                /*MUESTRA X*/
+                /*RESPRODUCE SONIDO*/
+                sonido_error.play();
+            }
+            break;
+    }
 }

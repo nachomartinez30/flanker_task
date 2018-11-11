@@ -85,11 +85,15 @@
     </div>
 
     <img id="pantalla_principal" src="./img/pantalla_negra.png">
+
     <div id="encuesta" class="container">
     </div>
     <div hidden class="container" id="div_instrucciones">
-
     </div>
+
+    <audio id="sonidoError">
+        <source src="./img/sonido_error.mp3" type="audio/mpeg">
+    </audio>
 </div>
 </body>
 <script src="./bootstrap/js/cambio_fases.js"></script>
