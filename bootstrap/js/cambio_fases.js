@@ -805,7 +805,7 @@ var contador_ensayos = 0;
 function iniciarSesion(iterador) {
     fase2Error.src= '';
     console.log("***-------INICIO-------***");
-    console.log("iterador=" + iterador);
+    console.log("iterador=" + iterador)
     console.log("--CONTADOR ENSAYO=" + contador_ensayos);
     console.log('numero de imagen=' + num_imagen);
     console.log('IMAGEN=' + listado_primera_fase[iterador]);
@@ -956,7 +956,7 @@ function iniciarSesion(iterador) {
 
 
     /*TESTING*/
-    if (iterador < 261) {
+    if (iterador < 220) {
         segundos = 10
     }
     /*TESTING*/
