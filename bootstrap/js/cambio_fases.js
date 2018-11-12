@@ -947,7 +947,7 @@ function iniciarSesion(iterador) {
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
             /*REINICIO DE LA SESION*/
-            sesionIniciada = fasle;
+            sesionIniciada = false;
             break;
         default:
             label.src = listado_primera_fase[iterador]; // asignar el path al src
