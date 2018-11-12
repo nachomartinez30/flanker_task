@@ -798,10 +798,12 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
 
 
 var label = document.getElementById('pantalla_principal');
+var fase2Error = document.getElementById('errorFase2');
 var num_imagen = 0;
 var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
+    fase2Error.src= '';
     console.log("***-------INICIO-------***");
     console.log("iterador=" + iterador);
     console.log("--CONTADOR ENSAYO=" + contador_ensayos);
@@ -954,9 +956,9 @@ function iniciarSesion(iterador) {
 
 
     /*TESTING*/
-    /*if (iterador < 261) {
+    if (iterador < 261) {
         segundos = 10
-    }*/
+    }
     /*TESTING*/
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -1618,576 +1620,704 @@ function checkRespuestasFase2(tecla, imagen) {
     switch (imagen) {
         case 'AA_1.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AA_4.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DA_3.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DN_2.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NA_1.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NA_4.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AA_2.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DA_1.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DA_4.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DN_3.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NA_2.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AA_3.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DA_2.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DN_1.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'DN_4.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NA_3.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAD_1.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAD_4.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAI_3.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AND_2.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ANI_1.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ANI_4.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAD_2.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAI_1.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAI_4.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AND_3.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ANI_2.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAD_3.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AAI_2.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AND_1.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'AND_4.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ANI_3.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_3.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_6.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_1.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_4.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_7.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_1.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_4.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_7.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_2.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_5.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_8.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_2.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_5.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SA_8.png':
             if (tecla === '4') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_3.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'SN_6.png':
             if (tecla === '6') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_1.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_4.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_7.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_2.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_5.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_8.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_2.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_5.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_8.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_3.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_6.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_3.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'ACS_6.png':
             if (tecla === '8') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_1.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_4.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }
             break;
         case 'NCS_7.png':
             if (tecla === '2') {
-                console.log('RESPUESTA CORRECTA!')
+                console.log('RESPUESTA CORRECTA!');
+                fase2Error.src = './img/palomita.png';
             } else {
                 /*MUESTRA X*/
+                fase2Error.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
             }

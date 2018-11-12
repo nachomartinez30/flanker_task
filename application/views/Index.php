@@ -85,7 +85,7 @@
     </div>
 
     <img id="pantalla_principal" src="./img/pantalla_negra.png">
-
+    <img id='errorFase2' src="">
     <div id="encuesta" class="container">
     </div>
     <div hidden class="container" id="div_instrucciones">
