@@ -1172,8 +1172,8 @@ function iniciarSesion(iterador) {
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
             instrucciones.innerHTML = '<h1>\n' +
-                'La tarea volverá a ser igual que al inicio. no habrá señales que indiquen si tu respuesta fue correcta. \n' +
-                'Trata de contestar lo mejor que puedas. En sesguida verás una pantalla negra, trata de fijar la mirada \n' +
+                'La tarea volverá a ser igual que al inicio. No habrá señales que indiquen si tu respuesta fue correcta. \n' +
+                'Trata de contestar lo mejor que puedas. En seguida verás una pantalla negra, trata de fijar la mirada \n' +
                 'en la cruz y relajarte hasta que la tarea comience.\n' +
                 '</h1>'
             instrucciones.removeAttribute('hidden');
