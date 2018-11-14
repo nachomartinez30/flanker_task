@@ -1232,9 +1232,9 @@ function iniciarSesion(iterador) {
       581-839
       *******/
 
-    /*if (iterador < 260) {
+    if (iterador < 260) {
         segundos = 10;
-    }*/
+    }
     /*TESTING*/
     tecla_respuesta = ''
     console.log('***DURACION SEGUNDOS =' + segundos);
