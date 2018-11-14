@@ -1,4 +1,5 @@
 var encuesta = document.getElementById('div_encuesta');
+var tecla_respuesta;
 var tecla_presionada;
 var instrucciones = document.getElementById('div_instrucciones');
 var sesionIniciada = false;
@@ -958,196 +959,196 @@ function iniciarSesion(iterador) {
             break;
         /*RESPUESTAS FASE 2*/
         case 264:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 269:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 274:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 279:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 284:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 289:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 294:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 299:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 304:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 309:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 314:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 319:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 324:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 329:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 334:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 339:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 344:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 349:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 354:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 359:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 364:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 369:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 374:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 379:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 384:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 389:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 394:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 399:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 404:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 409:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 414:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 419:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 424:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 429:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 434:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 439:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 444:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 449:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 454:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 459:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 464:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 469:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 474:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 479:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 484:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 489:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 494:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 499:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 504:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 509:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 514:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 519:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 524:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 529:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 534:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 539:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 544:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 549:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 554:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 559:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 564:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 569:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 574:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 579:
-            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
 
         /***********************************************************FINAL FASE 2*****************************************************/
@@ -1231,11 +1232,11 @@ function iniciarSesion(iterador) {
       581-839
       *******/
 
-    /*if (iterador < 583) {
+    /*if (iterador < 260) {
         segundos = 10;
     }*/
     /*TESTING*/
-    tecla_presionada = ''
+    tecla_respuesta = ''
     console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
@@ -1247,14 +1248,12 @@ function iniciarSesion(iterador) {
 
 function checkKeyPressed(event) {
     var event = window.event ? window.event : e;
-    tecla_presionada = event.key
+
 
     if (sesionIniciada === true) {
         checkTiempoRespuesta();
         /*SI ES LA SEGUNDA FASE CHECA RESPUESTAS*/
-        if (fase === 2) {
 
-        }
     }
     /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
     if (event.key === 'Enter' && sesionIniciada === false) {
@@ -1266,6 +1265,9 @@ function checkKeyPressed(event) {
 
 function checkTiempoRespuesta() {
     intentosRespuesta++;
+    if(intentosRespuesta<= 1){
+        tecla_respuesta = event.key
+    }
     date_fin = new Date();
     tiempo_fin = date_fin.getTime()
     let tiempo_final = tiempo_fin - tiempo_inicio;
