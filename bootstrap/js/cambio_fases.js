@@ -1,4 +1,5 @@
 var encuesta = document.getElementById('div_encuesta');
+var tecla_presionada;
 var instrucciones = document.getElementById('div_instrucciones');
 var sesionIniciada = false;
 var sonido_error = document.getElementById('sonidoError');
@@ -279,258 +280,322 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AND_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ANI_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_6.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_6.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_5.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAI_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ANI_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_7.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DA_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DN_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAD_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_5.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ANI_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DN_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DN_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DA_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_8.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AA_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_6.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AA_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DA_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AND_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AND_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_8.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AA_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AA_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAI_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_7.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NA_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_5.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAD_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_8.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_7.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_6.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAD_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AND_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAI_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DN_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SA_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NA_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NA_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_1.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NCS_7.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ACS_8.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAI_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/SN_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/ANI_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/DA_2.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/AAD_3.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
     './img/2_fase/ensayos/NA_4.png',
+    'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_5.png'
+    './img/2_fase/ensayos/SA_5.png',
+    'respuesta'
     /*FINAL SEGUNDA FASE*/
     , 'final_segunda_fase_ENCUESTA'
     , 'imagenes_instrucciones_2_fase'
@@ -832,14 +897,21 @@ function iniciarSesion(iterador) {
                     let aux = listado_primera_fase[iterador];
                     nombre_ensayo = aux.substr(21, aux.length);
                     console.log(nombre_ensayo);
+                    segundos = 5000;
+                } else {
+                    num_imagen = -1;
+                    segundos = 6000;
+                    contador_ensayos++;
                 }
-                num_imagen = -1;
-                segundos = 6000;
-                contador_ensayos++;
 
                 console.log("***-------FIN ENSAYO-------***");
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
                 intentosRespuesta = 0;
+                break;
+            case 4:
+                num_imagen = -1;
+                segundos = 1000;
+                contador_ensayos++;
                 break;
         }
         num_imagen++;
@@ -884,8 +956,202 @@ function iniciarSesion(iterador) {
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
             break;
+        /*RESPUESTAS FASE 2*/
+        case 264:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 269:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 274:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 279:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 284:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 289:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 294:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 299:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 304:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 309:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 314:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 319:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 324:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 329:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 334:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 339:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 344:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 349:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 354:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 359:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 364:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 369:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 374:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 379:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 384:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 389:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 394:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 399:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 404:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 409:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 414:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 419:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 424:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 429:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 434:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 439:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 444:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 449:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 454:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 459:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 464:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 469:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 474:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 479:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 484:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 489:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 494:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 499:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 504:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 509:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 514:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 519:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 524:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 529:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 534:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 539:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 544:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 549:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 554:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 559:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 564:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 569:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 574:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+        case 579:
+            checkRespuestasFase2(tecla_presionada, nombre_ensayo);
+            break;
+
         /***********************************************************FINAL FASE 2*****************************************************/
-        case 516:/*ENCUESTA SEGUNDA FASE*/
+        case 580:/*ENCUESTA SEGUNDA FASE*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 120000;
@@ -894,7 +1160,7 @@ function iniciarSesion(iterador) {
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 517:/*INSTRUCCIONES  DE FASE 3*/
+        case 581:/*INSTRUCCIONES  DE FASE 3*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
@@ -911,14 +1177,14 @@ function iniciarSesion(iterador) {
                 '</h1>'
             instrucciones.removeAttribute('hidden');
             break;
-        case 518:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 582:/*PANTALLA NEGRA SEGUNDA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
             break;
         /***********************************************************FINAL FASE 3*****************************************************/
-        case 775:/*TERCERA ENCUESTA MANEKINS*/
+        case 839:/*TERCERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 120000;
@@ -927,7 +1193,7 @@ function iniciarSesion(iterador) {
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 776:/*INSTRUCCIONES DE FASE 3*/
+        case 840:/*INSTRUCCIONES DE FASE 3*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
@@ -941,7 +1207,7 @@ function iniciarSesion(iterador) {
                 'te lo indique</h1>';
             instrucciones.removeAttribute('hidden');
             break;
-        case 777:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 841:/*PANTALLA NEGRA SEGUNDA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
@@ -956,18 +1222,20 @@ function iniciarSesion(iterador) {
 
 
     /*TESTING*/
-    /*FASE 1
-      1-256
+    /*******
+      FASE 1
+      0-257
       FASE 2
-      257-516
+      258-580
       FASE 3
-      517-775*/
+      581-839
+      *******/
 
-   /* if (iterador < 517) {
+    /*if (iterador < 583) {
         segundos = 10;
     }*/
     /*TESTING*/
-
+    tecla_presionada = ''
     console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
@@ -979,13 +1247,13 @@ function iniciarSesion(iterador) {
 
 function checkKeyPressed(event) {
     var event = window.event ? window.event : e;
-
+    tecla_presionada = event.key
 
     if (sesionIniciada === true) {
         checkTiempoRespuesta();
         /*SI ES LA SEGUNDA FASE CHECA RESPUESTAS*/
         if (fase === 2) {
-            checkRespuestasFase2(event.key, nombre_ensayo);
+
         }
     }
     /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
