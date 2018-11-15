@@ -1228,13 +1228,13 @@ function iniciarSesion(iterador) {
       0-257
       FASE 2
       258-580
-      FASE 3
+      FASE 3<
       581-839
       *******/
 
-    if (iterador < 257) {
+    /*if (iterador < 257) {
         segundos = 10;
-    }
+    }*/
     /*testing*/
     tecla_respuesta = ''
     console.log('***DURACION SEGUNDOS =' + segundos);
