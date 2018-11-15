@@ -13,3 +13,17 @@ label
 {
 	max-height: 200px;
 }
+#frm_encuesta
+{
+	width: 100%;
+}
+.container-flex
+{
+	display: flex;
+	flex-flow: row wrap;
+	/* alineacion vertical */
+	align-items: center;
+	/* alineacion horizontal */
+	justify-content: center;
+	width: 100%;
+}

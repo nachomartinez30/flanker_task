@@ -18,7 +18,7 @@
                 tecla
             </h3>
             <form id="frm_encuesta" action="../controllers/Encuesta.php" method="post">
-                <div class="d-flex justify-content-center">
+                <div class="container">
                     <label class="col-md-2">
                         <img src="img/encuesta/fila1_1.png" class="img-fluid"><br>
                     </label>
