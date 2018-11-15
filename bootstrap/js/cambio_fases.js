@@ -1222,7 +1222,7 @@ function iniciarSesion(iterador) {
     }
 
 
-    /*TESTING*/
+    /*testing*/
     /*******
       FASE 1
       0-257
@@ -1232,10 +1232,10 @@ function iniciarSesion(iterador) {
       581-839
       *******/
 
-    if (iterador < 260) {
+    if (iterador < 257) {
         segundos = 10;
     }
-    /*TESTING*/
+    /*testing*/
     tecla_respuesta = ''
     console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer

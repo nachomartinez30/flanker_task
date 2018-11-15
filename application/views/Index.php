@@ -18,68 +18,186 @@
                 tecla
             </h3>
             <form id="frm_encuesta" action="../controllers/Encuesta.php" method="post">
-                <label class="offset-1 col-md-2">
-                    <img src="img/encuesta/fila1_1.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_1" value="1">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila1_2.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_1" value="2">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila1_3.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_1" value="3">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila1_4.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_1" value="4">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila1_5.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_1" value="5">
-                </label>
+                <div class="d-flex justify-content-center">
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila1_1.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila1_2.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila1_3.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila1_4.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila1_5.png" class="img-fluid"><br>
+                    </label>
+                </div>
+
+
+                <div class="container">
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="1">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="2">
+                    </label>
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="3">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="4">
+                    </label>
+                    <label class="col-md-1">
+
+                        <input type="radio" name="psico_1" value="5">
+                    </label>
+                    <label class="col-md-1">
+
+                        <input type="radio" name="psico_1" value="6">
+                    </label>
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="7">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="8">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_1" value="9">
+                    </label>
+                </div>
+
+
+
+
                 <!--Fila 2-->
-                <label class="offset-1 col-md-2">
-                    <img src="img/encuesta/fila2_1.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_2" value="1">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila2_2.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_2" value="2">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila2_3.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_2" value="3">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila2_4.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_2" value="4">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila2_5.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_2" value="5">
-                </label>
+                <div class="container">
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila2_1.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila2_2.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila2_3.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila2_4.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila2_5.png" class="img-fluid"><br>
+                    </label>
+                </div>
+
+
+                <div class="container">
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="1">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="2">
+                    </label>
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="3">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="4">
+                    </label>
+                    <label class="col-md-1">
+
+                        <input type="radio" name="psico_2" value="5">
+                    </label>
+                    <label class="col-md-1">
+
+                        <input type="radio" name="psico_2" value="6">
+                    </label>
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="7">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="8">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_2" value="9">
+                    </label>
+                </div>
                 <!--Fila 3-->
-                <label class="offset-1 col-md-2">
-                    <img src="img/encuesta/fila3_1.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_3" value="1">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila3_2.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_3" value="2">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila3_3.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_3" value="3">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila3_4.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_3" value="4">
-                </label>
-                <label class="col-md-2">
-                    <img src="img/encuesta/fila3_5.png" class="img-fluid"><br>
-                    <input type="radio" name="psico_3" value="5">
-                </label>
+                <div class="container">
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila3_1.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila3_2.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila3_3.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila3_4.png" class="img-fluid"><br>
+                    </label>
+
+                    <label class="col-md-2">
+                        <img src="img/encuesta/fila3_5.png" class="img-fluid"><br>
+                    </label>
+                </div>
+
+
+                <div class="container">
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="1">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="2">
+                    </label>
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="3">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="4">
+                    </label>
+                    <label class="col-md-1">
+
+                        <input type="radio" name="psico_3" value="5">
+                    </label>
+                    <label class="col-md-1">
+
+                        <input type="radio" name="psico_3" value="6">
+                    </label>
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="7">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="8">
+                    </label>
+
+                    <label class="col-md-1">
+                        <input type="radio" name="psico_3" value="9">
+                    </label>
+                </div>
             </form>
         </div>
     </div>
