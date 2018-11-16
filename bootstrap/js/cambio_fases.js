@@ -1,6 +1,7 @@
 var encuesta = document.getElementById('div_encuesta');
 var tecla_respuesta;
 var tecla_presionada;
+var respuesta_valida_fase1_3;
 var instrucciones = document.getElementById('div_instrucciones');
 var sesionIniciada = false;
 var sonido_error = document.getElementById('sonidoError');
@@ -21,11 +22,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_3.png'
+    , './img/1_3_fase/verdes/V_03.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_1.png'
+    , './img/1_3_fase/azul/A_01.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -81,15 +82,15 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_4.png'
+    , './img/1_3_fase/verdes/V_04.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_8.png'
+    , './img/1_3_fase/azul/A_08.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_4.png'
+    , './img/1_3_fase/azul/A_04.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -101,7 +102,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_9.png'
+    , './img/1_3_fase/verdes/V_09.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -129,7 +130,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_2.png'
+    , './img/1_3_fase/azul/A_02.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -141,7 +142,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_5.png'
+    , './img/1_3_fase/verdes/V_05.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -153,7 +154,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_5.png'
+    , './img/1_3_fase/azul/A_05.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -169,11 +170,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_6.png'
+    , './img/1_3_fase/azul/A_06.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_7.png'
+    , './img/1_3_fase/azul/A_07.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -181,7 +182,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_1.png'
+    , './img/1_3_fase/verdes/V_01.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -193,11 +194,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_7.png'
+    , './img/1_3_fase/verdes/V_07.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_6.png'
+    , './img/1_3_fase/verdes/V_06.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -209,7 +210,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_8.png'
+    , './img/1_3_fase/verdes/V_08.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -253,7 +254,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_9.png'
+    , './img/1_3_fase/azul/A_09.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -261,11 +262,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_2.png'
+    , './img/1_3_fase/verdes/V_02.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_3.png'
+    , './img/1_3_fase/azul/A_03.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -281,322 +282,322 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_3.png',
+    './img/2_fase/ensayos/ACS_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_1.png',
+    './img/2_fase/ensayos/ACS_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_3.png',
+    './img/2_fase/ensayos/AND_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_2.png',
+    './img/2_fase/ensayos/ANI_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_6.png',
+    './img/2_fase/ensayos/ACS_06.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_2.png',
+    './img/2_fase/ensayos/NCS_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_6.png',
+    './img/2_fase/ensayos/NCS_06.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_5.png',
+    './img/2_fase/ensayos/NCS_05.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_3.png',
+    './img/2_fase/ensayos/AAI_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_1.png',
+    './img/2_fase/ensayos/ANI_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_4.png',
+    './img/2_fase/ensayos/SA_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_2.png',
+    './img/2_fase/ensayos/ACS_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_7.png',
+    './img/2_fase/ensayos/SN_07.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_1.png',
+    './img/2_fase/ensayos/DA_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_3.png',
+    './img/2_fase/ensayos/DN_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_2.png',
+    './img/2_fase/ensayos/AAD_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_5.png',
+    './img/2_fase/ensayos/ACS_05.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_3.png',
+    './img/2_fase/ensayos/ANI_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_2.png',
+    './img/2_fase/ensayos/DN_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_4.png',
+    './img/2_fase/ensayos/DN_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_3.png',
+    './img/2_fase/ensayos/DA_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_3.png',
+    './img/2_fase/ensayos/SA_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_8.png',
+    './img/2_fase/ensayos/SN_08.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_2.png',
+    './img/2_fase/ensayos/AA_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_4.png',
+    './img/2_fase/ensayos/SN_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_6.png',
+    './img/2_fase/ensayos/SN_06.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_4.png',
+    './img/2_fase/ensayos/AA_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_4.png',
+    './img/2_fase/ensayos/DA_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_4.png',
+    './img/2_fase/ensayos/AND_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_1.png',
+    './img/2_fase/ensayos/AND_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_8.png',
+    './img/2_fase/ensayos/SA_08.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_1.png',
+    './img/2_fase/ensayos/AA_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_4.png',
+    './img/2_fase/ensayos/ACS_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_2.png',
+    './img/2_fase/ensayos/SA_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_3.png',
+    './img/2_fase/ensayos/SN_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_3.png',
+    './img/2_fase/ensayos/AA_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_1.png',
+    './img/2_fase/ensayos/AAI_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_1.png',
+    './img/2_fase/ensayos/NCS_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_7.png',
+    './img/2_fase/ensayos/SA_07.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_2.png',
+    './img/2_fase/ensayos/NA_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_5.png',
+    './img/2_fase/ensayos/SN_05.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_1.png',
+    './img/2_fase/ensayos/AAD_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_8.png',
+    './img/2_fase/ensayos/NCS_08.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_7.png',
+    './img/2_fase/ensayos/ACS_07.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_3.png',
+    './img/2_fase/ensayos/NCS_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_4.png',
+    './img/2_fase/ensayos/NCS_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_6.png',
+    './img/2_fase/ensayos/SA_06.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_4.png',
+    './img/2_fase/ensayos/AAD_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_2.png',
+    './img/2_fase/ensayos/AND_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_4.png',
+    './img/2_fase/ensayos/AAI_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_1.png',
+    './img/2_fase/ensayos/DN_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_1.png',
+    './img/2_fase/ensayos/SA_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_3.png',
+    './img/2_fase/ensayos/NA_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_1.png',
+    './img/2_fase/ensayos/NA_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_1.png',
+    './img/2_fase/ensayos/SN_01.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_7.png',
+    './img/2_fase/ensayos/NCS_07.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_8.png',
+    './img/2_fase/ensayos/ACS_08.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_2.png',
+    './img/2_fase/ensayos/AAI_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_2.png',
+    './img/2_fase/ensayos/SN_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_4.png',
+    './img/2_fase/ensayos/ANI_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_2.png',
+    './img/2_fase/ensayos/DA_02.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_3.png',
+    './img/2_fase/ensayos/AAD_03.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_naranja.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_4.png',
+    './img/2_fase/ensayos/NA_04.png',
     'respuesta',
     './img/2_fase/cruz.png',
     './img/2_fase/pantalla_amarilla.png',
     './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_5.png',
+    './img/2_fase/ensayos/SA_05.png',
     'respuesta'
     /*FINAL SEGUNDA FASE*/
     , 'final_segunda_fase_ENCUESTA'
@@ -633,11 +634,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_1.png'
+    , './img/1_3_fase/verdes/V_01.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_1.png'
+    , './img/1_3_fase/azul/A_01.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -665,7 +666,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_6.png'
+    , './img/1_3_fase/verdes/V_06.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -673,7 +674,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_3.png'
+    , './img/1_3_fase/verdes/V_03.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -693,7 +694,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_4.png'
+    , './img/1_3_fase/verdes/V_04.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -701,7 +702,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_6.png'
+    , './img/1_3_fase/azul/A_06.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -717,7 +718,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_5.png'
+    , './img/1_3_fase/verdes/V_05.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -737,7 +738,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_5.png'
+    , './img/1_3_fase/azul/A_05.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -757,19 +758,19 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_3.png'
+    , './img/1_3_fase/azul/A_03.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_2.png'
+    , './img/1_3_fase/verdes/V_02.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_9.png'
+    , './img/1_3_fase/verdes/V_09.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_7.png'
+    , './img/1_3_fase/verdes/V_07.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -801,7 +802,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_8.png'
+    , './img/1_3_fase/azul/A_08.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -817,11 +818,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_9.png'
+    , './img/1_3_fase/azul/A_09.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_7.png'
+    , './img/1_3_fase/azul/A_07.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -841,7 +842,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_4.png'
+    , './img/1_3_fase/azul/A_04.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
@@ -849,11 +850,11 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_2.png'
+    , './img/1_3_fase/azul/A_02.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_8.png'
+    , './img/1_3_fase/verdes/V_08.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -883,7 +884,9 @@ function iniciarSesion(iterador) {
                 //console.log('cruz');
                 asignarTiempoPorEnsayo(contador_ensayos);
                 if (iterador != 1)/*primera cruz*/{
+                    respuesta_valida_fase1_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
                     sendData();
+                    respuesta_valida_fase1_3 = 0;
                 }
                 break;
             case 1:/*pantalla color*/
@@ -897,6 +900,7 @@ function iniciarSesion(iterador) {
             case 3:/*ensayo*/
                 date_inicio = new Date();
                 tiempo_inicio = date_inicio.getTime();
+
                 /*EXTRACCION IMAGEN FASE 2*/
                 if (fase === 2) {
                     let aux = listado_primera_fase[iterador];
@@ -905,7 +909,7 @@ function iniciarSesion(iterador) {
                     segundos = 5000;
                 } else {
                     let aux = listado_primera_fase[iterador];
-                    nombre_ensayo = aux.substr(aux.length-7, aux.length);
+                    nombre_ensayo = aux.substr(aux.length - 8, aux.length);
                     num_imagen = -1;
                     segundos = 6000;
                     contador_ensayos++;
@@ -1243,7 +1247,6 @@ function iniciarSesion(iterador) {
     }*/
     /*testing*/
 
-
     tecla_respuesta = ''
     //console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
@@ -1279,7 +1282,6 @@ function checkTiempoRespuesta() {
         /*DEMAS INTENTOS*/
         tecla_presionada = event.key
     }
-
 
 
     //console.log("tiempo respuesta=" + tiempo_respuesta);
@@ -1900,6 +1902,589 @@ function asignarTiempoPorEnsayo(contador_ensayos) {
             break;
     }
 
+}
+
+function checkRespuestasFase1_3(tecla, imagen) {
+    let resultado = 0;
+    switch (imagen) {
+        case'A_01.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_10.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_11.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_12.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_13.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_14.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_15.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_16.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_17.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_18.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_19.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_02.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_20.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_21.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_22.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_23.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_24.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_25.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_26.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_27.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_28.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_29.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_03.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_30.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_31.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_32.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_04.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_05.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_06.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_07.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_08.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'A_09.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_01.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_10.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_11.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_12.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_13.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_14.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_15.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_16.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_17.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_18.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_19.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_02.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_20.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_21.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_22.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_23.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_24.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_25.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_26.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_27.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_28.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_29.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_03.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_30.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_31.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_32.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_04.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_05.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_06.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_07.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_08.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case'V_09.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+    }
+    return resultado;
 }
 
 function checkRespuestasFase2(tecla, imagen) {
@@ -2615,6 +3200,7 @@ function sendData() {
     console.log('---------------------------------------------------------------');
     console.log('NOMBRE_ENSAYO=' + nombre_ensayo);
     console.log('TECLA_PRIMER RESPUESTA=' + tecla_respuesta);
-    console.log('TIEMPO_PRIMERA_RESPUESTA=' + tiempo_respuesta/1000+' seg.');
+    console.log('CORRECTO=' + respuesta_valida_fase1_3);
+    console.log('TIEMPO_PRIMERA_RESPUESTA=' + tiempo_respuesta / 1000 + ' seg.');
     console.log('INTENTOS_RESPUESTA=' + intentosRespuesta);
 }
