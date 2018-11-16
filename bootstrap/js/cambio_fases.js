@@ -11,8 +11,6 @@ var fase = 1;
 
 var intentosRespuesta = 0;
 
-var date_inicio;
-var date_fin;
 var tiempo_inicio;
 var tiempo_fin;
 var segundos = /*10 * 60000*/8000;
@@ -898,7 +896,7 @@ function iniciarSesion(iterador) {
                 segundos = 1000
                 break;
             case 3:/*ensayo*/
-                date_inicio = new Date();
+                let date_inicio = new Date();
                 tiempo_inicio = date_inicio.getTime();
 
                 /*EXTRACCION IMAGEN FASE 2*/
@@ -1274,7 +1272,7 @@ function checkTiempoRespuesta() {
     intentosRespuesta++;
     if (intentosRespuesta <= 1) {
         /*PRIMERA RESPUESTA*/
-        date_fin = new Date();
+        let date_fin = new Date();
         tiempo_fin = date_fin.getTime()
         tiempo_respuesta = tiempo_fin - tiempo_inicio;
         tecla_respuesta = event.key
