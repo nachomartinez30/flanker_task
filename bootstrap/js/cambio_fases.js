@@ -896,9 +896,6 @@ function iniciarSesion(iterador) {
                 segundos = 1000
                 break;
             case 3:/*ensayo*/
-                let date_inicio = new Date();
-                tiempo_inicio = date_inicio.getTime();
-
                 /*EXTRACCION IMAGEN FASE 2*/
                 if (fase === 2) {
                     let aux = listado_primera_fase[iterador];
@@ -923,6 +920,8 @@ function iniciarSesion(iterador) {
                 contador_ensayos++;
                 break;
         }
+        let date_inicio = new Date();
+        tiempo_inicio = date_inicio.getTime();
         num_imagen++;
     }
 
@@ -1240,9 +1239,9 @@ function iniciarSesion(iterador) {
      581-839
      *******/
 
-    if (iterador < 260) {
+   /* if (iterador < 260) {
         segundos = 10;
-    }
+    }*/
     /*testing*/
 
     tecla_respuesta = ''
