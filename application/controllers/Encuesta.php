@@ -13,7 +13,7 @@ class Encuesta extends CI_Controller
 
     public function index()
     {
-        $data['sujeto'] = 'Lorem Ipsum Dolor';
+        $data['sujeto'] = 'PRUEBA_PILOTO';
         $data['fase'] = $_GET['fase'];
 
         $fila_1 = $_GET['fila_1'];
