@@ -13,7 +13,7 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = /*10 * 60000*/8000;
+var segundos = 10 * 60000/*8000*/;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
@@ -870,7 +870,7 @@ var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
     fase2Error.src = '';
-    //console.log("***-------INICIO-------***");
+    // console.log("***-------INICIO-------***");
     //console.log("iterador=" + iterador)
     //console.log("--CONTADOR ENSAYO=" + contador_ensayos);
     //console.log('numero de imagen=' + num_imagen);
@@ -1261,7 +1261,7 @@ function checkKeyPressed(event) {
     }
     /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
     if (event.key === 'Enter' && sesionIniciada === false) {
-        //console.log('inició');
+        console.log('INICIO');
         sesionIniciada = true;
         iniciarSesion();
     }
