@@ -10,7 +10,7 @@
     <title></title>
 </head>
 <body onkeypress="checkKeyPressed(event)">
-<div align="center">
+<div align="center" class="borde">
     <div hidden id="div_encuesta" class="checklist">
         <div class="radio row">
             <h3>Selecciona con un clic las opciones que describen como te sentiste en la realización de la tarea. Tienes

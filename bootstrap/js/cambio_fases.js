@@ -1,19 +1,20 @@
 var encuesta = document.getElementById('div_encuesta');
 var tecla_respuesta;
 var tecla_presionada;
-var respuesta_valida_fase1_3;
+var respuesta_valida_fase1_2_3;
 var instrucciones = document.getElementById('div_instrucciones');
 var sesionIniciada = false;
 var sonido_error = document.getElementById('sonidoError');
 var nombre_ensayo;
 let tiempo_respuesta = 0;
 var fase = 1;
+var numero_ensayo = 0;
 
 var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = 10 * 60000/*8000*/;
+var segundos = /*10 * 60000*/8000;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
@@ -882,9 +883,11 @@ function iniciarSesion(iterador) {
                 //console.log('cruz');
                 asignarTiempoPorEnsayo(contador_ensayos);
                 if (iterador != 1)/*primera cruz*/{
-                    respuesta_valida_fase1_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
+                    if (fase != 2) {/*SI NO ES FASE 2*/
+                        respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
+                    }
                     sendData();
-                    respuesta_valida_fase1_3 = 0;
+                    respuesta_valida_fase1_2_3 = 0;
                 }
                 break;
             case 1:/*pantalla color*/
@@ -897,6 +900,7 @@ function iniciarSesion(iterador) {
                 break;
             case 3:/*ensayo*/
                 /*EXTRACCION IMAGEN FASE 2*/
+                numero_ensayo++;
                 if (fase === 2) {
                     let aux = listado_primera_fase[iterador];
                     nombre_ensayo = aux.substr(21, aux.length);
@@ -963,199 +967,200 @@ function iniciarSesion(iterador) {
             num_imagen = 0;
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
+            numero_ensayo = 0;
             break;
         /*RESPUESTAS FASE 2*/
         case 264:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 269:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 274:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 279:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 284:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 289:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 294:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 299:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 304:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 309:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 314:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 319:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 324:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 329:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 334:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 339:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 344:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 349:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 354:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 359:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 364:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 369:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 374:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 379:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 384:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 389:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 394:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 399:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 404:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 409:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 414:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 419:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 424:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 429:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 434:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 439:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 444:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 449:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 454:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 459:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 464:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 469:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 474:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 479:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 484:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 489:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 494:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 499:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 504:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 509:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 514:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 519:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 524:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 529:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 534:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 539:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 544:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 549:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 554:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 559:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 564:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 569:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 574:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
         case 579:
-            checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
+            respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
 
         /***********************************************************FINAL FASE 2*****************************************************/
@@ -1190,6 +1195,7 @@ function iniciarSesion(iterador) {
             num_imagen = 0;
             segundos = 120000;
             label.src = listado_primera_fase[iterador];
+            numero_ensayo = 0;
             break;
         /***********************************************************FINAL FASE 3*****************************************************/
         case 839:/*TERCERA ENCUESTA MANEKINS*/
@@ -1223,6 +1229,7 @@ function iniciarSesion(iterador) {
             /*REINICIO DE LA SESION*/
             sesionIniciada = false;
             break;
+            numero_ensayo = 0;
         default:
             label.src = listado_primera_fase[iterador]; // asignar el path al src
             break;
@@ -1239,12 +1246,12 @@ function iniciarSesion(iterador) {
      581-839
      *******/
 
-   /* if (iterador < 260) {
+    /*if (iterador < 261) {
         segundos = 10;
     }*/
     /*testing*/
 
-    tecla_respuesta = ''
+
     //console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
@@ -2490,716 +2497,865 @@ function checkRespuestasFase2(tecla, imagen) {
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AA_4.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DA_3.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DN_2.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NA_1.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NA_4.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AA_2.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DA_1.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DA_4.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DN_3.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NA_2.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AA_3.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DA_2.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DN_1.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'DN_4.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NA_3.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAD_1.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAD_4.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAI_3.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AND_2.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ANI_1.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ANI_4.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAD_2.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAI_1.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAI_4.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AND_3.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ANI_2.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAD_3.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AAI_2.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AND_1.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'AND_4.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ANI_3.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_3.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_6.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_1.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_4.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_7.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_1.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_4.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_7.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_2.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_5.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_8.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_2.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_5.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SA_8.png':
             if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_3.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'SN_6.png':
             if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_1.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_4.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_7.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_2.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_5.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_8.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_2.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_5.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_8.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_3.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_6.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_3.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'ACS_6.png':
             if (tecla === '8') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_1.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_4.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
         case 'NCS_7.png':
             if (tecla === '2') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
+                respuesta = 1;
             } else {
                 /*MUESTRA X*/
                 label.src = './img/tacha.png'
                 /*RESPRODUCE SONIDO*/
                 sonido_error.play();
+                respuesta = 0;
             }
             break;
     }
+    return respuesta;
 }
 
 function sendData() {
     console.log('---------------------------------------------------------------');
     console.log('NOMBRE_ENSAYO=' + nombre_ensayo);
+    console.log('NUMERO_ENSAYO=' + numero_ensayo);
+    console.log('FASE=' + fase);
     console.log('TECLA_PRIMER RESPUESTA=' + tecla_respuesta);
-    console.log('CORRECTO=' + respuesta_valida_fase1_3);
+    console.log('CORRECTO=' + respuesta_valida_fase1_2_3);
     console.log('TIEMPO_PRIMERA_RESPUESTA=' + tiempo_respuesta / 1000 + ' seg.');
     console.log('INTENTOS_RESPUESTA=' + intentosRespuesta);
+    tiempo_respuesta = tiempo_respuesta / 1000;
+
+    $.ajax({});
+    $.ajax({
+        type: 'get',
+        url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&numero_ensayo=' + numero_ensayo +
+            '&cantidad_respuestas=' + intentosRespuesta,
+
+
+        data: $('frm_encuesta').serialize(),
+        success: function (res) {
+            console.log('INSERTADO');
+        }
+    })
 
     tiempo_respuesta = 0;
+    tecla_respuesta = ''
 }
