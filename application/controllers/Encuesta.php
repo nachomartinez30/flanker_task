@@ -35,7 +35,7 @@ class Encuesta extends CI_Controller
         $data['fila_2'] = $fila_2;
         $data['fila_3'] = $fila_3;
 
-        $resultado = $this->encuesta_model->InsertEncuesta($data);
+        $resultado = $this->encuesta_model->insert_encuesta($data);
         if ($resultado == true) {
             echo "insertado";
         } else {

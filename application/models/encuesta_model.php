@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Encuesta_model extends CI_Model
 {
 
-    function InsertEncuesta($data)
+    function insert_encuesta($data)
     {
         $resupuesta = $this->db->insert('encuestas', $data);
         return $resupuesta;

@@ -3340,7 +3340,19 @@ function sendData() {
     console.log('INTENTOS_RESPUESTA=' + intentosRespuesta);
     tiempo_respuesta = tiempo_respuesta / 1000;
 
-    $.ajax({});
+    $.ajax({
+        type: 'get',
+        url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
+            '&fase=' + fase +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&cantidad_respuestas=' + intentosRespuesta,
+        success: function (res) {
+            console.log('log_insertado');
+        }
+    });
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
@@ -3349,10 +3361,8 @@ function sendData() {
             '&numero_ensayo=' + numero_ensayo +
             '&cantidad_respuestas=' + intentosRespuesta,
 
-
-        data: $('frm_encuesta').serialize(),
         success: function (res) {
-            console.log('INSERTADO');
+            console.log('ENSAYO REGISTRADO');
         }
     })
 
