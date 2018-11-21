@@ -29,7 +29,7 @@ class Ensayos extends CI_Controller
         $correcto_incorrecto =$_GET['correcto_incorrecto'];
         $cantidad_respuestas =$_GET['cantidad_respuestas'];
 
-        $fp = fopen('C:\xampp\htdocs\flanker_task\logs\log_'.$sujeto.'.txt', 'a');
+        $fp = fopen('C:\xampp\htdocs\flanker_task\registros\log_'.$sujeto.'.txt', 'a');
         fwrite($fp,"--------------------------------------------------------\n");
         fwrite($fp,"sujeto=".$sujeto."\n");
         fwrite($fp,"fase=".$fase."\n");
@@ -40,7 +40,7 @@ class Ensayos extends CI_Controller
         fwrite($fp,"numero_ensayo=".$numero_ensayo."\n");
         fwrite($fp,"cantidad_respuestas=".$cantidad_respuestas."\n");
         fclose($fp);
-        echo "true";
+
     }
 
 }
