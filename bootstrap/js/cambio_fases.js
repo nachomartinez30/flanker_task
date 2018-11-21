@@ -274,8 +274,8 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_28.png'
-    , 'final_primera_fase_ENCUESTA'
-    , 'imagenes_instrucciones_2_fase'
+    , 'ENCUESTA'
+    , 'instrucciones'
     , './img/pantalla_negra.png',
     /*FINAL PRIMERA FASE*/
     './img/2_fase/cruz.png',
@@ -599,8 +599,8 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     './img/2_fase/ensayos/SA_5.png',
     'respuesta'
     /*FINAL SEGUNDA FASE*/
-    , 'final_segunda_fase_ENCUESTA'
-    , 'imagenes_instrucciones_2_fase'
+    , 'ENCUESTA'
+    , 'instrucciones'
     , './img/pantalla_negra.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
@@ -858,8 +858,8 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_12.png',
-    'final_segunda_fase_ENCUESTA',
-    'imagenes_instrucciones_2_fase',
+    'ENCUESTA',
+    'instrucciones',
     './img/pantalla_negra.png'
 ]
 
@@ -1246,9 +1246,23 @@ function iniciarSesion(iterador) {
      581-839
      *******/
 
-    /*if (iterador < 261) {
-        segundos = 10;
-    }*/
+    switch (iterador) {
+        case 257:/*PRIMER ENCUESTA*/
+            segundos = 8000;
+            break;
+        case 580: /*PRIMER ENCUESTA*/
+            segundos = 8000;
+            break;
+        case 839:/*PRIMER ENCUESTA*/
+            segundos = 8000;
+            break;
+        default:
+            segundos = 10;
+            break;
+    }
+    // if (iterador < 257 || iterador < 580 || iterador < 839) {
+    //     segundos = 10;
+    // }
     /*testing*/
 
 
@@ -1320,6 +1334,9 @@ function enviarEncuesta(fase) {
         data: $('frm_encuesta').serialize(),
         success: function (res) {
             //console.log("Resultado encuesta=" + res);
+            $('input[name=psico_1]').prop( "checked", false );
+            $('input[name=psico_2]').prop( "checked", false );
+            $('input[name=psico_3]').prop( "checked", false );
         }
     });
 }
@@ -3343,12 +3360,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-            '&fase=' + fase +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&fase=' + fase +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             console.log('log_insertado');
         }
@@ -3356,10 +3373,10 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&numero_ensayo=' + numero_ensayo +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&numero_ensayo=' + numero_ensayo +
+        '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             console.log('ENSAYO REGISTRADO');
