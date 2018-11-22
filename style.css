@@ -6,11 +6,13 @@
     overflow-x: hidden;
 }*/
 body {
-    overflow:hidden;
+    overflow: hidden;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     display: none;
 }
+
 .checklist {
     width: 100%;
     margin: 0 auto;
@@ -39,12 +41,38 @@ label {
     justify-content: center;
     width: 100%;
 }
-#pantalla_principal img{
+.center-element {
+    display: flex;
+    flex-flow: row wrap;
+    /* alineacion vertical */
+    align-items: center;
+    /* alineacion horizontal */
+    justify-content: center;
+    width: 100%;
+}
+
+#pantalla_principal img {
     width: 100% !important;
     height: 100vh;
 }
-.borde{
-position: absolute;
-top: 0px;
-left: -10px;
+
+.borde {
+    position: absolute;
+    top: 0px;
+    left: -10px;
+}
+
+.arriba {
+    z-index: 9999;
+    width: 100%;
+    font-size: 0.5rem;
+}
+
+.raddio{
+    right: 0;
+    text-align: right;
+}
+.clear
+{
+    clear: both;
 }

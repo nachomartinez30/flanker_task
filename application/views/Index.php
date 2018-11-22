@@ -18,8 +18,9 @@
                 tecla
             </h3>
             <form id="frm_encuesta" action="../controllers/Encuesta.php" method="post">
-                <div class="container">
-                    <label class="col-md-1">
+
+                <div class="container row ">
+                    <label class="col-md-2 arriba center-element">
                         <h5>Sentimiento</h5>
                     </label>
                     <label class="col-md-2">
@@ -44,7 +45,7 @@
                 </div>
 
 
-                <div class="container">
+                <div class="container raddio">
                     <label class="col-md-1">
                         1
                         <input type="radio" name="psico_1" value="1">
@@ -89,9 +90,11 @@
 
 
                 <!--Fila 2-->
-                <div class="container">
+                <div class="container row ">
+                    <label class="col-md-2 arriba center-element">
+                        <h5>Activación fisiológica</h5>
+                    </label>
                     <label class="col-md-2">
-                        <h3>ACTIVACIÓN FISIOLOGICA</h3>
                         <img src="img/encuesta/fila2_5.png" class="img-fluid"><br>
                     </label>
 
@@ -114,7 +117,7 @@
                 </div>
 
 
-                <div class="container">
+                <div class="container raddio">
                     <label class="col-md-1">
                         1
                         <input type="radio" name="psico_2" value="1">
@@ -159,9 +162,11 @@
                     </label>
                 </div>
                 <!--Fila 3-->
-                <div class="container">
+                <div class="container row ">
+                    <label class="col-md-2 arriba container-flex">
+                        <h5>Control de la tarea</h5>
+                    </label>
                     <label class="col-md-2">
-                        <h3>CONTROL DE LA TAREA</h3>
                         <img src="img/encuesta/fila3_1.png" class="img-fluid"><br>
                     </label>
 
@@ -183,7 +188,7 @@
                 </div>
 
 
-                <div class="container">
+                <div class="container raddio">
                     <label class="col-md-1">
                         1
                         <input type="radio" name="psico_3" value="1">

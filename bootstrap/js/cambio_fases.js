@@ -1246,20 +1246,20 @@ function iniciarSesion(iterador) {
      581-839
      *******/
 
-    switch (iterador) {
-        case 257:/*PRIMER ENCUESTA*/
-            segundos = 8000;
-            break;
-        case 580: /*PRIMER ENCUESTA*/
-            segundos = 8000;
-            break;
-        case 839:/*PRIMER ENCUESTA*/
-            segundos = 8000;
-            break;
-        default:
-            segundos = 10;
-            break;
-    }
+    // switch (iterador) {
+    //     case 257:/*PRIMER ENCUESTA*/
+    //         segundos = 9999999;
+    //         break;
+    //     case 580: /*PRIMER ENCUESTA*/
+    //         segundos = 9999999;
+    //         break;
+    //     case 839:/*PRIMER ENCUESTA*/
+    //         segundos = 9999999;
+    //         break;
+    //     default:
+    //         segundos = 10;
+    //         break;
+    // }
     // if (iterador < 257 || iterador < 580 || iterador < 839) {
     //     segundos = 10;
     // }
