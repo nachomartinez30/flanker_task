@@ -22,23 +22,23 @@ class Ensayos extends CI_Controller
     {
         $sujeto = 'Lorem_Ipsum';
         $tipo_ensayo = $_GET['tipo_ensayo'];
-        $fase =$_GET['fase'];
-        $tecla_primer_respuesta =$_GET['tecla_primer_respuesta'];
-        $numero_ensayo =$_GET['numero_ensayo'];
-        $tiempo_respuesta =$_GET['tiempo_respuesta'];
-        $correcto_incorrecto =$_GET['correcto_incorrecto'];
-        $cantidad_respuestas =$_GET['cantidad_respuestas'];
+        $fase = $_GET['fase'];
+        $tecla_primer_respuesta = $_GET['tecla_primer_respuesta'];
+        $numero_ensayo = $_GET['numero_ensayo'];
+        $tiempo_respuesta = $_GET['tiempo_respuesta'];
+        $correcto_incorrecto = $_GET['correcto_incorrecto'];
+        $cantidad_respuestas = $_GET['cantidad_respuestas'];
 
-        $fp = fopen('C:\xampp\htdocs\flanker_task\registros\log_'.$sujeto.'.txt', 'a');
-        fwrite($fp,"--------------------------------------------------------\n");
-        fwrite($fp,"sujeto=".$sujeto."\n");
-        fwrite($fp,"fase=".$fase."\n");
-        fwrite($fp,"tipo_ensayo=".$tipo_ensayo."\n");
-        fwrite($fp,"tecla_primer_respuesta=".$tecla_primer_respuesta."\n");
-        fwrite($fp,"tiempo_respuesta=".$tiempo_respuesta."\n");
-        fwrite($fp,"correcto_incorrecto=".$correcto_incorrecto."\n");
-        fwrite($fp,"numero_ensayo=".$numero_ensayo."\n");
-        fwrite($fp,"cantidad_respuestas=".$cantidad_respuestas."\n");
+        $fp = fopen('C:\xampp\htdocs\flanker_task\registros\log_' . $sujeto . '.txt', 'a');
+        fwrite($fp, "--------------------------------------------------------\n");
+        fwrite($fp, "sujeto=" . $sujeto . "\n");
+        fwrite($fp, "fase=" . $fase . "\n");
+        fwrite($fp, "tipo_ensayo=" . $tipo_ensayo . "\n");
+        fwrite($fp, "tecla_primer_respuesta=" . $tecla_primer_respuesta . "\n");
+        fwrite($fp, "tiempo_respuesta=" . $tiempo_respuesta . "\n");
+        fwrite($fp, "correcto_incorrecto=" . $correcto_incorrecto . "\n");
+        fwrite($fp, "numero_ensayo=" . $numero_ensayo . "\n");
+        fwrite($fp, "cantidad_respuestas=" . $cantidad_respuestas . "\n");
         fclose($fp);
 
     }
