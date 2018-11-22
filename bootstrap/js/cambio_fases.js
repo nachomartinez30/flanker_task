@@ -18,6 +18,7 @@ var segundos = /*10 * 60000*/8000;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
+    , './img/figuras_flechas.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -865,27 +866,29 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
 
 
 var label = document.getElementById('pantalla_principal');
-var fase2Error = document.getElementById('errorFase2');
+
 var num_imagen = 0;
 var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
-    fase2Error.src = '';
+
     // console.log("***-------INICIO-------***");
-    //console.log("iterador=" + iterador)
-    //console.log("--CONTADOR ENSAYO=" + contador_ensayos);
-    //console.log('numero de imagen=' + num_imagen);
+    // console.log("iterador=" + iterador);
+    // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
+    // console.log('numero de imagen=' + num_imagen);
     //console.log('IMAGEN=' + listado_primera_fase[iterador]);
-    if (iterador != undefined)/*CRUZ NEGRA*/{
+    if (iterador != 'undefined' && iterador > 1)/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
             case 0:/*cruz*/
-                //console.log('cruz');
+                // console.log('cruz');
                 asignarTiempoPorEnsayo(contador_ensayos);
-                if (iterador != 1)/*primera cruz*/{
+                /*SI NO ES PANTALLA NEGRA, INSTRUCCION o ENCUESTA*/
+                if (isEncuestaPantallaNegraInstruccion(iterador) === false) {
                     if (fase != 2) {/*SI NO ES FASE 2*/
                         respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
                     }
+                    console.log('previo log ='+iterador);
                     sendData();
                     respuesta_valida_fase1_2_3 = 0;
                 }
@@ -933,36 +936,43 @@ function iniciarSesion(iterador) {
 
     /*ENCUESTAS Y PANTALLAS NEGRAS*/
     switch (iterador) {
+        case 1:
+            /*PANTALLA RECORDATORIA*/
+            // segundos = 30000;
+            segundos = 7000;
+            label.src = listado_primera_fase[iterador];
+            break;
         /***********************************************************FINAL FASE 1*****************************************************/
-        case 257:/*MUESTRA PRIMERA ENCUESTA MANEKINS*/
+        case 258:/*MUESTRA PRIMERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            segundos = 120000;
+            segundos = 60000;
             /*QUITA LA ULTIMA IMAGEN*/
             label.src = '';
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 258:/*INSTRUCCIONES 1 DE FASE 2*/
+        case 259:/*INSTRUCCIONES 1 DE FASE 2*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
             fase++;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            segundos = 120000;
+            segundos = 60000;
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = ' <h1>A continuación las imágenes cambiaran de color, pero tu deberás seguir contestando' +
-                ' como hasta ahora. Si tu\n' +
+            instrucciones.innerHTML = ' <h3> A continuación las imágenes cambiarán de color, pero tú deberás seguir ' +
+                'contestando como hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un ' +
+                'segundo y una cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.\n' +
                 'respuesta es incorrecta escucharás un sonido por un segundo y una cruz aparecerá; si respondes ' +
-                'correctamente verás una señal que así lo indicará.\n' +
-                'En seguida verás una pantalla negra, trata de fijar la mirada den la cruz y relajarte hasta que la tarea\n' +
-                'comience.\n' +
-                '</h1>';
+                'correctamente verás una señal que así lo indicará.\n' +'</h3>'+
+                '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de fijar' +
+                ' la mirada en la cruz y estar atento a que la fase comience.\n' +
+                '</h3></p>';
             instrucciones.removeAttribute('hidden');
             break;
-        case 259:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 260:/*PANTALLA NEGRA SEGUNDA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
@@ -970,227 +980,227 @@ function iniciarSesion(iterador) {
             numero_ensayo = 0;
             break;
         /*RESPUESTAS FASE 2*/
-        case 264:
+        case 265:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 269:
+        case 270:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 274:
+        case 275:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 279:
+        case 280:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 284:
+        case 285:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 289:
+        case 290:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 294:
+        case 295:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 299:
+        case 300:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 304:
+        case 305:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 309:
+        case 310:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 314:
+        case 315:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 319:
+        case 320:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 324:
+        case 325:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 329:
+        case 330:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 334:
+        case 335:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 339:
+        case 340:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 344:
+        case 345:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 349:
+        case 350:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 354:
+        case 355:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 359:
+        case 360:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 364:
+        case 365:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 369:
+        case 370:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 374:
+        case 375:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 379:
+        case 380:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 384:
+        case 385:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 389:
+        case 390:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 394:
+        case 395:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 399:
+        case 400:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 404:
+        case 405:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 409:
+        case 410:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 414:
+        case 415:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 419:
+        case 420:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 424:
+        case 425:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 429:
+        case 430:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 434:
+        case 435:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 439:
+        case 440:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 444:
+        case 445:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 449:
+        case 450:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 454:
+        case 455:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 459:
+        case 460:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 464:
+        case 465:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 469:
+        case 470:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 474:
+        case 475:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 479:
+        case 480:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 484:
+        case 485:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 489:
+        case 490:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 494:
+        case 495:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 499:
+        case 500:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 504:
+        case 505:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 509:
+        case 510:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 514:
+        case 515:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 519:
+        case 520:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 524:
+        case 525:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 529:
+        case 530:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 534:
+        case 535:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 539:
+        case 540:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 544:
+        case 545:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 549:
+        case 550:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 554:
+        case 555:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 559:
+        case 560:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 564:
+        case 565:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 569:
+        case 570:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 574:
+        case 575:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 579:
+        case 580:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
 
         /***********************************************************FINAL FASE 2*****************************************************/
-        case 580:/*ENCUESTA SEGUNDA FASE*/
+        case 581:/*ENCUESTA SEGUNDA FASE*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            segundos = 120000;
+            segundos = 60000;
             /*QUITA LA ULTIMA IMAGEN*/
             label.src = '';
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 581:/*INSTRUCCIONES  DE FASE 3*/
+        case 582:/*INSTRUCCIONES  DE FASE 3*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
             fase++;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            segundos = 120000;
+            segundos = 60000;
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = '<h1>\n' +
-                'La tarea volverá a ser igual que al inicio. No habrá señales que indiquen si tu respuesta fue correcta. \n' +
-                'Trata de contestar lo mejor que puedas. En seguida verás una pantalla negra, trata de fijar la mirada \n' +
-                'en la cruz y relajarte hasta que la tarea comience.\n' +
-                '</h1>'
+            instrucciones.innerHTML = '<h3> A continuación la tarea volverá a ser igual que al inicio. No habrá señales' +
+                ' que indiquen si tu respuesta fue correcta o incorrecta. Intenta contestar lo mejor que puedas.<br><br>' +
+                'En seguida verás una pantalla negra con una cruz al centro, trata de fijar la mirada en la cruz y estar' +
+                ' atento a que la fase comience.\n' +
+                '</h3>'
             instrucciones.removeAttribute('hidden');
             break;
-        case 582:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 583:/*PANTALLA NEGRA SEGUNDA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
@@ -1198,16 +1208,16 @@ function iniciarSesion(iterador) {
             numero_ensayo = 0;
             break;
         /***********************************************************FINAL FASE 3*****************************************************/
-        case 839:/*TERCERA ENCUESTA MANEKINS*/
+        case 840:/*TERCERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            segundos = 120000;
+            segundos = 60000;
             /*QUITA LA ULTIMA IMAGEN*/
             label.src = '';
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 840:/*INSTRUCCIONES DE FASE 3*/
+        case 841:/*INSTRUCCIONES DE FASE 3*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
@@ -1216,12 +1226,13 @@ function iniciarSesion(iterador) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = '<h1>La tarea ha terminado. En seguida verás una pantalla negra, trata de fijar la' +
-                ' mirada en la cruz y relajarte. No te muevas ni desconectes los sensores hasta que el investigador' +
-                'te lo indique</h1>';
+            instrucciones.innerHTML = '<h2> La tarea ha terminado. En seguida verás una pantalla negra con una cruz al ' +
+                'centro, trata de fijar la mirada en la cruz y relajarte. No te muevas ni desconectes los sensores ' +
+                'hasta que el investigador te lo indique.' +
+                '<br><br>Gracias por tu participación.</h2>';
             instrucciones.removeAttribute('hidden');
             break;
-        case 841:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 842:/*PANTALLA NEGRA SEGUNDA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
@@ -1229,7 +1240,7 @@ function iniciarSesion(iterador) {
             /*REINICIO DE LA SESION*/
             sesionIniciada = false;
             break;
-            numero_ensayo = 0;
+        // numero_ensayo = 0;
         default:
             label.src = listado_primera_fase[iterador]; // asignar el path al src
             break;
@@ -1246,27 +1257,30 @@ function iniciarSesion(iterador) {
      581-839
      *******/
 
-    // switch (iterador) {
-    //     case 257:/*PRIMER ENCUESTA*/
-    //         segundos = 9999999;
-    //         break;
-    //     case 580: /*PRIMER ENCUESTA*/
-    //         segundos = 9999999;
-    //         break;
-    //     case 839:/*PRIMER ENCUESTA*/
-    //         segundos = 9999999;
-    //         break;
-    //     default:
-    //         segundos = 10;
-    //         break;
-    // }
-    // if (iterador < 257 || iterador < 580 || iterador < 839) {
-    //     segundos = 10;
-    // }
     /*testing*/
+    /*switch (iterador) {
+        case 259:/!*PRIMER ENCUESTA*!/
+            segundos = 8000;
+            break;
+        case 582: /!*PRIMER ENCUESTA*!/
+            segundos = 8000;
+            break;
+        case 841:/!*PRIMER ENCUESTA*!/
+            segundos = 8000;
+            break;
+        default:
+            segundos = 10;
+            break;
+    }*/
 
 
-    //console.log('***DURACION SEGUNDOS =' + segundos);
+    /*if (iterador < 259) {
+        segundos = 10;
+    }*/
+
+
+
+    // console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
         if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima imagen
@@ -1334,9 +1348,9 @@ function enviarEncuesta(fase) {
         data: $('frm_encuesta').serialize(),
         success: function (res) {
             //console.log("Resultado encuesta=" + res);
-            $('input[name=psico_1]').prop( "checked", false );
-            $('input[name=psico_2]').prop( "checked", false );
-            $('input[name=psico_3]').prop( "checked", false );
+            $('input[name=psico_1]').prop("checked", false);
+            $('input[name=psico_2]').prop("checked", false);
+            $('input[name=psico_3]').prop("checked", false);
         }
     });
 }
@@ -3347,14 +3361,14 @@ function checkRespuestasFase2(tecla, imagen) {
 }
 
 function sendData() {
-    console.log('---------------------------------------------------------------');
-    console.log('NOMBRE_ENSAYO=' + nombre_ensayo);
-    console.log('NUMERO_ENSAYO=' + numero_ensayo);
-    console.log('FASE=' + fase);
-    console.log('TECLA_PRIMER RESPUESTA=' + tecla_respuesta);
-    console.log('CORRECTO=' + respuesta_valida_fase1_2_3);
-    console.log('TIEMPO_PRIMERA_RESPUESTA=' + tiempo_respuesta / 1000 + ' seg.');
-    console.log('INTENTOS_RESPUESTA=' + intentosRespuesta);
+    // console.log('---------------------------------------------------------------');
+    // console.log('NOMBRE_ENSAYO=' + nombre_ensayo);
+    // console.log('NUMERO_ENSAYO=' + numero_ensayo);
+    // console.log('FASE=' + fase);
+    // console.log('TECLA_PRIMER RESPUESTA=' + tecla_respuesta);
+    // console.log('CORRECTO=' + respuesta_valida_fase1_2_3);
+    // console.log('TIEMPO_PRIMERA_RESPUESTA=' + tiempo_respuesta / 1000 + ' seg.');
+    // console.log('INTENTOS_RESPUESTA=' + intentosRespuesta);
     tiempo_respuesta = tiempo_respuesta / 1000;
 
     $.ajax({
@@ -3367,7 +3381,7 @@ function sendData() {
         '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
         '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
-            console.log('log_insertado');
+            // console.log('log_insertado');
         }
     });
     $.ajax({
@@ -3385,4 +3399,56 @@ function sendData() {
 
     tiempo_respuesta = 0;
     tecla_respuesta = ''
+}
+
+function isEncuestaPantallaNegraInstruccion(numero) {
+    let resultado = true;
+    console.log('iterador = '+numero);
+    switch (numero) {
+        case 2:
+            /*PRIMER CONTORNO NO ENVÍA DATOS*/
+            resultados = true;
+            break;
+        case 258:
+            /* ENCUESTA*/
+            resultado = true;
+            break;
+        case 581:
+            /* ENCUESTA*/
+            resultado = true;
+            break;
+        case 840:
+            /* ENCUESTA*/
+            resultado = true;
+            break;
+        case 259:
+            /* instrucciones*/
+            resultado = true;
+            break;
+        case 582:
+            /* instrucciones*/
+            resultado = true;
+            break;
+        case 841:
+            /* instrucciones*/
+            resultado = true;
+            break;
+        case 260:
+            /* ./img/pantalla_negra.png*/
+            resultado = true;
+            break;
+        case 583:
+            /* ./img/pantalla_negra.png*/
+            resultado = true;
+            break;
+        case 842:
+            /* ./img/pantalla_negra.png*/
+            resultado = true;
+            break;
+        default:
+            resultado = false;
+            break;
+    }
+    console.log("IS PANTATALLA " + resultado);
+    return resultado;
 }

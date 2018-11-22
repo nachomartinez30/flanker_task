@@ -13,10 +13,10 @@
 <div align="center" class="borde">
     <div hidden id="div_encuesta" class="checklist">
         <div class="radio row">
-            <h3>Selecciona con un clic las opciones que describen como te sentiste en la realización de la tarea. Tienes
-                2 minutos para responder. Después de contestar espera las siguientes indicaciones.No Pulses ninguna
-                tecla
-            </h3>
+            <h4>Selecciona con un clic las opciones que describen cómo te sentiste en la realización de la tarea.
+                Debes seleccionar una opción por fila. Tienes 1 minuto para responder. Después de contestar espera las
+                siguientes indicaciones. No pulses ninguna tecla.
+            </h4>
             <form id="frm_encuesta" action="../controllers/Encuesta.php" method="post">
 
                 <div class="container row ">
@@ -237,10 +237,9 @@
     </div>
 
     <img id="pantalla_principal" src="./img/pantalla_negra.png">
-    <img id='errorFase2' src="">
     <div id="encuesta" class="container">
     </div>
-    <div hidden class="container" id="div_instrucciones">
+    <div hidden class="center-element" id="div_instrucciones">
     </div>
 
     <audio id="sonidoError">
