@@ -888,7 +888,7 @@ function iniciarSesion(iterador) {
                     if (fase != 2) {/*SI NO ES FASE 2*/
                         respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
                     }
-                    console.log('previo log ='+iterador);
+                    // console.log('previo log ='+iterador);
                     sendData();
                     respuesta_valida_fase1_2_3 = 0;
                 }
@@ -908,12 +908,12 @@ function iniciarSesion(iterador) {
                     let aux = listado_primera_fase[iterador];
                     nombre_ensayo = aux.substr(21, aux.length);
                     //console.log(nombre_ensayo);
-                    segundos = 5000;
+                    segundos = 4000;
                 } else {
                     let aux = listado_primera_fase[iterador];
                     nombre_ensayo = aux.substr(aux.length - 8, aux.length);
                     num_imagen = -1;
-                    segundos = 6000;
+                    segundos = 5000;
                     contador_ensayos++;
                 }
 
@@ -1280,7 +1280,7 @@ function iniciarSesion(iterador) {
 
 
 
-    // console.log('***DURACION SEGUNDOS =' + segundos);
+    console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
         if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima imagen
@@ -3393,7 +3393,7 @@ function sendData() {
         '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
-            console.log('ENSAYO REGISTRADO');
+            // console.log('ENSAYO REGISTRADO');
         }
     })
 
@@ -3403,7 +3403,7 @@ function sendData() {
 
 function isEncuestaPantallaNegraInstruccion(numero) {
     let resultado = true;
-    console.log('iterador = '+numero);
+    // console.log('iterador = '+numero);
     switch (numero) {
         case 2:
             /*PRIMER CONTORNO NO ENVÍA DATOS*/
@@ -3449,6 +3449,6 @@ function isEncuestaPantallaNegraInstruccion(numero) {
             resultado = false;
             break;
     }
-    console.log("IS PANTATALLA " + resultado);
+    // console.log("IS PANTATALLA " + resultado);
     return resultado;
 }
