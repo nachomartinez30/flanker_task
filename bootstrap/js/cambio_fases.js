@@ -1258,20 +1258,20 @@ function iniciarSesion(iterador) {
      *******/
 
     /*testing*/
-    /*switch (iterador) {
-        case 259:/!*PRIMER ENCUESTA*!/
+    switch (iterador) {
+        case 258:/*Primer ENCUESTA*/
             segundos = 8000;
             break;
-        case 582: /!*PRIMER ENCUESTA*!/
+        case 581: /*Segunda ENCUESTA*/
             segundos = 8000;
             break;
-        case 841:/!*PRIMER ENCUESTA*!/
+        case 840:/*Tercer ENCUESTA*/
             segundos = 8000;
             break;
         default:
             segundos = 10;
             break;
-    }*/
+    }
 
 
     /*if (iterador < 259) {
@@ -1348,11 +1348,11 @@ function enviarEncuesta(fase) {
         data: $('frm_encuesta').serialize(),
         success: function (res) {
             //console.log("Resultado encuesta=" + res);
-            $('input[name=psico_1]').prop("checked", false);
-            $('input[name=psico_2]').prop("checked", false);
-            $('input[name=psico_3]').prop("checked", false);
         }
     });
+    $('input[name=psico_1]').prop("checked", false);
+    $('input[name=psico_2]').prop("checked", false);
+    $('input[name=psico_3]').prop("checked", false);
 }
 
 function asignarTiempoPorEnsayo(contador_ensayos) {

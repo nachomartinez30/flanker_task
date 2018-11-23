@@ -12,7 +12,7 @@
 <body onkeypress="checkKeyPressed(event)">
 <div align="center" class="borde">
     <div hidden id="div_encuesta" class="checklist">
-        <div class="radio row">
+        <div class="radio row center-element">
             <h4>Selecciona con un clic las opciones que describen cómo te sentiste en la realización de la tarea.
                 Debes seleccionar una opción por fila. Tienes 1 minuto para responder. Después de contestar espera las
                 siguientes indicaciones. No pulses ninguna tecla.
