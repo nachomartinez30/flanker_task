@@ -965,8 +965,7 @@ function iniciarSesion(iterador) {
             instrucciones.innerHTML = ' <h3> A continuación las imágenes cambiarán de color, pero tú deberás seguir ' +
                 'contestando como hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un ' +
                 'segundo y una cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.\n' +
-                'respuesta es incorrecta escucharás un sonido por un segundo y una cruz aparecerá; si respondes ' +
-                'correctamente verás una señal que así lo indicará.\n' +'</h3>'+
+                '</h3>'+
                 '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de fijar' +
                 ' la mirada en la cruz y estar atento a que la fase comience.\n' +
                 '</h3></p>';
@@ -1258,20 +1257,20 @@ function iniciarSesion(iterador) {
      *******/
 
     /*testing*/
-    switch (iterador) {
-        case 258:/*Primer ENCUESTA*/
-            segundos = 8000;
-            break;
-        case 581: /*Segunda ENCUESTA*/
-            segundos = 8000;
-            break;
-        case 840:/*Tercer ENCUESTA*/
-            segundos = 8000;
-            break;
-        default:
-            segundos = 10;
-            break;
-    }
+    // switch (iterador) {
+    //     case 258:/*Primer ENCUESTA*/
+    //         segundos = 8000;
+    //         break;
+    //     case 581: /*Segunda ENCUESTA*/
+    //         segundos = 8000;
+    //         break;
+    //     case 840:/*Tercer ENCUESTA*/
+    //         segundos = 8000;
+    //         break;
+    //     default:
+    //         segundos = 10;
+    //         break;
+    // }
 
 
     /*if (iterador < 259) {
