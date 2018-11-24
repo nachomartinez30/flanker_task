@@ -965,7 +965,7 @@ function iniciarSesion(iterador) {
             instrucciones.innerHTML = ' <h3> A continuación las imágenes cambiarán de color, pero tú deberás seguir ' +
                 'contestando como hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un ' +
                 'segundo y una cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.\n' +
-                '</h3>'+
+                '</h3>' +
                 '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de fijar' +
                 ' la mirada en la cruz y estar atento a que la fase comience.\n' +
                 '</h3></p>';
@@ -1276,7 +1276,6 @@ function iniciarSesion(iterador) {
     /*if (iterador < 259) {
         segundos = 10;
     }*/
-
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -3369,16 +3368,16 @@ function sendData() {
     // console.log('TIEMPO_PRIMERA_RESPUESTA=' + tiempo_respuesta / 1000 + ' seg.');
     // console.log('INTENTOS_RESPUESTA=' + intentosRespuesta);
     tiempo_respuesta = tiempo_respuesta / 1000;
-
+    /*AJAX QUE REGISTRA EN EL LOG*/
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -3386,10 +3385,11 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&numero_ensayo=' + numero_ensayo +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');

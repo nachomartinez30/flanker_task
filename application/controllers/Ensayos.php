@@ -12,6 +12,7 @@ class Ensayos extends CI_Controller
         $data['sujeto'] = 'Lorem Ipsum';
         $data['tipo_ensayo'] = $_GET['tipo_ensayo'];
         $data['tiempo_respuesta'] = $_GET['tiempo_respuesta'];
+        $data['respuesta_sujeto'] = $_GET['tecla_primer_respuesta'];
         $data['correcto_incorrecto'] = $_GET['correcto_incorrecto'];
         $data['numero_ensayo'] = $_GET['numero_ensayo'];
         $data['cantidad_respuestas'] = $_GET['cantidad_respuestas'];
