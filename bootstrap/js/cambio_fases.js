@@ -10,6 +10,31 @@ let tiempo_respuesta = 0;
 var fase = 1;
 var numero_ensayo = 0;
 
+/*VARIABLES LINEA DE TIEMPO*/
+var time_inicio_sesion = new Date();
+var time_pantalla_negra = new Date();
+var time_recordatorio = new Date();
+var time_cruz = new Date();
+var time_color = new Date();
+var time_contorno = new Date();
+var time_ensayo = new Date();
+var time_intrucciones = new Date();
+var time_encuesta = new Date();
+
+var time_aux_time = new Date();
+var set_aux_time ;
+
+var set_inicio_sesion;
+var set_pantalla_negra;
+var set_recordatorio;
+var set_cruz;
+var set_color;
+var set_contorno;
+var set_ensayo;
+var set_intrucciones;
+var set_encuesta;
+/*VARIABLES LINEA DE TIEMPO*/
+
 var intentosRespuesta = 0;
 
 var tiempo_inicio;
@@ -871,7 +896,6 @@ var num_imagen = 0;
 var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
-
     // console.log("***-------INICIO-------***");
     // console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
@@ -962,10 +986,11 @@ function iniciarSesion(iterador) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = ' <h3> A continuación las imágenes cambiarán de color, pero tú deberás seguir ' +
+            instrucciones.innerHTML = ' <h2> A continuación las imágenes cambiarán de color, pero tú deberás seguir ' +
                 'contestando como hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un ' +
-                'segundo y una cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.\n' +
-                '</h3>' +
+                'segundo y una cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará. ' +
+                '<br>Trata de responder lo más rápido posible.' +
+                '</h2>' +
                 '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de fijar' +
                 ' la mirada en la cruz y estar atento a que la fase comience.\n' +
                 '</h3></p>';
@@ -1192,11 +1217,12 @@ function iniciarSesion(iterador) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = '<h3> A continuación la tarea volverá a ser igual que al inicio. No habrá señales' +
-                ' que indiquen si tu respuesta fue correcta o incorrecta. Intenta contestar lo mejor que puedas.<br><br>' +
+            instrucciones.innerHTML = '<h2> A continuación la tarea volverá a ser igual que al inicio. No habrá señales' +
+                ' que indiquen si tu respuesta fue correcta o incorrecta. Intenta contestar lo mejor y mas rápido que puedas.<br><br>' +
                 'En seguida verás una pantalla negra con una cruz al centro, trata de fijar la mirada en la cruz y estar' +
                 ' atento a que la fase comience.\n' +
-                '</h3>'
+
+                '</h2>'
             instrucciones.removeAttribute('hidden');
             break;
         case 583:/*PANTALLA NEGRA SEGUNDA FASE*/
@@ -1257,20 +1283,20 @@ function iniciarSesion(iterador) {
      *******/
 
     /*testing*/
-    // switch (iterador) {
-    //     case 258:/*Primer ENCUESTA*/
-    //         segundos = 8000;
-    //         break;
-    //     case 581: /*Segunda ENCUESTA*/
-    //         segundos = 8000;
-    //         break;
-    //     case 840:/*Tercer ENCUESTA*/
-    //         segundos = 8000;
-    //         break;
-    //     default:
-    //         segundos = 10;
-    //         break;
-    // }
+    switch (iterador) {
+        case 259:/*Primer ENCUESTA*/
+            segundos = 8000;
+            break;
+        case 582: /*Segunda ENCUESTA*/
+            segundos = 8000;
+            break;
+        case 840:/*Tercer ENCUESTA*/
+            segundos = 8000;
+            break;
+        default:
+            segundos = 10;
+            break;
+    }
 
 
     /*if (iterador < 259) {
@@ -1295,6 +1321,9 @@ function checkKeyPressed(event) {
     /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
     if (event.key === 'Enter' && sesionIniciada === false) {
         console.log('INICIO');
+        label.src = './img/cruz.png'
+        label.src = './img/pantalla_negra.png'
+        set_inicio_sesion= time_inicio_sesion.getTime();
         sesionIniciada = true;
         iniciarSesion();
     }
