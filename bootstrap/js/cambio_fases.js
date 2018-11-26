@@ -1,4 +1,5 @@
 var encuesta = document.getElementById('div_encuesta');
+var cuerpo_pagina = document.getElementById('cuerpo_pagina');
 var tecla_respuesta;
 var tecla_presionada;
 var respuesta_valida_fase1_2_3;
@@ -22,7 +23,7 @@ var time_intrucciones = new Date();
 var time_encuesta = new Date();
 
 var time_aux_time = new Date();
-var set_aux_time ;
+var set_aux_time;
 
 var set_inicio_sesion;
 var set_pantalla_negra;
@@ -900,7 +901,7 @@ function iniciarSesion(iterador) {
     // console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
     // console.log('numero de label=' + num_imagen);
-    //console.log('IMAGEN=' + listado_primera_fase[iterador]);
+    //console.log('IMAGEN=' + listado_tutorial[iterador]);
     if (iterador != 'undefined' && iterador > 1)/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
@@ -1283,20 +1284,20 @@ function iniciarSesion(iterador) {
      *******/
 
     /*testing*/
-    switch (iterador) {
-        case 259:/*Primer ENCUESTA*/
-            segundos = 8000;
-            break;
-        case 582: /*Segunda ENCUESTA*/
-            segundos = 8000;
-            break;
-        case 840:/*Tercer ENCUESTA*/
-            segundos = 8000;
-            break;
-        default:
-            segundos = 10;
-            break;
-    }
+    // switch (iterador) {
+    //     case 258:/*Primer ENCUESTA*/
+    //         segundos = 8000;
+    //         break;
+    //     case 581: /*Segunda ENCUESTA*/
+    //         segundos = 8000;
+    //         break;
+    //     case 839:/*Tercer ENCUESTA*/
+    //         segundos = 8000;
+    //         break;
+    //     default:
+    //         segundos = 10;
+    //         break;
+    // }
 
 
     /*if (iterador < 259) {
@@ -1321,9 +1322,11 @@ function checkKeyPressed(event) {
     /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
     if (event.key === 'Enter' && sesionIniciada === false) {
         console.log('INICIO');
+        cuerpo_pagina.classList.remove('borde_inicio');
+        cuerpo_pagina.classList.add('borde');
         label.src = './img/cruz.png'
         label.src = './img/pantalla_negra.png'
-        set_inicio_sesion= time_inicio_sesion.getTime();
+        set_inicio_sesion = time_inicio_sesion.getTime();
         sesionIniciada = true;
         iniciarSesion();
     }
@@ -1968,6 +1971,8 @@ function asignarTiempoPorEnsayo(contador_ensayos) {
 
 function checkRespuestasFase1_3(tecla, imagen) {
     let resultado = 0;
+    console.log('TECLA=' + tecla);
+    console.log('imagen=' + imagen);
     switch (imagen) {
         case'A_01.png':
             if (tecla == '8') {
@@ -2258,7 +2263,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_01.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2267,7 +2272,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_10.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2276,7 +2281,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_11.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2285,7 +2290,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_12.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2294,7 +2299,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_13.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2303,7 +2308,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_14.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2312,7 +2317,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_15.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2321,7 +2326,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_16.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2330,7 +2335,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_17.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2339,7 +2344,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_18.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2348,7 +2353,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_19.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2357,7 +2362,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_02.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2366,7 +2371,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_20.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2375,7 +2380,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_21.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2384,7 +2389,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_22.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2393,7 +2398,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_23.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2402,7 +2407,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_24.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2411,7 +2416,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_25.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2420,7 +2425,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_26.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2429,7 +2434,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_27.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2438,7 +2443,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_28.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2447,7 +2452,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_29.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2456,7 +2461,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_03.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2465,7 +2470,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_30.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2474,7 +2479,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_31.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2483,7 +2488,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_32.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2492,7 +2497,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_04.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2501,7 +2506,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_05.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2510,7 +2515,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_06.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2519,7 +2524,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_07.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2528,7 +2533,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_08.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2537,7 +2542,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_09.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -3401,12 +3406,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-            '&fase=' + fase +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&fase=' + fase +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -3414,11 +3419,11 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');

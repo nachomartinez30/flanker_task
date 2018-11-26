@@ -60,6 +60,12 @@ label {
     position: absolute;
     top: 0px;
     left: -10px;
+    right: -10px;
+}
+.borde_inicio {
+    position: absolute;
+    top: 0px;
+    left: -10px;
 }
 
 .arriba {
@@ -75,4 +81,8 @@ label {
 .clear
 {
     clear: both;
+}
+
+.no_cursor{
+    cursor: none;
 }

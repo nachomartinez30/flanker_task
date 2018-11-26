@@ -11,7 +11,7 @@
 </head>
 <body onkeypress="checkKeyPressed(event)">
 <div align="center">
-    <img id="imagen_tutorial" src="">
+    <img class="no_cursor"  id="imagen_tutorial" src="">
 </div>
 <div id="div_instrucciones" align="center">
     <h1>Tutorial</h1>

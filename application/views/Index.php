@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <title></title>
 </head>
-<body onkeypress="checkKeyPressed(event)">
-<div align="center" class="borde">
+<body   onkeypress="checkKeyPressed(event)">
+<div id="cuerpo_pagina" align="center" class="borde_inicio">
     <div hidden id="div_encuesta" class="checklist">
         <div class="radio row center-element">
             <h4>Selecciona con un clic las opciones que describen cómo te sentiste en la realización de la tarea.
@@ -236,7 +236,7 @@
         </div>
     </div>
 
-    <img id="pantalla_principal" src="./img/pantalla_negra.png">
+    <img class="no_cursor center-element" id="pantalla_principal" src="./img/pantalla_negra.png">
     <div id="encuesta" class="container">
     </div>
     <div hidden class="center-element" id="div_instrucciones">

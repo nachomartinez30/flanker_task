@@ -1,3 +1,4 @@
+var cantidad_correctas = 9;
 var encuesta = document.getElementById('div_encuesta');
 var tecla_respuesta;
 var tecla_presionada;
@@ -17,258 +18,321 @@ var tiempo_fin;
 var segundos = /*10 * 60000*/8000;
 
 
-var listado_primera_fase = ['./img/1_3_fase/cruz.png'
+var listado_tutorial =['./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_24.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_05.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_32.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_08.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_29.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_08.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_12.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_04.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_22.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_11.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_01.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_30.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_03.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_20.png'
-    ,'./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_09.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_21.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_06.png'
+    ,'./img/1_3_fase/verdes/V_04.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_22.png'
+    ,'respuesta'
+    , './img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_azul.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/azul/A_01.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_30.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_03.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_11.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_08.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_21.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_18.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_31.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_29.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_27.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_25.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_28.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_25.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_24.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_20.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_09.png'
+    ,'respuesta'
+    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/pantalla_verde.png'
+    , './img/1_3_fase/contornos.png'
+    ,'./img/1_3_fase/verdes/V_06.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_18.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_07.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_19.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_26.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_06.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_20.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_07.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_13.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_15.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_04.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_09.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_12.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_15.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_14.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_30.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_26.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_13.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_02.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_10.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_27.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_17.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_32.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_03.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_02.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_23.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_14.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_05.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_16.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_10.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_01.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_11.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_31.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_23.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_16.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_19.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_28.png'
+    ,'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/azul/A_22.png'
+    ,'respuesta'
     ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
@@ -301,7 +365,7 @@ function tutorialInstruccionVerdes(num_inst) {
             label.src = './img/tuto_ovalo.png';
             break;
         case 4:
-            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↓</h1></h3>" +
+            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
             label.src = './img/tuto_circulo.png';
             break;
@@ -317,17 +381,28 @@ function tutorialInstruccionVerdes(num_inst) {
         case 6:
             instrucciones.setAttribute('hidden', 'true');
             iniciarTutorial();
+            sesionIniciada = true;
+            break;
+        case 7:
+            label.src=''
+            instrucciones.removeAttribute('hidden');
+            instrucciones.innerHTML = "<h3>Ahora que has comprendido las instrucciones, llama por favor al investigador " +
+                "para comenzar</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>\";"
+
             break;
     }
 
 }
 
 function iniciarTutorial(iterador) {
+
     // console.log("***-------INICIO-------***");
     // console.log("iterador=" + iterador);
+    console.log("CORRECTAS=" + cantidad_correctas);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
     // console.log('numero de label=' + num_imagen);
-    //console.log('IMAGEN=' + listado_primera_fase[iterador]);
+    //console.log('IMAGEN=' + listado_tutorial[iterador]);
     if (iterador != 'undefined')/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
@@ -348,10 +423,10 @@ function iniciarTutorial(iterador) {
                 break;
             case 3:/*ensayo*/
                 numero_ensayo++;
-                    let aux = listado_primera_fase[iterador];
-                    nombre_ensayo = aux.substr(21, aux.length);
-                    //console.log(nombre_ensayo);
-                    segundos = 4000;
+                let aux = listado_tutorial[iterador];
+                nombre_ensayo = aux.substr(aux.length - 8, aux.length);
+                //console.log(nombre_ensayo);
+                segundos = 4000;
                 //console.log("***-------FIN ENSAYO-------***");
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
                 intentosRespuesta = 0;
@@ -371,9 +446,197 @@ function iniciarTutorial(iterador) {
 
     /*ENCUESTAS Y PANTALLAS NEGRAS*/
     switch (iterador) {
-
+        case 4:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 9:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 14:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 19:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 24:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 29:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 34:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 39:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 44:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 49:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 54:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 59:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 64:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 69:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 74:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 79:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 84:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 89:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 94:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 99:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 104:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 109:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 114:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 119:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 124:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 129:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 134:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 139:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 144:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 149:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 154:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 159:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 164:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 169:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 174:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 179:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 184:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 189:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 194:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 199:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 204:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 209:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 214:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 219:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 224:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 229:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 234:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 239:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 244:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 249:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 254:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 259:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 264:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 269:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 274:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 279:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 284:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 289:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 294:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 299:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 304:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 309:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 314:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
         default:
-            label.src = listado_primera_fase[iterador]; // asignar el path al src
+            label.src = listado_tutorial[iterador]; // asignar el path al src
             break;
     }
 
@@ -394,11 +657,12 @@ function iniciarTutorial(iterador) {
         segundos = 10;
     }*/
 
+    /*COMPLETO LA CANTIDAD DE RESPUESTAS*/
 
-    console.log('***DURACION SEGUNDOS =' + segundos);
+    // console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
-        if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima label
+        if (iterador < listado_tutorial.length - 1 && cantidad_correctas < 10) { // romper la recursión si se llega a la ultima label
             iniciarTutorial(iterador + 1);
         }
     }, segundos);
@@ -408,14 +672,6 @@ function checkKeyPressed(event) {
     var event = window.event ? window.event : e;
     if (sesionIniciada === true) {
         checkTiempoRespuesta();
-    }
-    /*REVISA QUE INICIE LA SESION Y NO SE PUEDA HASTA QUE TERMINE*/
-    if (event.key === 'Enter' && sesionIniciada === false) {
-        console.log('INICIO_TUTORIAL');
-        label.src = './img/cruz.png'
-        label.src = './img/pantalla_negra.png'
-        set_inicio_sesion = time_inicio_sesion.getTime();
-
     }
 }
 
@@ -1019,6 +1275,7 @@ function asignarTiempoPorEnsayo(contador_ensayos) {
 
 function checkRespuestasFase1_3(tecla, imagen) {
     let resultado = 0;
+
     switch (imagen) {
         case'A_01.png':
             if (tecla == '8') {
@@ -1309,7 +1566,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_01.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1318,7 +1575,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_10.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1327,7 +1584,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_11.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1336,7 +1593,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_12.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1345,7 +1602,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_13.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1354,7 +1611,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_14.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1363,7 +1620,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_15.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1372,7 +1629,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_16.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1381,7 +1638,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_17.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1390,7 +1647,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_18.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1399,7 +1656,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_19.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1408,7 +1665,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_02.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1417,7 +1674,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_20.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1426,7 +1683,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_21.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1435,7 +1692,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_22.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1444,7 +1701,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_23.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1453,7 +1710,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_24.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1462,7 +1719,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_25.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1471,7 +1728,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_26.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1480,7 +1737,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_27.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1489,7 +1746,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_28.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1498,7 +1755,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_29.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1507,7 +1764,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_03.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1516,7 +1773,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_30.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1525,7 +1782,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_31.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1534,7 +1791,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_32.png':
-            if (tecla == '6') {
+            if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1543,7 +1800,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_04.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1552,7 +1809,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_05.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1561,7 +1818,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_06.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1570,7 +1827,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_07.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1579,7 +1836,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_08.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1588,7 +1845,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'V_09.png':
-            if (tecla == '4') {
+            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1597,7 +1854,20 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
     }
-    return resultado;
+    console.log("resultado=" + resultado);
+
+    if (resultado == 1) {
+        label.src = './img/palomita.png';
+        cantidad_correctas++;
+        resultado = 0
+        tecla_respuesta = '';
+        console.log('cantidad_correctas'+cantidad_correctas);
+        if(cantidad_correctas == 10){
+            tutorialInstruccionVerdes(7)
+        }
+    } else {
+        label.src = './img/tacha.png'
+    }
 }
 
 
