@@ -3419,6 +3419,7 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
+        '&fase=' + fase +
         '&tiempo_respuesta=' + tiempo_respuesta +
         '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
         '&numero_ensayo=' + numero_ensayo +

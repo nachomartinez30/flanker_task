@@ -1,14 +1,11 @@
 var cantidad_correctas = 10;
-var encuesta = document.getElementById('div_encuesta');
 var tecla_respuesta;
 var tecla_presionada;
 var respuesta_valida_fase1_2_3;
 var instrucciones = document.getElementById('div_instrucciones');
 var sesionIniciada = false;
-var sonido_error = document.getElementById('sonidoError');
 var nombre_ensayo;
 let tiempo_respuesta = 0;
-var fase = 1;
 var numero_ensayo = 0;
 
 var intentosRespuesta = 0;
@@ -17,6 +14,10 @@ var tiempo_inicio;
 var tiempo_fin;
 var segundos = /*10 * 60000*/8000;
 
+var num_imagen = 0;
+var contador_ensayos = 0;
+
+var label = document.getElementById('imagen_tutorial');
 
 var listado_tutorial =['./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
@@ -337,15 +338,6 @@ var listado_tutorial =['./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     ,'./img/1_3_fase/verdes/V_17.png']
-
-
-var num_imagen = 0;
-var contador_ensayos = 0;
-
-
-var instrucciones = document.getElementById('div_instrucciones');
-var label = document.getElementById('imagen_tutorial');
-
 
 function tutorialInstruccionVerdes(num_inst) {
     switch (num_inst) {

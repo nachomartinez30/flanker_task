@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Ensayos extends CI_Controller
 {
 
@@ -9,8 +10,9 @@ class Ensayos extends CI_Controller
 
         $this->load->model('ensayos_model');
 //        var_dump($_GET);
-        $data['sujeto'] = 'Lorem Ipsum';
+        $data['sujeto'] = SUJETO_TEST;
         $data['tipo_ensayo'] = $_GET['tipo_ensayo'];
+        $data['fase'] = $_GET['fase'];
         $data['tiempo_respuesta'] = $_GET['tiempo_respuesta'];
         $data['respuesta_sujeto'] = $_GET['tecla_primer_respuesta'];
         $data['correcto_incorrecto'] = $_GET['correcto_incorrecto'];
@@ -21,7 +23,7 @@ class Ensayos extends CI_Controller
 
     public function write_log()
     {
-        $sujeto = 'Lorem_Ipsum';
+        $sujeto = SUJETO_TEST;
         $tipo_ensayo = $_GET['tipo_ensayo'];
         $fase = $_GET['fase'];
         $tecla_primer_respuesta = $_GET['tecla_primer_respuesta'];
