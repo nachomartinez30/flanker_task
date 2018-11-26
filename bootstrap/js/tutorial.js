@@ -1,4 +1,4 @@
-var cantidad_correctas = 9;
+var cantidad_correctas = 10;
 var encuesta = document.getElementById('div_encuesta');
 var tecla_respuesta;
 var tecla_presionada;
@@ -388,7 +388,7 @@ function tutorialInstruccionVerdes(num_inst) {
             instrucciones.removeAttribute('hidden');
             instrucciones.innerHTML = "<h3>Ahora que has comprendido las instrucciones, llama por favor al investigador " +
                 "para comenzar</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>\";"
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>"
 
             break;
     }
