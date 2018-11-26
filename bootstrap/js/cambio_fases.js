@@ -899,7 +899,7 @@ function iniciarSesion(iterador) {
     // console.log("***-------INICIO-------***");
     // console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
-    // console.log('numero de imagen=' + num_imagen);
+    // console.log('numero de label=' + num_imagen);
     //console.log('IMAGEN=' + listado_primera_fase[iterador]);
     if (iterador != 'undefined' && iterador > 1)/*CRUZ NEGRA*/{
         segundos = 2000;
@@ -1307,7 +1307,7 @@ function iniciarSesion(iterador) {
     console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
-        if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima imagen
+        if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima label
             iniciarSesion(iterador + 1);
         }
     }, segundos);
