@@ -1,4 +1,4 @@
-var cantidad_correctas = 10;
+var cantidad_correctas = 0;
 var tecla_respuesta;
 var tecla_presionada;
 var respuesta_valida_fase1_2_3;
