@@ -1,8 +1,8 @@
 var cantidad_correctas = 0;
 var tecla_respuesta;
 var tecla_presionada;
-var respuesta_valida_fase1_2_3;
 var instrucciones = document.getElementById('div_instrucciones');
+var cabecera_tutorial = document.getElementById('cabecera_tutorial');
 var sesionIniciada = false;
 var nombre_ensayo;
 let tiempo_respuesta = 0;
@@ -19,369 +19,412 @@ var contador_ensayos = 0;
 
 var label = document.getElementById('imagen_tutorial');
 
-var listado_tutorial =['./img/1_3_fase/cruz.png'
+var listado_tutorial = ['./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_24.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_24.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_05.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_05.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_32.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_32.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_29.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_29.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_08.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_08.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_12.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_12.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_21.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_21.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_04.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_04.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_22.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_22.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_01.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_01.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_30.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_30.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_03.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_03.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_11.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_11.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_08.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_08.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_21.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_21.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_18.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_18.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_31.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_31.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_29.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_29.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_27.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_27.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_25.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_25.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_28.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_28.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_25.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_25.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_24.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_24.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_20.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_20.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_09.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_09.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_06.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_06.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_18.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_18.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_07.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_07.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_19.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_19.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_26.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_26.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_06.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_06.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_20.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_20.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_07.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_07.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_13.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_13.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_15.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_15.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_04.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_04.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_09.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_09.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_12.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_12.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_15.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_15.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_14.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_14.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_30.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_30.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_26.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_26.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_13.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_13.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_02.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_02.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_10.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_10.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_27.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_27.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_17.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_17.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_32.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_32.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_03.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_03.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_02.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_02.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_23.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_23.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_14.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_14.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_05.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_05.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_16.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_16.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_10.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_10.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_01.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_01.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_11.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_11.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_31.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/verdes/V_31.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_23.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_23.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_16.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_16.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_19.png'
-    ,'respuesta'
+    , './img/1_3_fase/verdes/V_19.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_28.png'
-    ,'respuesta'
+    , './img/1_3_fase/azul/A_28.png'
+    , 'respuesta'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/azul/A_22.png'
-    ,'respuesta'
-    ,'./img/1_3_fase/cruz.png'
+    , './img/1_3_fase/azul/A_22.png'
+    , 'respuesta'
+    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    ,'./img/1_3_fase/verdes/V_17.png']
+    , './img/1_3_fase/verdes/V_17.png']
 
 function tutorialInstruccionVerdes(num_inst) {
     switch (num_inst) {
+        case 0:
+            instrucciones.innerHTML = "<h3>A continuación aparecerá una secuencia de pantallas.<br>Primero una pantalla " +
+                "blanca con una cruz negra al centro;</h3>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(1)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_pantalla_blanca.png';
+            break;
         case 1:
-            instrucciones.innerHTML = "<h3>Si un cuadrado aparece dentro de cualquier contorno, oprime la tecla de flecha izquierda <h1>←</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(2)\">Siguiente</button>"
-            label.src = './img/tuto_cuadrado.png';
+            instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde que te indicarán las figuras que se presentarán a continuación.</h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(0)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(2)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_pantalla_colores.png';
             break;
         case 2:
-            instrucciones.innerHTML = "<h3>si aparece un rombo dentro de cualquier contorno, oprime la tecla de flecha derecha <h1>→</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Siguiente</button>"
-            label.src = './img/tuto_rombo.png';
+            instrucciones.innerHTML = "<h3>Después de las pantallas de color (azul o verde) verás un conjunto de contornos circulares.</h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(1)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(3)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_contornos.png';
             break;
         case 3:
-            instrucciones.innerHTML = "<h3>si aparece un óvalo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↑</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(4)\">Siguiente</button>"
-            label.src = './img/tuto_ovalo.png';
+            instrucciones.innerHTML = "<h3>Posteriormente dentro de los contornos circulares aparecerán figuras.</h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(2)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(4)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_figuras.png';
             break;
         case 4:
-            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
-            label.src = './img/tuto_circulo.png';
+            instrucciones.innerHTML = "<h3>Tu tarea será identificar en cada ensayo donde aparece una figura, la cual puede ser un cuadrado o rombo un  círculo u óvalo.</h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_ensayos_simples.png';
+            break;
+        case 5:
+            instrucciones.innerHTML = "<h3>A veces solo aparecerá una figura, otras veces puede haber más, pero siempre habrá una figura presente en uno de los contornos circulares (cuadrado, rombo, círculo u óvalo).</h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(4)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(6)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_ensayos_completos.png';
             break;
 
-        case 5:
+        case 6:
+            instrucciones.innerHTML = "<h3>Si un cuadrado aparece dentro de cualquier contorno, oprime la tecla de flecha izquierda <h1>←</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_cuadrado.png';
+            break;
+        case 7:
+            instrucciones.innerHTML = "<h3>si aparece un rombo dentro de cualquier contorno, oprime la tecla de flecha derecha <h1>→</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_rombo.png';
+            break;
+        case 8:
+            instrucciones.innerHTML = "<h3>si aparece un óvalo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↑</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_ovalo.png';
+            break;
+        case 9:
+            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Siguiente</button>"
+            label.src = './img/tutorial/tuto_circulo.png';
+            break;
+
+        case 10:
             label.src = '';
             instrucciones.innerHTML = "<h3>Recuerda que antes de que las figuras aparezcan, la pantalla parpadea de color Azul o Verde. El Verde siempre" +
                 " indicará la presencia del rombo o cuadrado, es decir el uso de las teclas</h3> <h1>←   →</h1>   <h3>y el Azul indicará la presencia del círculo u " +
                 "óvalo, el uso de las teclas <h1>↑   ↓</h1>.</h3><h3> Céntrate únicamente en las figuras dentro de los contornos circulares. Ignora " +
                 "cualquier figura que aparezca fuera de los contornos. Trata de responder lo más rápido posible cometiendo el menor número de errores.</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Hacer Prueba</button>";
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(9)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(11)\">Hacer Prueba</button>";
             break;
-        case 6:
+        case 11:
             instrucciones.setAttribute('hidden', 'true');
+            cabecera_tutorial.setAttribute('hidden', 'true');
             iniciarTutorial();
             sesionIniciada = true;
             break;
-        case 7:
-            label.src=''
+        case 12:
+            label.src = ''
             instrucciones.removeAttribute('hidden');
+            cabecera_tutorial.removeAttribute('hidden');
             instrucciones.innerHTML = "<h3>Ahora que has comprendido las instrucciones, llama por favor al investigador " +
                 "para comenzar</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>"
-
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>"
             break;
     }
 
@@ -389,21 +432,13 @@ function tutorialInstruccionVerdes(num_inst) {
 
 function iniciarTutorial(iterador) {
 
-    // console.log("***-------INICIO-------***");
-    // console.log("iterador=" + iterador);
-    console.log("CORRECTAS=" + cantidad_correctas);
-    // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
-    // console.log('numero de label=' + num_imagen);
-    //console.log('IMAGEN=' + listado_tutorial[iterador]);
+
     if (iterador != 'undefined')/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
             case 0:/*cruz*/
-                // console.log('cruz');
-                asignarTiempoPorEnsayo(contador_ensayos);
-                respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
-                respuesta_valida_fase1_2_3 = 0;
 
+                asignarTiempoPorEnsayo(contador_ensayos);
                 break;
             case 1:/*pantalla color*/
                 //console.log('color');
@@ -437,222 +472,8 @@ function iniciarTutorial(iterador) {
     var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
 
     /*ENCUESTAS Y PANTALLAS NEGRAS*/
-    switch (iterador) {
-        case 4:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 9:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 14:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 19:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 24:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 29:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 34:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 39:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 44:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 49:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 54:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 59:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 64:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 69:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 74:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 79:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 84:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 89:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 94:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 99:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 104:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 109:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 114:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 119:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 124:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 129:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 134:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 139:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 144:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 149:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 154:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 159:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 164:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 169:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 174:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 179:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 184:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 189:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 194:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 199:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 204:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 209:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 214:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 219:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 224:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 229:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 234:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 239:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 244:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 249:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 254:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 259:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 264:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 269:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 274:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 279:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 284:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 289:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 294:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 299:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 304:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 309:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 314:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        default:
-            label.src = listado_tutorial[iterador]; // asignar el path al src
-            break;
-    }
+    revisarIterador(iterador);
 
-
-    /*testing*/
-    /*******
-     FASE 1
-     0-257
-     FASE 2
-     258-580
-     FASE 3<
-     581-839
-     *******/
-
-    /*testing*/
-
-    /*if (iterador < 259) {
-        segundos = 10;
-    }*/
-
-    /*COMPLETO LA CANTIDAD DE RESPUESTAS*/
-
-    // console.log('***DURACION SEGUNDOS =' + segundos);
-    // llamada recursiva con timer
     setTimeout(function () {
         if (iterador < listado_tutorial.length - 1 && cantidad_correctas < 10) { // romper la recursión si se llega a la ultima label
             iniciarTutorial(iterador + 1);
@@ -1846,22 +1667,408 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
     }
-    console.log("resultado=" + resultado);
+    // console.log("resultado=" + resultado);
 
-    if (resultado == 1) {
+    if (resultado === 1) {
         label.src = './img/palomita.png';
         cantidad_correctas++;
-        resultado = 0
         tecla_respuesta = '';
-        console.log('cantidad_correctas'+cantidad_correctas);
-        if(cantidad_correctas == 10){
-            tutorialInstruccionVerdes(7)
+        console.log('cantidad_correctas=' + cantidad_correctas);
+        if (cantidad_correctas === 10) {
+            tutorialInstruccionVerdes(12)
         }
     } else {
-        label.src = './img/tacha.png'
+        console.log('incorrecto');
+        label.src = './img/tacha.png';
+        cantidad_correctas = 0
     }
 }
 
-
-
-
+function revisarIterador(iter) {
+    switch (iter) {
+        case 4:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 9:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 14:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 19:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 24:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 29:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 34:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 39:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 44:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 49:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 54:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 59:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 64:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 69:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 74:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 79:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 84:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 89:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 94:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 99:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 104:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 109:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 114:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 119:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 124:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 129:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 134:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 139:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 144:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 149:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 154:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 159:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 164:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 169:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 174:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 179:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 184:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 189:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 194:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 199:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 204:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 209:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 214:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 219:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 224:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 229:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 234:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 239:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 244:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 249:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 254:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 259:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 264:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 269:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 274:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 279:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 284:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 289:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 294:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 299:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 304:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 309:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 314:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 319:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 324:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 329:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 334:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 339:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 344:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 349:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 354:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 359:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 364:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 369:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 374:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 379:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 384:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 389:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 394:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 399:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 404:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 409:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 414:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 419:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 424:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 429:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 434:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 439:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 444:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 449:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 454:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 459:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 464:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 469:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 474:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 479:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 484:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 489:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 494:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 499:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 504:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 509:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 514:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 519:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 524:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 529:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 534:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 539:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 544:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 549:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 554:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 559:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 564:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 569:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 574:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 579:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 584:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 589:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 594:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 599:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 604:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 609:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 614:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 619:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 624:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 629:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        case 634:
+            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        default:
+            label.src = listado_tutorial[iter]; // asignar el path al src
+            break;
+    }
+}

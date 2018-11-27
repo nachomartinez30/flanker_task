@@ -1,0 +1,9 @@
+--------------------------------------------------------
+sujeto=Lorem_ipsum
+fase=1
+tipo_ensayo=V_03.png
+tecla_primer_respuesta=6
+tiempo_respuesta=1.235
+correcto_incorrecto=1
+numero_ensayo=1
+cantidad_respuestas=1

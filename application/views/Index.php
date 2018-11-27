@@ -9,13 +9,13 @@
     <meta charset="utf-8">
     <title></title>
 </head>
-<body   onkeypress="checkKeyPressed(event)">
+<body onkeypress="checkKeyPressed(event)">
 <div id="cuerpo_pagina" align="center" class="borde_inicio">
     <div hidden id="div_encuesta" class="checklist">
         <div class="radio row center-element">
-            <h4>Selecciona con un clic las opciones que describen cómo te sentiste en la realización de la tarea.
-                Debes seleccionar una opción por fila. Tienes 1 minuto para responder. Después de contestar espera las
-                siguientes indicaciones. No pulses ninguna tecla.
+            <h4>Selecciona con un clic: del uno (poco) al nueve (mucho) la opción que mejor describa cómo te sentiste
+                en la realización de la tarea. Debes seleccionar una opción por fila. Tienes 1 minuto para responder.
+                Después de contestar espera las siguientes indicaciones. No pulses ninguna tecla.
             </h4>
             <form id="frm_encuesta" action="../controllers/Encuesta.php" method="post">
 
