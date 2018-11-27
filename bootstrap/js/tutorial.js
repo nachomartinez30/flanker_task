@@ -20,412 +20,412 @@ var contador_ensayos = 0;
 var label = document.getElementById('imagen_tutorial');
 
 var listado_tutorial = ['./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_24.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_05.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_32.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_29.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_08.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_12.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_21.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_04.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_22.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_01.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_30.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_03.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_11.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_08.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_21.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_18.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_31.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_29.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_27.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_25.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_28.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_25.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_24.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_20.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_09.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_06.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_18.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_07.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_19.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_26.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_06.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_20.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_07.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_13.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_15.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_04.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_09.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_12.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_15.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_14.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_30.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_26.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_13.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_02.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_10.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_27.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_17.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_32.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_03.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_02.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_23.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_14.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_05.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_16.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_10.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_01.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_11.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_31.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_23.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_16.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_19.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_28.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_22.png'
-    , 'respuesta'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_17.png']
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_15.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_31.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_17.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_25.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_09.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_03.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_15.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_32.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_29.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_05.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_30.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_24.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_13.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_11.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_20.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_01.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_01.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_19.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_11.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_05.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_03.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_09.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_26.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_28.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_22.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_27.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_07.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_21.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_07.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_23.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_13.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_18.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_17.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_15.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_29.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_22.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_15.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_32.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_31.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_01.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_01.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_28.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_09.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_03.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_05.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_20.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_13.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_11.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_03.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_11.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_25.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_23.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_05.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_09.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_07.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_30.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_18.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_13.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_21.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_19.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_24.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_26.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/azul/A_27.png'
+, 'respuesta'
+, './img/1_3_fase/cruz.png'
+, './img/1_3_fase/pantalla_verde.png'
+, './img/1_3_fase/contornos.png'
+,'./img/1_3_fase/verdes/V_07.png']
 
 function tutorialInstruccionVerdes(num_inst) {
     switch (num_inst) {
         case 0:
-            instrucciones.innerHTML = "<h3>A continuación aparecerá una secuencia de pantallas.<br>Primero una pantalla " +
-                "blanca con una cruz negra al centro;</h3>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(1)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_pantalla_blanca.png';
-            break;
+        instrucciones.innerHTML = "<h3>A continuación aparecerá una secuencia de pantallas.<br>Primero una pantalla " +
+        "blanca con una cruz negra al centro;</h3>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(1)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_pantalla_blanca.png';
+        break;
         case 1:
-            instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde que te indicarán las figuras que se presentarán a continuación.</h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(0)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(2)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_pantalla_colores.png';
-            break;
+        instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde que te indicarán las figuras que se presentarán a continuación.</h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(0)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(2)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_pantalla_colores.png';
+        break;
         case 2:
-            instrucciones.innerHTML = "<h3>Después de las pantallas de color (azul o verde) verás un conjunto de contornos circulares.</h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(1)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(3)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_contornos.png';
-            break;
+        instrucciones.innerHTML = "<h3>Después de las pantallas de color (azul o verde) verás un conjunto de contornos circulares.</h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(1)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(3)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_contornos.png';
+        break;
         case 3:
-            instrucciones.innerHTML = "<h3>Posteriormente dentro de los contornos circulares aparecerán figuras.</h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(2)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(4)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_figuras.png';
-            break;
+        instrucciones.innerHTML = "<h3>Posteriormente dentro de los contornos circulares aparecerán figuras.</h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(2)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(4)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_figuras.png';
+        break;
         case 4:
-            instrucciones.innerHTML = "<h3>Tu tarea será identificar en cada ensayo donde aparece una figura, la cual puede ser un cuadrado o rombo un  círculo u óvalo.</h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_ensayos_simples.png';
-            break;
+        instrucciones.innerHTML = "<h3>Tu tarea será identificar en cada ensayo donde aparece una figura, la cual puede ser un cuadrado o rombo un  círculo u óvalo.</h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_ensayos_simples.png';
+        break;
         case 5:
-            instrucciones.innerHTML = "<h3>A veces solo aparecerá una figura, otras veces puede haber más, pero siempre habrá una figura presente en uno de los contornos circulares (cuadrado, rombo, círculo u óvalo).</h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(4)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(6)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_ensayos_completos.png';
-            break;
+        instrucciones.innerHTML = "<h3>A veces solo aparecerá una figura, otras veces puede haber más, pero siempre habrá una figura presente en uno de los contornos circulares (cuadrado, rombo, círculo u óvalo).</h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(4)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(6)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_ensayos_completos.png';
+        break;
 
         case 6:
-            instrucciones.innerHTML = "<h3>Si un cuadrado aparece dentro de cualquier contorno, oprime la tecla de flecha izquierda <h1>←</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_cuadrado.png';
-            break;
+        instrucciones.innerHTML = "<h3>Si un cuadrado aparece dentro de cualquier contorno, oprime la tecla de flecha izquierda <h1>←</h1></h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_cuadrado.png';
+        break;
         case 7:
-            instrucciones.innerHTML = "<h3>si aparece un rombo dentro de cualquier contorno, oprime la tecla de flecha derecha <h1>→</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_rombo.png';
-            break;
+        instrucciones.innerHTML = "<h3>si aparece un rombo dentro de cualquier contorno, oprime la tecla de flecha derecha <h1>→</h1></h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_rombo.png';
+        break;
         case 8:
-            instrucciones.innerHTML = "<h3>si aparece un óvalo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↑</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_ovalo.png';
-            break;
+        instrucciones.innerHTML = "<h3>si aparece un óvalo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↑</h1></h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_ovalo.png';
+        break;
         case 9:
-            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_circulo.png';
-            break;
+        instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
+        "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
+        "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Siguiente</button>"
+        label.src = './img/tutorial/tuto_circulo.png';
+        break;
 
         case 10:
-            label.src = '';
-            instrucciones.innerHTML = "<h3>Recuerda que antes de que las figuras aparezcan, la pantalla parpadea de color Azul o Verde. El Verde siempre" +
-                " indicará la presencia del rombo o cuadrado, es decir el uso de las teclas</h3> <h1>←   →</h1>   <h3>y el Azul indicará la presencia del círculo u " +
-                "óvalo, el uso de las teclas <h1>↑   ↓</h1>.</h3><h3> Céntrate únicamente en las figuras dentro de los contornos circulares. Ignora " +
-                "cualquier figura que aparezca fuera de los contornos. Trata de responder lo más rápido posible cometiendo el menor número de errores.</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(9)\">Anterior</button>" +
-                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(11)\">Hacer Prueba</button>";
-            break;
+        label.src = '';
+        instrucciones.innerHTML = "<h3>Recuerda que antes de que las figuras aparezcan, la pantalla parpadea de color Azul o Verde. El Verde siempre" +
+        " indicará la presencia del rombo o cuadrado, es decir el uso de las teclas</h3> <h1>←   →</h1>   <h3>y el Azul indicará la presencia del círculo u " +
+        "óvalo, el uso de las teclas <h1>↑   ↓</h1>.</h3><h3> Céntrate únicamente en las figuras dentro de los contornos circulares. Ignora " +
+        "cualquier figura que aparezca fuera de los contornos. Trata de responder lo más rápido posible cometiendo el menor número de errores.</h3>" +
+        "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(9)\">Anterior</button>" +
+        "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(11)\">Hacer Prueba</button>";
+        break;
         case 11:
-            instrucciones.setAttribute('hidden', 'true');
-            cabecera_tutorial.setAttribute('hidden', 'true');
-            iniciarTutorial();
-            sesionIniciada = true;
-            break;
+        instrucciones.setAttribute('hidden', 'true');
+        cabecera_tutorial.setAttribute('hidden', 'true');
+        iniciarTutorial();
+        sesionIniciada = true;
+        break;
         case 12:
-            label.src = ''
-            instrucciones.removeAttribute('hidden');
-            cabecera_tutorial.removeAttribute('hidden');
-            instrucciones.innerHTML = "<h3>Ahora que has comprendido las instrucciones, llama por favor al investigador " +
-                "para comenzar</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>"
-            break;
+        label.src = ''
+        instrucciones.removeAttribute('hidden');
+        cabecera_tutorial.removeAttribute('hidden');
+        instrucciones.innerHTML = "<h3>Ahora que has comprendido las instrucciones, llama por favor al investigador " +
+        "para comenzar</h3>" +
+        "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>"
+        break;
     }
 
 }
@@ -438,17 +438,17 @@ function iniciarTutorial(iterador) {
         switch (num_imagen) {
             case 0:/*cruz*/
 
-                asignarTiempoPorEnsayo(contador_ensayos);
-                break;
+            asignarTiempoPorEnsayo(contador_ensayos);
+            break;
             case 1:/*pantalla color*/
                 //console.log('color');
                 segundos = 1000
                 break;
-            case 2:/*pantalla contornos*/
+                case 2:/*pantalla contornos*/
                 //console.log('contornos');
                 segundos = 1000
                 break;
-            case 3:/*ensayo*/
+                case 3:/*ensayo*/
                 numero_ensayo++;
                 let aux = listado_tutorial[iterador];
                 nombre_ensayo = aux.substr(aux.length - 8, aux.length);
@@ -458,16 +458,16 @@ function iniciarTutorial(iterador) {
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
                 intentosRespuesta = 0;
                 break;
-            case 4:
+                case 4:
                 num_imagen = -1;
                 segundos = 1000;
                 contador_ensayos++;
                 break;
+            }
+            let date_inicio = new Date();
+            tiempo_inicio = date_inicio.getTime();
+            num_imagen++;
         }
-        let date_inicio = new Date();
-        tiempo_inicio = date_inicio.getTime();
-        num_imagen++;
-    }
 
     var iterador = iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
 
@@ -505,583 +505,583 @@ function checkTiempoRespuesta() {
 function asignarTiempoPorEnsayo(contador_ensayos) {
     switch (contador_ensayos) {
         case 1:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 2:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 3:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 4:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 5:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 6:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 7:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 8:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 9:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 10:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 11:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 12:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 13:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 14:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 15:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 16:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 17:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 18:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 19:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 20:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 21:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 22:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 23:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 24:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 25:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 26:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 27:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 28:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 29:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 30:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 31:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 32:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 33:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 34:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 35:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 36:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 37:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 38:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 39:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 40:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 41:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 42:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 43:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 44:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 45:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 46:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 47:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 48:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 49:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 50:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 51:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 52:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 53:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 54:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 55:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 56:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 57:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 58:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 59:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 60:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 61:
-            segundos = 1000
-            break;
+        segundos = 1000
+        break;
         case 62:
-            segundos = 3000
-            break;
+        segundos = 3000
+        break;
         case 63:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         case 64:
-            segundos = 2000
-            break;
+        segundos = 2000
+        break;
         /*FASE 2*/
         case 65:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 66:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 67:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 68:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 69:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 70:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 71:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 72:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 73:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 74:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 75:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 76:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 77:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 78:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 79:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 80:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 81:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 82:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 83:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 84:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 85:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 86:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 87:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 88:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 89:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 90:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 91:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 92:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 93:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 94:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 95:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 96:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 97:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 98:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 99:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 100:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 101:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 102:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 103:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 104:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 105:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 106:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 107:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 108:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 109:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 110:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 111:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 112:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 113:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 114:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 115:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 116:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 117:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 118:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 119:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 120:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 121:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 122:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 123:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 124:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 125:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 126:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 127:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 128:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         /*FASE 3*/
         case 129:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 130:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 131:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 132:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 133:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 134:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 135:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 136:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 137:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 138:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 139:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 140:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 141:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 142:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 143:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 144:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 145:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 146:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 147:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 148:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 149:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 150:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 151:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 152:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 153:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 154:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 155:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 156:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 157:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 158:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 159:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 160:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 161:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 162:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 163:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 164:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 165:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 166:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 167:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 168:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 169:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 170:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 171:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 172:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 173:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 174:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 175:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 176:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 177:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 178:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 179:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 180:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 181:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 182:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 183:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 184:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 185:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 186:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 187:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 188:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 189:
-            segundos = 1000;
-            break;
+        segundos = 1000;
+        break;
         case 190:
-            segundos = 3000;
-            break;
+        segundos = 3000;
+        break;
         case 191:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
         case 192:
-            segundos = 2000;
-            break;
+        segundos = 2000;
+        break;
     }
 
 }
@@ -1091,581 +1091,581 @@ function checkRespuestasFase1_3(tecla, imagen) {
 
     switch (imagen) {
         case'A_01.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_10.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_11.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_12.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_13.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_14.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_15.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_16.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_17.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_18.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_19.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_02.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_20.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_21.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_22.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_23.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_24.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_25.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_26.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_27.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_28.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_29.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_03.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_30.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_31.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_32.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '2') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_04.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_05.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_06.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_07.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_08.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'A_09.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '8') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_01.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_10.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_11.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_12.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_13.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_14.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_15.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_16.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_17.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_18.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_19.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_02.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_20.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_21.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_22.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_23.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_24.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_25.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_26.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_27.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_28.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_29.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_03.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_30.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_31.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_32.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '4') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_04.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_05.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_06.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_07.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_08.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
         case'V_09.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
+        if (tecla == '6') {
+            /*CORRECTO*/
+            resultado = 1;
+        } else {
+            /*INCORRECTO*/
+            resultado = 0;
+        }
+        break;
     }
     // console.log("resultado=" + resultado);
 
@@ -1687,388 +1687,196 @@ function checkRespuestasFase1_3(tecla, imagen) {
 function revisarIterador(iter) {
     switch (iter) {
         case 4:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 9:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 14:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 19:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 24:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 29:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 34:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 39:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 44:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 49:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 54:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 59:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 64:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 69:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 74:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 79:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 84:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 89:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 94:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 99:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 104:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 109:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 114:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 119:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 124:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 129:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 134:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 139:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 144:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 149:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 154:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 159:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 164:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 169:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 174:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 179:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 184:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 189:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 194:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 199:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 204:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 209:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 214:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 219:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 224:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 229:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 234:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 239:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 244:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 249:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 254:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 259:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 264:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 269:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 274:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 279:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 284:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 289:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 294:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 299:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 304:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 309:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         case 314:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 319:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 324:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 329:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 334:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 339:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 344:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 349:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 354:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 359:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 364:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 369:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 374:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 379:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 384:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 389:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 394:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 399:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 404:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 409:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 414:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 419:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 424:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 429:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 434:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 439:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 444:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 449:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 454:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 459:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 464:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 469:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 474:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 479:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 484:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 489:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 494:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 499:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 504:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 509:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 514:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 519:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 524:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 529:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 534:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 539:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 544:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 549:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 554:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 559:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 564:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 569:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 574:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 579:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 584:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 589:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 594:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 599:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 604:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 609:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 614:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 619:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 624:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 629:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
-        case 634:
-            checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
-            break;
+        checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+        break;
         default:
             label.src = listado_tutorial[iter]; // asignar el path al src
             break;
+        }
     }
-}

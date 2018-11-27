@@ -1284,20 +1284,20 @@ function iniciarSesion(iterador) {
      *******/
 
     /*testing*/
-    // switch (iterador) {
-    //     case 258:/*Primer ENCUESTA*/
-    //         segundos = 8000;
-    //         break;
-    //     case 581: /*Segunda ENCUESTA*/
-    //         segundos = 8000;
-    //         break;
-    //     case 839:/*Tercer ENCUESTA*/
-    //         segundos = 8000;
-    //         break;
-    //     default:
-    //         segundos = 10;
-    //         break;
-    // }
+    switch (iterador) {
+        case 258:/*Primer ENCUESTA*/
+            segundos = 8000;
+            break;
+        case 581: /*Segunda ENCUESTA*/
+            segundos = 8000;
+            break;
+        case 839:/*Tercer ENCUESTA*/
+            segundos = 8000;
+            break;
+        default:
+            segundos = 10;
+            break;
+    }
 
 
     /*if (iterador < 259) {

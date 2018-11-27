@@ -48,7 +48,7 @@
                 <div class="container raddio">
                     <label class="col-md-1">
                         1
-                        <input type="radio" name="psico_1" value="1">
+                        <input class="radioButton" type="radio" name="psico_1" value="1">
                     </label>
 
                     <label class="col-md-1">
