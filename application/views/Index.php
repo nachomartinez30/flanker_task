@@ -46,43 +46,43 @@
 
 
                 <div class="container raddio">
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         1
                         <input class="radioButton" type="radio" name="psico_1" value="1">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         2
                         <input type="radio" name="psico_1" value="2">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         3
                         <input type="radio" name="psico_1" value="3">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         4
-                        <input type="radio" name="psico_1" value="4">
+                        <input  type="radio" name="psico_1" value="4">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         5
                         <input type="radio" name="psico_1" value="5">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         6
                         <input type="radio" name="psico_1" value="6">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         7
                         <input type="radio" name="psico_1" value="7">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         8
                         <input type="radio" name="psico_1" value="8">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         9
                         <input type="radio" name="psico_1" value="9">
                     </label>
@@ -118,45 +118,45 @@
 
 
                 <div class="container raddio">
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         1
                         <input type="radio" name="psico_2" value="1">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         2
                         <input type="radio" name="psico_2" value="2">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         3
                         <input type="radio" name="psico_2" value="3">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         4
                         <input type="radio" name="psico_2" value="4">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
 
                         5
                         <input type="radio" name="psico_2" value="5">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
 
                         6
                         <input type="radio" name="psico_2" value="6">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         7
                         <input type="radio" name="psico_2" value="7">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         8
                         <input type="radio" name="psico_2" value="8">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         9
                         <input type="radio" name="psico_2" value="9">
                     </label>
@@ -189,45 +189,45 @@
 
 
                 <div class="container raddio">
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         1
                         <input type="radio" name="psico_3" value="1">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         2
                         <input type="radio" name="psico_3" value="2">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         3
                         <input type="radio" name="psico_3" value="3">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         4
                         <input type="radio" name="psico_3" value="4">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
 
                         5
                         <input type="radio" name="psico_3" value="5">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
 
                         6
                         <input type="radio" name="psico_3" value="6">
                     </label>
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         7
                         <input type="radio" name="psico_3" value="7">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         8
                         <input type="radio" name="psico_3" value="8">
                     </label>
 
-                    <label class="col-md-1">
+                    <label style="font-size: 25px" class="col-md-1">
                         9
                         <input type="radio" name="psico_3" value="9">
                     </label>
