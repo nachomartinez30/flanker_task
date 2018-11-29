@@ -10,7 +10,7 @@ class Ensayos extends CI_Controller
 
         $this->load->model('ensayos_model');
 //        var_dump($_GET);
-        $data['sujeto'] = SUJETO_TEST;
+        $data['sujeto'] = $_SESSION['sujeto'];
         $data['tipo_ensayo'] = $_GET['tipo_ensayo'];
         $data['fase'] = $_GET['fase'];
         $data['tiempo_respuesta'] = $_GET['tiempo_respuesta'];
@@ -23,7 +23,7 @@ class Ensayos extends CI_Controller
 
     public function write_log()
     {
-        $sujeto = SUJETO_TEST;
+        $sujeto = $_SESSION['sujeto'];
         $tipo_ensayo = $_GET['tipo_ensayo'];
         $fase = $_GET['fase'];
         $tecla_primer_respuesta = $_GET['tecla_primer_respuesta'];
