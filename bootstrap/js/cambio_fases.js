@@ -40,7 +40,7 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = /*10 * 60000*/8000;
+var segundos = 10 * 60000/*8000*/;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
@@ -1766,7 +1766,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case'A_02.png':
-            if (tecla == '2') {
+            if (tecla == '8') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2249,7 +2249,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
 function checkRespuestasFase2(tecla, imagen) {
     switch (imagen) {
         case 'AA_1.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2262,7 +2262,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'AA_4.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2275,7 +2275,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DA_3.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2288,7 +2288,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DN_2.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2327,7 +2327,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'AA_2.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2340,7 +2340,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DA_1.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2353,7 +2353,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DA_4.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2366,7 +2366,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DN_3.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2379,7 +2379,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'NA_2.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2392,7 +2392,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'AA_3.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2405,7 +2405,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DA_2.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2418,7 +2418,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DN_1.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2431,7 +2431,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'DN_4.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2444,7 +2444,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'NA_3.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2665,7 +2665,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_3.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2678,7 +2678,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_6.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2691,7 +2691,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_1.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2704,7 +2704,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_4.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2717,7 +2717,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_7.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2730,7 +2730,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_1.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2743,7 +2743,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_4.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2756,7 +2756,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_7.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2769,7 +2769,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_2.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2782,7 +2782,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_5.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2795,7 +2795,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_8.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2808,7 +2808,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_2.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2821,7 +2821,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_5.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2834,7 +2834,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SA_8.png':
-            if (tecla === '4') {
+            if (tecla === '6') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2847,7 +2847,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_3.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;
@@ -2860,7 +2860,7 @@ function checkRespuestasFase2(tecla, imagen) {
             }
             break;
         case 'SN_6.png':
-            if (tecla === '6') {
+            if (tecla === '4') {
                 //console.log('RESPUESTA CORRECTA!');
                 label.src = './img/palomita.png';
                 respuesta = 1;

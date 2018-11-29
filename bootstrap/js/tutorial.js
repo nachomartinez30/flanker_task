@@ -1190,7 +1190,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
         }
         break;
         case'A_02.png':
-        if (tecla == '2') {
+        if (tecla == '8') {
             /*CORRECTO*/
             resultado = 1;
         } else {
