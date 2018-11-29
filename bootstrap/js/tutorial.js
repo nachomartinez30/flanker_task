@@ -1,4 +1,4 @@
-var cantidad_correctas = 4;
+var cantidad_correctas = 0;
 var limite_correctas = 5;
 var tecla_respuesta;
 var tecla_presionada;
