@@ -3185,7 +3185,7 @@ function revisarIterador(iter) {
         case 1:
             /*PANTALLA RECORDATORIA*/
             // segundos = 30000;
-            segundos = 7000;
+            segundos = 20000;
             label.src = listado_primera_fase[iter];
             break;
         /***********************************************************FINAL FASE 1*****************************************************/
