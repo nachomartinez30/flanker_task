@@ -3447,7 +3447,7 @@ function revisarIterador(iter) {
                 '</h2>'
             instrucciones.removeAttribute('hidden');
             break;
-        case 583:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 583:/*PANTALLA NEGRA TERCERA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
@@ -3469,8 +3469,8 @@ function revisarIterador(iter) {
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            // segundos = 120000;
-            segundos = 8000;
+            segundos = 60000;
+            // segundos = 8000;
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
@@ -3480,7 +3480,7 @@ function revisarIterador(iter) {
                 '<br><br>Gracias por tu participación.</h2>';
             instrucciones.removeAttribute('hidden');
             break;
-        case 842:/*PANTALLA NEGRA SEGUNDA FASE*/
+        case 842:/*PANTALLA NEGRA FINAL DE FASE*/
             instrucciones.setAttribute('hidden', 'true');
             // console.log(listado_primera_fase[iter]);
             label.src = listado_primera_fase[iter];
