@@ -3470,7 +3470,6 @@ function revisarIterador(iter) {
             enviarEncuesta(fase);
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 60000;
-            // segundos = 8000;
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
