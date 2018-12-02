@@ -40,855 +40,90 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = 10 * 60000/*8000*/;
+var segundos = /*10 * 60000*/2000;
 
 
-var listado_primera_fase = ['./img/pantalla_negra.png'
-    , './img/figuras_flechas.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_03.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_01.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_19.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_21.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_26.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_27.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_32.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_12.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_20.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_17.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_30.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_29.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_11.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_24.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_21.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_04.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_08.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_04.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_15.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_22.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_09.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_19.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_20.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_26.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_24.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_32.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_14.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_02.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_25.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_17.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_05.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_18.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_15.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_05.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_18.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_23.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_29.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_06.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_07.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_13.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_01.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_22.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_11.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_07.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_06.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_14.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_28.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_08.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_23.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_16.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_30.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_13.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_31.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_25.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_27.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_12.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_31.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_10.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_09.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_10.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_02.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_03.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_16.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_28.png'
-    , 'ENCUESTA'
-    , 'instrucciones'
-    , './img/pantalla_negra.png',
-    /*FINAL PRIMERA FASE*/
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_6.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_6.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_5.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_7.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_5.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_8.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_6.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_8.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AA_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_7.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_5.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_8.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_7.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_6.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AND_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DN_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_1.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NCS_7.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ACS_8.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAI_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SN_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/ANI_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/DA_2.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/AAD_3.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_naranja.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/NA_4.png',
-    'respuesta',
-    './img/2_fase/cruz.png',
-    './img/2_fase/pantalla_amarilla.png',
-    './img/1_3_fase/contornos.png',
-    './img/2_fase/ensayos/SA_5.png',
-    'respuesta'
-    /*FINAL SEGUNDA FASE*/
-    , 'ENCUESTA'
-    , 'instrucciones'
-    , './img/pantalla_negra.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_14.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_25.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_10.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_28.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_01.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_26.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_23.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_14.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_01.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_24.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_30.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_16.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_13.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_06.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_20.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_12.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_03.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_19.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_23.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_31.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_32.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_04.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_11.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_06.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_13.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_20.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_15.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_05.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_17.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_30.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_29.png'
-    , './img/1_3_fase/cruz.png'
+var listado_primera_fase = ['./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_05.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_31.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_11.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_27.png'
+    , './img/imagenes_prueba/F_01.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_32.png'
+    , './img/imagenes_prueba/F_10.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_21.png'
+    , './img/imagenes_prueba/F_02.png'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_29.png'
-    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_03.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_02.png'
+    , './img/imagenes_prueba/F_03.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_09.png'
+    , './img/imagenes_prueba/F_04.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_07.png'
+    , './img/imagenes_prueba/F_05.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_28.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_16.png'
+    , './img/imagenes_prueba/F_06.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_18.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_15.png'
+    , './img/imagenes_prueba/F_07.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_22.png'
+    , './img/imagenes_prueba/F_08.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_25.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_24.png'
-    , './img/1_3_fase/cruz.png'
+    , './img/imagenes_prueba/F_09.png'
+/*-----------------------------------------------------------------------------------------*/
+    ,'./img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_08.png'
+    , './img/imagenes_prueba/F_01.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_17.png'
+    , './img/imagenes_prueba/F_10.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_26.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_19.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_09.png'
+    , './img/imagenes_prueba/F_02.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_07.png'
+    , './img/imagenes_prueba/F_03.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_10.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_22.png'
+    , './img/imagenes_prueba/F_04.png'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_21.png'
-    , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
-    , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_18.png'
-    , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_04.png'
+    , './img/imagenes_prueba/F_05.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_27.png'
+    , './img/imagenes_prueba/F_06.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/azul/A_02.png'
+    , './img/imagenes_prueba/F_07.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_08.png'
+    , './img/imagenes_prueba/F_08.png'
     , './img/1_3_fase/cruz.png'
     , './img/1_3_fase/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_12.png',
-    'ENCUESTA',
-    'instrucciones'
-    ,'./img/pantalla_negra.png'
-    ,'termino_sesion'
+    , './img/imagenes_prueba/F_09.png'
 ]
 
 
@@ -898,26 +133,16 @@ var num_imagen = 0;
 var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
-    // console.log("***-------INICIO-------***");
-    // console.log("iterador=" + iterador);
-    // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
-    // console.log('numero de label=' + num_imagen);
-    //console.log('IMAGEN=' + listado_tutorial[iterador]);
-    if (iterador != 'undefined' && iterador > 1)/*CRUZ NEGRA*/{
+    if (iterador != 'undefined')/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
             case 0:/*cruz*/
-                // console.log('cruz');
-                asignarTiempoPorEnsayo(contador_ensayos);
-                /*SI NO ES PANTALLA NEGRA, INSTRUCCION o ENCUESTA*/
-                if (isEncuestaPantallaNegraInstruccion(iterador) === false) {
-                    if (fase != 2) {/*SI NO ES FASE 2*/
-                        respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
-                    }
-                    // console.log('previo log ='+iterador);
-                    sendData();
-                    respuesta_valida_fase1_2_3 = 0;
+                if (fase != 2) {/*SI NO ES FASE 2*/
+                    respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
                 }
+                // console.log('previo log ='+iterador);
+                sendData();
+                respuesta_valida_fase1_2_3 = 0;
                 break;
             case 1:/*pantalla color*/
                 //console.log('color');
@@ -928,30 +153,19 @@ function iniciarSesion(iterador) {
                 segundos = 1000
                 break;
             case 3:/*ensayo*/
-                /*EXTRACCION IMAGEN FASE 2*/
                 numero_ensayo++;
-                if (fase === 2) {
-                    let aux = listado_primera_fase[iterador];
-                    nombre_ensayo = aux.substr(21, aux.length);
-                    //console.log(nombre_ensayo);
-                    segundos = 4000;
-                } else {
-                    let aux = listado_primera_fase[iterador];
-                    nombre_ensayo = aux.substr(aux.length - 8, aux.length);
-                    num_imagen = -1;
-                    segundos = 5000;
-                    contador_ensayos++;
-                }
-
+                let aux = listado_primera_fase[iterador];
+                nombre_ensayo = aux.substr(aux.length - 8, aux.length);
+                //console.log(nombre_ensayo);
+                segundos = 6000;
                 //console.log("***-------FIN ENSAYO-------***");
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
+
+                num_imagen = -1;
+                contador_ensayos++
                 intentosRespuesta = 0;
                 break;
-            case 4:/*ensayo fase 2*/
-                num_imagen = -1;
-                segundos = 1000;
-                contador_ensayos++;
-                break;
+
         }
         let date_inicio = new Date();
         tiempo_inicio = date_inicio.getTime();
@@ -991,13 +205,13 @@ function iniciarSesion(iterador) {
     }
 */
 
- /*   if (iterador < 841) {
-        // console.log('iterador= ' + iterador);
-        segundos = 10;
-    }*/
+    /*   if (iterador < 841) {
+           // console.log('iterador= ' + iterador);
+           segundos = 10;
+       }*/
 
 
-    // console.log('***DURACION SEGUNDOS =' + segundos);
+    console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
         if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima label
@@ -1057,24 +271,6 @@ function aleatoriosNoRepetidos(cantidad) /*AUTHOR ArtEze*/ {
         array = insertarEn(array, i, Math.random() * (cantidad + 1))
     }
     return array
-}
-
-function enviarEncuesta(fase) {
-    let fila_1 = $('input[name=psico_1]:checked').val();
-    let fila_2 = $('input[name=psico_2]:checked').val();
-    let fila_3 = $('input[name=psico_3]:checked').val();
-
-    $.ajax({
-        type: 'post',
-        url: 'encuesta?fase=' + fase + '&fila_1=' + fila_1 + '&fila_2=' + fila_2 + '&fila_3=' + fila_3,
-        data: $('frm_encuesta').serialize(),
-        success: function (res) {
-            //console.log("Resultado encuesta=" + res);
-        }
-    });
-    $('input[name=psico_1]').prop("checked", false);
-    $('input[name=psico_2]').prop("checked", false);
-    $('input[name=psico_3]').prop("checked", false);
 }
 
 function asignarTiempoPorEnsayo(contador_ensayos) {
@@ -1663,298 +859,10 @@ function asignarTiempoPorEnsayo(contador_ensayos) {
 
 function checkRespuestasFase1_3(tecla, imagen) {
     let resultado = 0;
-    // console.log('TECLA=' + tecla);
-    // console.log('imagen=' + imagen);
+    console.log('TECLA=' + tecla);
+    console.log('imagen=' + imagen);
     switch (imagen) {
-        case'A_01.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_10.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_11.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_12.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_13.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_14.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_15.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_16.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_17.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_18.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_19.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_02.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_20.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_21.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_22.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_23.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_24.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_25.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_26.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_27.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_28.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_29.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_03.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_30.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_31.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_32.png':
-            if (tecla == '2') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_04.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_05.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_06.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_07.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_08.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'A_09.png':
-            if (tecla == '8') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_01.png':
+        case 'F_01.png':
             if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
@@ -1963,7 +871,34 @@ function checkRespuestasFase1_3(tecla, imagen) {
                 resultado = 0;
             }
             break;
-        case'V_10.png':
+        case 'F_10.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_02.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_03.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_04.png':
             if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
@@ -1972,61 +907,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
                 resultado = 0;
             }
             break;
-        case'V_11.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_12.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_13.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_14.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_15.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_16.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_17.png':
+        case 'F_05.png':
             if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
@@ -2035,7 +916,16 @@ function checkRespuestasFase1_3(tecla, imagen) {
                 resultado = 0;
             }
             break;
-        case'V_18.png':
+        case 'F_06.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_07.png':
             if (tecla == '4') {
                 /*CORRECTO*/
                 resultado = 1;
@@ -2044,197 +934,17 @@ function checkRespuestasFase1_3(tecla, imagen) {
                 resultado = 0;
             }
             break;
-        case'V_19.png':
+        case 'F_08.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_09.png':
             if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_02.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_20.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_21.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_22.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_23.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_24.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_25.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_26.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_27.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_28.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_29.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_03.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_30.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_31.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_32.png':
-            if (tecla == '4') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_04.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_05.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_06.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_07.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_08.png':
-            if (tecla == '6') {
-                /*CORRECTO*/
-                resultado = 1;
-            } else {
-                /*INCORRECTO*/
-                resultado = 0;
-            }
-            break;
-        case'V_09.png':
-            if (tecla == '6') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2246,843 +956,6 @@ function checkRespuestasFase1_3(tecla, imagen) {
     return resultado;
 }
 
-function checkRespuestasFase2(tecla, imagen) {
-    switch (imagen) {
-        case 'AA_1.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AA_4.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DA_3.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DN_2.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NA_1.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NA_4.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AA_2.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DA_1.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DA_4.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DN_3.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NA_2.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AA_3.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DA_2.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DN_1.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'DN_4.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NA_3.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAD_1.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAD_4.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAI_3.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AND_2.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ANI_1.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ANI_4.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAD_2.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAI_1.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAI_4.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AND_3.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ANI_2.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAD_3.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AAI_2.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AND_1.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'AND_4.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ANI_3.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_3.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_6.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_1.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_4.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_7.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_1.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_4.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_7.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_2.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_5.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_8.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_2.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_5.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SA_8.png':
-            if (tecla === '6') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_3.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'SN_6.png':
-            if (tecla === '4') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_1.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_4.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_7.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_2.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_5.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_8.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_2.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_5.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_8.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_3.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_6.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_3.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'ACS_6.png':
-            if (tecla === '8') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_1.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_4.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-        case 'NCS_7.png':
-            if (tecla === '2') {
-                //console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
-                respuesta = 1;
-            } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
-                respuesta = 0;
-            }
-            break;
-    }
-    return respuesta;
-}
 
 function sendData() {
     // console.log('---------------------------------------------------------------');
@@ -3098,12 +971,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -3111,12 +984,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
@@ -3180,14 +1053,9 @@ function isEncuestaPantallaNegraInstruccion(numero) {
 }
 
 function revisarIterador(iter) {
-    console.log('ITERADOR= '+iter);
+    // console.log('ITERADOR= ' + iter);
     switch (iter) {
-        case 1:
-            /*PANTALLA RECORDATORIA*/
-            // segundos = 30000;
-            segundos = 20000;
-            label.src = listado_primera_fase[iter];
-            break;
+
         /***********************************************************FINAL FASE 1*****************************************************/
         case 258:/*MUESTRA PRIMERA ENCUESTA MANEKINS*/
             num_imagen = 0;
