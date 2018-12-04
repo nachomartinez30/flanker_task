@@ -343,13 +343,13 @@ var listado_tutorial = ['./img/1_3_fase/cruz.png'
 function tutorialInstruccionVerdes(num_inst) {
     switch (num_inst) {
         case 0:
-            instrucciones.innerHTML = "<h3>A continuación aparecerá una secuencia de pantallas.<br>Primero una pantalla " +
+            instrucciones.innerHTML = "<h3>A continuación aparecerán una secuencia pantallas distintas:<br>Primero una pantalla " +
                 "blanca con una cruz negra al centro;</h3>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(1)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_pantalla_blanca.png';
             break;
         case 1:
-            instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde que te indicarán las figuras que se presentarán a continuación.</h3>" +
+            instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde .</h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(0)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(2)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_pantalla_colores.png';
@@ -367,59 +367,52 @@ function tutorialInstruccionVerdes(num_inst) {
             label.src = './img/tutorial/tuto_figuras.png';
             break;
         case 4:
-            instrucciones.innerHTML = "<h3>Tu tarea será identificar en cada ensayo donde aparece una figura, la cual puede ser un cuadrado o rombo un  círculo u óvalo.</h3>" +
+            instrucciones.innerHTML = "<h3>Las figuras que pueden aparecer son: un cuadrado, rombo, un círculo y\n" +
+                "un óvalo. Cada figura estará asociada a una respuesta específica:</h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_ensayos_simples.png';
             break;
+
         case 5:
-            instrucciones.innerHTML = "<h3>A veces solo aparecerá una figura, otras veces puede haber más, pero siempre habrá una figura presente en uno de los contornos circulares (cuadrado, rombo, círculo u óvalo).</h3>" +
+            instrucciones.innerHTML = "<h3>Para el cuadrado la tecla de flecha izquierda <h1>←</h1></h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(4)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(6)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_ensayos_completos.png';
-            break;
-
-        case 6:
-            instrucciones.innerHTML = "<h3>Si un cuadrado aparece dentro de cualquier contorno, oprime la tecla de flecha izquierda <h1>←</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_cuadrado.png';
             break;
-        case 7:
-            instrucciones.innerHTML = "<h3>si aparece un rombo dentro de cualquier contorno, oprime la tecla de flecha derecha <h1>→</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
+        case 6:
+            instrucciones.innerHTML = "<h3>Para el rombo la tecla de flecha derecha <h1>→</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_rombo.png';
             break;
-        case 8:
-            instrucciones.innerHTML = "<h3>si aparece un óvalo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↑</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
+        case 7:
+            instrucciones.innerHTML = "<h3>Para el óvalo la tecla de flecha arriba <h1>↑</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_ovalo.png';
             break;
-        case 9:
-            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Siguiente</button>"
+        case 8:
+            instrucciones.innerHTML = "<h3>Y para el círculo la tecla de flecha abajo <h1>↓</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_circulo.png';
             break;
 
-        case 10:
+        case 9:
             label.src = '';
-            instrucciones.innerHTML = "<h3>Recuerda que antes de que las figuras aparezcan, la pantalla parpadea de color Azul o Verde. El Verde siempre" +
-                " indicará la presencia del rombo o cuadrado, es decir el uso de las teclas</h3> <h1>←   →</h1>   <h3>y el Azul indicará la presencia del círculo u " +
-                "óvalo, el uso de las teclas <h1>↑   ↓</h1>.</h3><h3> Céntrate únicamente en las figuras dentro de los contornos circulares. Ignora " +
-                "cualquier figura que aparezca fuera de los contornos. Trata de responder lo más rápido posible cometiendo el menor número de errores.</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(9)\">Anterior</button>" +
-                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(11)\">Hacer Prueba</button>";
+            instrucciones.innerHTML = "<h3>A continuación se te presentaran unos pocos ensayos para que\n" +
+                "practiques y aprendas la respuesta asociada a cada figura .</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Hacer Prueba</button>";
             break;
-        case 11:
+        case 10: /*PRUEBA CON ENSAYOS SIMPLES*/
             instrucciones.setAttribute('hidden', 'true');
             cabecera_tutorial.setAttribute('hidden', 'true');
             iniciarTutorial();
             sesionIniciada = true;
             break;
-        case 12:
+        case 11:
             label.src = ''
             instrucciones.removeAttribute('hidden');
             cabecera_tutorial.removeAttribute('hidden');

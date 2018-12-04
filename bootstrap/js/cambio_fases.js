@@ -1980,12 +1980,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -1993,12 +1993,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
@@ -2090,13 +2090,13 @@ function revisarIterador(iter) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = ' <h2> A continuación las imágenes cambiarán de color, pero tú deberás seguir ' +
-                'contestando como hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un ' +
-                'segundo y una cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará. ' +
+            instrucciones.innerHTML = ' <h2> A continuación iniciará una nueva fase, deberás seguir contestando como ' +
+                'hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un segundo y una ' +
+                'cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.' +
                 '<br>Trata de responder lo más rápido posible.' +
                 '</h2>' +
-                '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de fijar' +
-                ' la mirada en la cruz y estar atento a que la fase comience.\n' +
+                '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de' +
+                'fijar la mirada en la cruz y estar atento a que la fase comience.' +
                 '</h3></p>';
             instrucciones.removeAttribute('hidden');
             break;
@@ -2225,11 +2225,11 @@ function revisarIterador(iter) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = '<h2> A continuación la tarea volverá a ser igual que al inicio. No habrá señales' +
-                ' que indiquen si tu respuesta fue correcta o incorrecta. Intenta contestar lo mejor y mas rápido que puedas.<br><br>' +
-                'En seguida verás una pantalla negra con una cruz al centro, trata de fijar la mirada en la cruz y estar' +
-                ' atento a que la fase comience.\n' +
-
+            instrucciones.innerHTML = '<h2> A continuación iniciará una nueva fase, deberás seguir contestando como ' +
+                'hasta ahora. No habrá señales que indiquen si tu respuesta fue correcta o incorrecta. Intenta contestar' +
+                ' lo mejor y mas rapido que puedas.' +
+                '<br><br> En seguida verás una pantalla negra con una cruz al centro, trata de fijar la mirada en la ' +
+                'cruz y estar atento a que la fase comience.' +
                 '</h2>'
             instrucciones.removeAttribute('hidden');
             break;
