@@ -177,7 +177,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , 'instrucciones'
     , './img/pantalla_negra.png',
     /*FINAL PRIMERA FASE*/
-    , './img/ensayos/cruz.png'
+    './img/ensayos/cruz.png'
     , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_27.png'
@@ -483,10 +483,11 @@ var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
     // console.log("***-------INICIO-------***");
-    // console.log("iterador=" + iterador);
+    console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
-    // console.log('numero de label=' + num_imagen);
-    //console.log('IMAGEN=' + listado_tutorial[iterador]);
+    console.log('numero de imagen=' + num_imagen);
+    // console.log('IMAGEN=' + listado_primera_fase[iterador]);
+    // console.log('FASE = '+fase);
     if (iterador != 'undefined' && iterador > 1)/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
@@ -575,13 +576,13 @@ function iniciarSesion(iterador) {
     }
 */
 
-    if (iterador < 138) {
+    if (iterador < 133) {
         // console.log('iterador= ' + iterador);
         segundos = 10;
     }
 
 
-    // console.log('***DURACION SEGUNDOS =' + segundos);
+    console.log('***DURACION SEGUNDOS =' + segundos);
     // llamada recursiva con timer
     setTimeout(function () {
         if (iterador < listado_primera_fase.length - 1) { // romper la recursión si se llega a la ultima label
@@ -2061,7 +2062,7 @@ function isEncuestaPantallaNegraInstruccion(numero) {
 }
 
 function revisarIterador(iter) {
-    console.log('ITERADOR= ' + iter);
+    // console.log('ITERADOR= ' + iter);
     switch (iter) {
         case 1:
             /*PANTALLA RECORDATORIA*/
@@ -2107,100 +2108,100 @@ function revisarIterador(iter) {
             numero_ensayo = 0;
             break;
         /*RESPUESTAS FASE 2*/
-        case 138:
+        case 137:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 143:
+        case 142:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 148:
+        case 147:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 153:
+        case 152:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 158:
+        case 157:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 163:
+        case 162:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 168:
+        case 167:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 173:
+        case 172:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 178:
+        case 177:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 183:
+        case 182:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 188:
+        case 187:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 193:
+        case 192:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 198:
+        case 197:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 203:
+        case 202:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 208:
+        case 207:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 213:
+        case 212:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 218:
+        case 217:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 223:
+        case 222:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 228:
+        case 227:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 233:
+        case 232:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 238:
+        case 237:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 243:
+        case 242:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 248:
+        case 247:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 253:
+        case 252:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 258:
+        case 257:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 263:
+        case 262:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 268:
+        case 267:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 273:
+        case 272:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 278:
+        case 277:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 283:
+        case 282:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 288:
+        case 287:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
-        case 293:
+        case 292:
             respuesta_valida_fase1_2_3 = checkRespuestasFase2(tecla_respuesta, nombre_ensayo);
             break;
 
