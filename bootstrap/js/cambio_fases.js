@@ -576,7 +576,7 @@ function iniciarSesion(iterador) {
     }
 */
 
-    if (iterador < 133) {
+    if (iterador < 296) {
         // console.log('iterador= ' + iterador);
         segundos = 10;
     }
@@ -2021,11 +2021,11 @@ function isEncuestaPantallaNegraInstruccion(numero) {
             /* ENCUESTA*/
             resultado = true;
             break;
-        case 294:
+        case 293:
             /* ENCUESTA*/
             resultado = true;
             break;
-        case 425:
+        case 424:
             /* ENCUESTA*/
             resultado = true;
             break;
@@ -2033,11 +2033,11 @@ function isEncuestaPantallaNegraInstruccion(numero) {
             /* instrucciones*/
             resultado = true;
             break;
-        case 295:
+        case 294:
             /* instrucciones*/
             resultado = true;
             break;
-        case 426:
+        case 425:
             /* instrucciones*/
             resultado = true;
             break;
@@ -2045,11 +2045,11 @@ function isEncuestaPantallaNegraInstruccion(numero) {
             /*pantalla_negra*/
             resultado = true;
             break;
-        case 296:
+        case 295:
             /*pantalla_negra*/
             resultado = true;
             break;
-        case 427:
+        case 426:
             /*pantalla_negra*/
             resultado = true;
             break;
