@@ -576,10 +576,10 @@ function iniciarSesion(iterador) {
     }
 */
 
-    /*if (iterador < 296) {
+    if (iterador < 425) {
         // console.log('iterador= ' + iterador);
         segundos = 10;
-    }*/
+    }
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -1980,12 +1980,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-            '&fase=' + fase +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&fase=' + fase +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -1993,12 +1993,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-            '&fase=' + fase +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&fase=' + fase +
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
@@ -2206,7 +2206,7 @@ function revisarIterador(iter) {
             break;
 
         /***********************************************************FINAL FASE 2*****************************************************/
-        case 294:/*SEGUNDA ENCUESTA*/
+        case 293:/*SEGUNDA ENCUESTA*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 60000;
@@ -2215,7 +2215,7 @@ function revisarIterador(iter) {
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 295:/*INSTRUCCIONES  DE FASE 3*/
+        case 294:/*INSTRUCCIONES  DE FASE 3*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
@@ -2233,7 +2233,7 @@ function revisarIterador(iter) {
                 '</h2>'
             instrucciones.removeAttribute('hidden');
             break;
-        case 296:/*PANTALLA NEGRA TERCERA FASE*/
+        case 295:/*PANTALLA NEGRA TERCERA FASE*/
             instrucciones.setAttribute('hidden', 'true');
             num_imagen = 0;
             segundos = 120000;
@@ -2241,7 +2241,7 @@ function revisarIterador(iter) {
             numero_ensayo = 0;
             break;
         /***********************************************************FINAL FASE 3*****************************************************/
-        case 425:/*TERCERA ENCUESTA MANEKINS*/
+        case 424:/*TERCERA ENCUESTA MANEKINS*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 60000;
@@ -2250,7 +2250,7 @@ function revisarIterador(iter) {
             /*MUESTRA LA ENCUESTA*/
             encuesta.removeAttribute('hidden');
             break;
-        case 426:/*INSTRUCCIONES DE FASE 3*/
+        case 425:/*INSTRUCCIONES DE FASE 3*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
@@ -2265,7 +2265,7 @@ function revisarIterador(iter) {
                 '<br><br>Gracias por tu participación.</h2>';
             instrucciones.removeAttribute('hidden');
             break;
-        case 427:/*PANTALLA NEGRA FINAL DE FASE*/
+        case 426:/*PANTALLA NEGRA FINAL DE FASE*/
             instrucciones.setAttribute('hidden', 'true');
             // console.log(listado_primera_fase[iter]);
             label.src = listado_primera_fase[iter];
@@ -2275,7 +2275,7 @@ function revisarIterador(iter) {
             /*REINICIO DE LA SESION*/
             break;
         // numero_ensayo = 0;
-        case 843:/*MUESTRA EL FINAL DE LA SESION*/
+        case 427:/*MUESTRA EL FINAL DE LA SESION*/
             segundos = 8000;
             cuerpo_pagina.classList.remove('borde');
             cuerpo_pagina.classList.add('borde_inicio');
