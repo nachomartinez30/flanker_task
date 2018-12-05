@@ -2290,10 +2290,10 @@ function revisarIterador(iter) {
     }
 }
 
-function getIdsArreglo() {
+function getIdsArreglo(listado) {
     let i = 0;
-    listado_primera_fase.forEach(function () {
-        console.log(i + '= ' + listado_primera_fase[i]);
+    listado.forEach(function () {
+        console.log(i + '= ' + listado[i]);
         i++;
     })
 }
