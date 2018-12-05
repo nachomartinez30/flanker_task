@@ -1,4 +1,5 @@
 var cantidad_correctas = 0;
+var segunda_cantidad_correctas = 0;
 var limite_correctas = 5;
 var tecla_respuesta;
 var tecla_presionada;
@@ -16,7 +17,9 @@ var tiempo_fin;
 var segundos = /*10 * 60000*/8000;
 
 var num_imagen = 0;
+var segundo_num_imagen = 0;
 var contador_ensayos = 0;
+var segundo_contador_ensayos = 0;
 
 var label = document.getElementById('imagen_tutorial');
 
@@ -340,6 +343,72 @@ var listado_tutorial = ['./img/1_3_fase/cruz.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_07.png']
 
+var listado_segudo_tutorial = [./img/ensayos/V_F_01.png
+    ./img/ensayos/A_F_20.png
+    ./img/ensayos/V_F_02.png
+    ./img/ensayos/A_F_24.png
+    ./img/ensayos/A_F_17.png
+    ./img/ensayos/V_F_06.png
+    ./img/ensayos/V_F_09.png
+    ./img/ensayos/A_F_26.png
+    ./img/ensayos/A_F_18.png
+    ./img/ensayos/V_F_03.png
+    ./img/ensayos/A_F_31.png
+    ./img/ensayos/A_F_30.png
+    ./img/ensayos/V_F_08.png
+    ./img/ensayos/A_F_21.png
+    ./img/ensayos/V_F_14.png
+    ./img/ensayos/V_F_13.png
+    ./img/ensayos/A_F_19.png
+    ./img/ensayos/V_F_07.png
+    ./img/ensayos/V_F_10.png
+    ./img/ensayos/A_F_29.png
+    ./img/ensayos/A_F_32.png
+    ./img/ensayos/V_F_15.png
+    ./img/ensayos/V_F_11.png
+    ./img/ensayos/A_F_22.png
+    ./img/ensayos/A_F_27.png
+    ./img/ensayos/V_F_16.png
+    ./img/ensayos/V_F_05.png
+    ./img/ensayos/A_F_25.png
+    ./img/ensayos/V_F_12.png
+    ./img/ensayos/A_F_28.png
+    ./img/ensayos/A_F_23.png
+    ./img/ensayos/V_F_04.png
+
+    ./img/ensayos/A_F_17.png
+    ./img/ensayos/A_F_28.png
+    ./img/ensayos/A_F_20.png
+    ./img/ensayos/V_F_01.png
+    ./img/ensayos/A_F_29.png
+    ./img/ensayos/A_F_32.png
+    ./img/ensayos/V_F_03.png
+    ./img/ensayos/V_F_04.png
+    ./img/ensayos/A_F_24.png
+    ./img/ensayos/V_F_14.png
+    ./img/ensayos/A_F_21.png
+    ./img/ensayos/A_F_31.png
+    ./img/ensayos/A_F_18.png
+    ./img/ensayos/V_F_13.png
+    ./img/ensayos/A_F_19.png
+    ./img/ensayos/A_F_26.png
+    ./img/ensayos/V_F_12.png
+    ./img/ensayos/A_F_22.png
+    ./img/ensayos/V_F_06.png
+    ./img/ensayos/V_F_02.png
+    ./img/ensayos/V_F_15.png
+    ./img/ensayos/V_F_09.png
+    ./img/ensayos/A_F_27.png
+    ./img/ensayos/V_F_07.png
+    ./img/ensayos/V_F_08.png
+    ./img/ensayos/A_F_23.png
+    ./img/ensayos/A_F_25.png
+    ./img/ensayos/V_F_16.png
+    ./img/ensayos/V_F_11.png
+    ./img/ensayos/V_F_05.png
+    ./img/ensayos/V_F_10.png
+    ./img/ensayos/A_F_30.png];
+
 function tutorialInstruccionVerdes(num_inst) {
     switch (num_inst) {
         case 0:
@@ -409,7 +478,7 @@ function tutorialInstruccionVerdes(num_inst) {
         case 10: /*PRUEBA CON ENSAYOS SIMPLES*/
             instrucciones.setAttribute('hidden', 'true');
             cabecera_tutorial.setAttribute('hidden', 'true');
-            iniciarTutorial();
+            iniciarTutorialSimple();
             sesionIniciada = true;
             break;
         case 11:
@@ -424,14 +493,12 @@ function tutorialInstruccionVerdes(num_inst) {
 
 }
 
-function iniciarTutorial(iterador) {
-
+function iniciarTutorialSimple(iterador) {
 
     if (iterador != 'undefined')/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
             case 0:/*cruz*/
-
                 asignarTiempoPorEnsayo(contador_ensayos);
                 break;
             case 1:/*pantalla color*/
@@ -470,7 +537,7 @@ function iniciarTutorial(iterador) {
 
     setTimeout(function () {
         if (iterador < listado_tutorial.length - 1 && cantidad_correctas < limite_correctas) { // romper la recursión si se llega a la ultima label
-            iniciarTutorial(iterador + 1);
+            iniciarTutorialSimple(iterador + 1);
         }
     }, segundos);
 }
@@ -1678,6 +1745,28 @@ function checkRespuestasFase1_3(tecla, imagen) {
     }
 }
 
+function checkRespuestasFaseCompleja(tecla, imagen) {
+    let resultado = 0;
+
+    switch (imagen) {
+
+    }
+
+    if (resultado === 1) {
+        label.src = './img/palomita.png';
+        segunda_cantidad_correctas++;
+        tecla_respuesta = '';
+        console.log('cantidad_correctas=' + segunda_cantidad_correctas);
+        if (segunda_cantidad_correctas === limite_correctas) {
+            tutorialInstruccionVerdes(12)
+        }
+    } else {
+        console.log('incorrecto');
+        label.src = './img/tacha.png';
+        segunda_cantidad_correctas = 0
+    }
+}
+
 function revisarIterador(iter) {
     switch (iter) {
         case 4:
@@ -1868,6 +1957,253 @@ function revisarIterador(iter) {
             break;
         case 314:
             checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo);
+            break;
+        default:
+            label.src = listado_tutorial[iter]; // asignar el path al src
+            break;
+    }
+}
+
+function iniciarTutorialComplejo(segundo_iterador) {
+
+    if (segundo_iterador != 'undefined')/*CRUZ NEGRA*/{
+        segundos = 2000;
+        switch (segundo_num_imagen) {
+            case 0:/*cruz*/
+                asignarTiempoPorEnsayo(segundo_contador_ensayos);
+                break;
+            case 1:/*pantalla color*/
+                //console.log('color');
+                segundos = 1000
+                break;
+            case 2:/*pantalla contornos*/
+                //console.log('contornos');
+                segundos = 1000
+                break;
+            case 3:/*ensayo*/
+                numero_ensayo++;
+                let aux = listado_segundo_tutorial[segundo_iterador];
+                nombre_ensayo = aux.substr(aux.length - 8, aux.length);
+                //console.log(nombre_ensayo);
+                segundos = 4000;
+                //console.log("***-------FIN ENSAYO-------***");
+                /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
+                intentosRespuesta = 0;
+                break;
+            case 4:
+                segundo_num_imagen = -1;
+                segundos = 1000;
+                segundo_contador_ensayos++;
+                break;
+        }
+        let date_inicio = new Date();
+        tiempo_inicio = date_inicio.getTime();
+        segundo_num_imagen++;
+    }
+
+    var segundo_iterador = segundo_iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
+
+    /*ENCUESTAS Y PANTALLAS NEGRAS*/
+    revisarIteradorSegundoTutorial(segundo_iterador);
+
+    setTimeout(function () {
+        if (segundo_iterador < listado_segundo_tutorial.length - 1 && cantidad_correctas < limite_correctas) { // romper la recursión si se llega a la ultima label
+            iniciarTutorialSimple(segundo_iterador + 1);
+        }
+    }, segundos);
+}
+
+
+function revisarIteradorSegundoTutorial(iter) {
+    switch (iter) {
+        case 4:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 9:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 14:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 19:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 24:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 29:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 34:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 39:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 44:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 49:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 54:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 59:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 64:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 69:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 74:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 79:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 84:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 89:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 94:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 99:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 104:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 109:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 114:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 119:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 124:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 129:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 134:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 139:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 144:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 149:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 154:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 159:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 164:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 169:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 174:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 179:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 184:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 189:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 194:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 199:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 204:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 209:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 214:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 219:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 224:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 229:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 234:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 239:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 244:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 249:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 254:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 259:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 264:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 269:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 274:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 279:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 284:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 289:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 294:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 299:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 304:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 309:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 314:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
             break;
         default:
             label.src = listado_tutorial[iter]; // asignar el path al src
