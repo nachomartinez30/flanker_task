@@ -1,5 +1,5 @@
-var cantidad_correctas ;
-var segunda_cantidad_correctas ;
+var cantidad_correctas;
+var segunda_cantidad_correctas;
 var limite_correctas = 5;
 var tecla_respuesta;
 var tecla_presionada;
@@ -2059,7 +2059,6 @@ function checkRespuestasFase1_3(tecla, imagen) {
 
 function checkRespuestasFaseCompleja(tecla, imagen) {
     let resultado = 0;
-
     switch (imagen) {
         case 'F_01.png':
             if (tecla == '2') {
@@ -2197,7 +2196,7 @@ function checkRespuestasFaseCompleja(tecla, imagen) {
             }
             break;
         case 'F_16.png':
-            if (tecla == '2') {
+            if (tecla == '8') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2341,7 +2340,7 @@ function checkRespuestasFaseCompleja(tecla, imagen) {
             }
             break;
         case 'F_32.png':
-            if (tecla == '2') {
+            if (tecla == '8') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -2810,5 +2809,5 @@ function revisarIteradorSegundoTutorial(iter) {
             label.src = listado_segundo_tutorial[iter]; // asignar el path al src
             break;
     }
-    tecla_respuesta='';
+    tecla_respuesta = '';
 }
