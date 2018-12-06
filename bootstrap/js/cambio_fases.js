@@ -576,10 +576,10 @@ function iniciarSesion(iterador) {
     }
 */
 
-    if (iterador < 294) {
+    /*if (iterador < 294) {
         // console.log('iterador= ' + iterador);
         segundos = 10;
-    }
+    }*/
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
