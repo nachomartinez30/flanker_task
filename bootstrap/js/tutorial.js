@@ -747,14 +747,14 @@ function tutorialInstruccionVerdes(num_inst) {
                 "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(12)\">Siguiente</button>";
             break;
         case 12:
-            label.src = '';
+            label.src = './img/tutorial/imagen_ejemplo_complejo.png';
             instrucciones.innerHTML = "<h3>Durante los ensayos aparecerán muchas figuras dentro y fuera de los contornos,\n" +
                 "para saber a cual figura debes responder existirán un par de criterios.</h3>" +
                 "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(11)\">Anterior</button>" +
                 "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(13)\">Siguiente</button>";
             break;
         case 13:
-            label.src = '';
+            label.src = './img/tutorial/pareja.png';
             /*AZUL CON ENSAYO COMPLEJO*/
             instrucciones.innerHTML = "<h3>Cuando la pantalla que se presente antes del ensayo sea Azul, responderás a la\n" +
                 "figura que se repita dos veces.</h3>" +
@@ -762,7 +762,7 @@ function tutorialInstruccionVerdes(num_inst) {
                 "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(14)\">Siguiente</button>";
             break;
         case 14:
-            label.src = '';
+            label.src = './img/tutorial/unica.png';
             /*VERDE CON ENSAYO COMPLEJO*/
             instrucciones.innerHTML = "<h3>Cuando la pantalla sea verde, responderás a la figura que no se repita.</h3>" +
                 "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(13)\">Anterior</button>" +
