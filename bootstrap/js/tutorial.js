@@ -825,7 +825,7 @@ function iniciarTutorialSimple(iterador) {
                 let aux = listado_tutorial[iterador];
                 nombre_ensayo = aux.substr(aux.length - 8, aux.length);
                 //console.log(nombre_ensayo);
-                segundos = 4000;
+                segundos = 5000;
                 //console.log("***-------FIN ENSAYO-------***");
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
                 intentosRespuesta = 0;
@@ -2584,7 +2584,7 @@ function iniciarTutorialComplejo(segundo_iterador) {
                 let aux = listado_segundo_tutorial[segundo_iterador];
                 nombre_ensayo = aux.substr(aux.length - 8, aux.length);
                 //console.log(nombre_ensayo);
-                segundos = 4000;
+                segundos = 6000;
                 //console.log("***-------FIN ENSAYO-------***");
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
                 intentosRespuesta = 0;
