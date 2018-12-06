@@ -755,7 +755,6 @@ function tutorialInstruccionVerdes(num_inst) {
             break;
         case 13:
             label.src = './img/tutorial/pareja.png';
-            /*AZUL CON ENSAYO COMPLEJO*/
             instrucciones.innerHTML = "<h3>Cuando la pantalla que se presente antes del ensayo sea Azul, responderás a la\n" +
                 "figura que se repita dos veces.</h3>" +
                 "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(12)\">Anterior</button>" +
@@ -763,7 +762,6 @@ function tutorialInstruccionVerdes(num_inst) {
             break;
         case 14:
             label.src = './img/tutorial/unica.png';
-            /*VERDE CON ENSAYO COMPLEJO*/
             instrucciones.innerHTML = "<h3>Cuando la pantalla sea verde, responderás a la figura que no se repita.</h3>" +
                 "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(13)\">Anterior</button>" +
                 "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(15)\">Siguiente</button>";
