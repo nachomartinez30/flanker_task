@@ -1387,7 +1387,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case 'F_16.png':
-            if (tecla == '2') {
+            if (tecla == '8') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
@@ -1531,7 +1531,7 @@ function checkRespuestasFase1_3(tecla, imagen) {
             }
             break;
         case 'F_32.png':
-            if (tecla == '2') {
+            if (tecla == '8') {
                 /*CORRECTO*/
                 resultado = 1;
             } else {
