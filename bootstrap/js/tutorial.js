@@ -784,10 +784,10 @@ function tutorialInstruccionVerdes(num_inst) {
             instrucciones.removeAttribute('hidden');
             instrucciones.innerHTML = "<h3>A continuación, se te presentarán 3 bloques de 32 ensayos cada uno.\n" +
                 "Cada bloque estará separado por tres pantallas: una encuesta, unas " +
-                "instrucciones y una pantalla negra. Durante estas pantallas no" +
-                "presiones ninguna tecla ni des clic en el mouse a menos de que se" +
+                "instrucciones y una pantalla negra. Durante estas pantallas no " +
+                "presiones ninguna tecla ni des clic en el mouse a menos de que se " +
                 "indique." +
-                "En todos los ensayos de todos los bloques deberás responder tal y" +
+                "En todos los ensayos de todos los bloques deberás responder tal y " +
                 "como haz aprendido ahora." +
                 "En seguida verás una pantalla negra con una cruz al centro durante" +
                 "algunos minutos, trata de fijar la mirada en la cruz y estar atento a que" +
@@ -2611,7 +2611,6 @@ function iniciarTutorialComplejo(segundo_iterador) {
         }
     }, segundos);
 }
-
 
 function revisarIteradorSegundoTutorial(iter) {
     switch (iter) {

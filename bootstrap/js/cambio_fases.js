@@ -2095,7 +2095,7 @@ function revisarIterador(iter) {
                 'cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.' +
                 '<br>Trata de responder lo más rápido posible.' +
                 '</h2>' +
-                '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de' +
+                '<br><br><p><h3>Antes de que la segunda fase comience aparecerá una pantalla negra y una cruz al centro, trata de ' +
                 'fijar la mirada en la cruz y estar atento a que la fase comience.' +
                 '</h3></p>';
             instrucciones.removeAttribute('hidden');
