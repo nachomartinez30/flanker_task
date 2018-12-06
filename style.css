@@ -31,7 +31,10 @@ label {
 #frm_encuesta {
     width: 100%;
 }
-
+#div_instrucciones
+{
+    padding: 2em 3em;
+}
 .container-flex {
     display: flex;
     flex-flow: row wrap;
@@ -79,7 +82,6 @@ label {
 .raddio {
     right: 0;
     text-align: right;
-
 }
 
 .clear {
