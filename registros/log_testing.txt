@@ -1,9 +1,0 @@
---------------------------------------------------------
-sujeto=testing
-fase=3
-tipo_ensayo=F_25.png
-tecla_primer_respuesta=
-tiempo_respuesta=0
-correcto_incorrecto=0
-numero_ensayo=32
-cantidad_respuestas=0

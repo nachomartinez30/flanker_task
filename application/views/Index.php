@@ -245,6 +245,10 @@
     <audio id="sonidoError">
         <source src="./img/sonido_error.mp3" type="audio/mpeg">
     </audio>
+
+    <audio id="bipAviso">
+        <source src="./img/bip.mp3" type="audio/mpeg">
+    </audio>
 </div>
 </body>
 <script src="./bootstrap/js/cambio_fases.js"></script>
