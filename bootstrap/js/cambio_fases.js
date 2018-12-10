@@ -41,7 +41,7 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = /*10 * 60000*/8000;
+var segundos = 10 * 60000 /*8000*/;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
@@ -2093,7 +2093,7 @@ function revisarIterador(iter) {
         case 2:
             /*PANTALLA RECORDATORIA*/
             // segundos = 30000;
-            segundos = 20000;
+            segundos = 30000;
             label.src = listado_primera_fase[iter];
             break;
 
