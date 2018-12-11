@@ -23,6 +23,7 @@
                     <label class="col-md-2 arriba center-element">
                         <h5>Sentimiento</h5>
                     </label>
+
                     <label class="col-md-2">
                         <img src="img/encuesta/fila1_1.png" class="img-fluid"><br>
                     </label>

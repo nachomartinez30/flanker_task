@@ -691,8 +691,8 @@ function tutorialInstruccionVerdes(num_inst) {
             label.src = './img/tutorial/tuto_figuras.png';
             break;
         case 4:
-            instrucciones.innerHTML = "<h3>Las figuras que pueden aparecer son: un cuadrado, rombo, un círculo y\n" +
-                "un óvalo. Cada figura estará asociada a una respuesta específica:</h3>" +
+            instrucciones.innerHTML = "<h3>Las figuras que pueden aparecer son: un cuadrado, rombo, un círculo y " +
+                "un óvalo. <strong>Independientemente del lugar y del color</strong> cada figura estará asociada a una respuesta específica:</h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_ensayos_simples.png';
@@ -786,12 +786,12 @@ function tutorialInstruccionVerdes(num_inst) {
                 "Cada bloque estará separado por tres pantallas: una encuesta, unas " +
                 "instrucciones y una pantalla negra. Durante estas pantallas no " +
                 "presiones ninguna tecla ni des clic en el mouse a menos de que se " +
-                "indique." +
+                "indique. " +
                 "En todos los ensayos de todos los bloques deberás responder tal y " +
-                "como haz aprendido ahora." +
-                "En seguida verás una pantalla negra con una cruz al centro durante" +
+                "como haz aprendido ahora. " +
+                "En seguida verás una pantalla negra con una cruz al centro durante " +
                 "algunos minutos, trata de fijar la mirada en la cruz y estar atento a que" +
-                "la primera fase comience." +
+                "la primera fase comience. " +
                 "Una vez que hayas leído las instrucciones llama al investigador.</h3>" +
                 "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(16)\">Anterior</button>" +
                 "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(18)\">Hacer Prueba</button>";
