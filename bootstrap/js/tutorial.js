@@ -790,7 +790,7 @@ function tutorialInstruccionVerdes(num_inst) {
                 "En todos los ensayos de todos los bloques deberás responder tal y " +
                 "como haz aprendido ahora. " +
                 "En seguida verás una pantalla negra con una cruz al centro durante " +
-                "algunos minutos, trata de fijar la mirada en la cruz y estar atento a que" +
+                "algunos minutos, trata de fijar la mirada en la cruz y estar atento a que " +
                 "la primera fase comience. " +
                 "Una vez que hayas leído las instrucciones llama al investigador.</h3>" +
                 "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(16)\">Anterior</button>" +
