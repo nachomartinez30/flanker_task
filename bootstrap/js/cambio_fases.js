@@ -41,7 +41,7 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = /*10 * 60000*/ 8000;
+var segundos = 5 * 60000 /*8000*/;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
@@ -579,7 +579,7 @@ function iniciarSesion(iterador) {
     }
     */
 
-    /*if (iterador < 131) {
+    /*if (iterador < 297) {
         // console.log('iterador= ' + iterador);
         segundos = 10;
     }*/
@@ -2189,7 +2189,7 @@ function revisarIterador(iter) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRtutoUCCIONES FASE 2*/
-            instrucciones.innerHTML = '<h2>t A continuación iniciará una nueva fase, deberás seguir contestando como ' +
+            instrucciones.innerHTML = '<h2> A continuación iniciará una nueva fase, deberás seguir contestando como ' +
                 'hasta ahora. No habrá señales que indiquen si tu respuesta fue correcta o incorrecta. Intenta contestar' +
                 ' lo mejor y más rápido que puedas.' +
                 '<br><br>Antes de que la fase inicie aparecerá una pantalla negra y una cruz al centro, trata de fijar ' +
