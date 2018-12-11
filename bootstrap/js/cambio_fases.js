@@ -579,7 +579,7 @@ function iniciarSesion(iterador) {
     }
     */
 
-    /*if (iterador < 297) {
+   /* if (iterador < 131) {
         // console.log('iterador= ' + iterador);
         segundos = 10;
     }*/
@@ -2128,7 +2128,8 @@ function revisarIterador(iter) {
         case 131:/*PRIMERA ENCUESTA*/
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
-            segundos = 60000;
+            // segundos = 60000;
+            segundos = 10* 60000;
             /*QUITA LA ULTIMA IMAGEN*/
             label.src = '';
             /*MUESTRA LA ENCUESTA*/

@@ -46,7 +46,10 @@
                 </div>
 
 
-                <div class="container raddio">
+                <div class="container raddio etiquetas">
+                    <label  class="col-md-1">
+                        <h6>Positivo</h6>
+                    </label>
                     <label style="font-size: 25px" class="col-md-1">
                         1
                         <input class="radioButton" type="radio" name="psico_1" value="1">
@@ -87,6 +90,9 @@
                         9
                         <input type="radio" name="psico_1" value="9">
                     </label>
+                    <label  class="col-md-1">
+                        <h6>Negativo</h6>
+                    </label>
                 </div>
 
 
@@ -118,7 +124,10 @@
                 </div>
 
 
-                <div class="container raddio">
+                <div class="container raddio etiquetas">
+                    <label  class="col-md-1">
+                        <h6>Calma</h6>
+                    </label>
                     <label style="font-size: 25px" class="col-md-1">
                         1
                         <input type="radio" name="psico_2" value="1">
@@ -161,6 +170,9 @@
                         9
                         <input type="radio" name="psico_2" value="9">
                     </label>
+                    <label  class="col-md-1">
+                        <h6>Exitación</h6>
+                    </label>
                 </div>
                 <!--Fila 3-->
                 <div class="container row ">
@@ -189,7 +201,10 @@
                 </div>
 
 
-                <div class="container raddio">
+                <div class="container raddio etiquetas">
+                    <label  class="col-md-1" style="text-align: center">
+                        <h6>Poco Dominio</h6>
+                    </label>
                     <label style="font-size: 25px" class="col-md-1">
                         1
                         <input type="radio" name="psico_3" value="1">
@@ -231,6 +246,9 @@
                     <label style="font-size: 25px" class="col-md-1">
                         9
                         <input type="radio" name="psico_3" value="9">
+                    </label>
+                    <label  class="col-md-1" style="text-align: center">
+                        <h6>Mucho Dominio</h6>
                     </label>
                 </div>
             </form>
