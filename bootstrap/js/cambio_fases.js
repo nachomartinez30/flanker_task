@@ -41,7 +41,7 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = 5 * 60000 /*8000*/;
+var segundos = 3 * 60000 /*8000*/;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
