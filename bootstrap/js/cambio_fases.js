@@ -41,32 +41,20 @@ var intentosRespuesta = 0;
 
 var tiempo_inicio;
 var tiempo_fin;
-var segundos = 5 * 60000 /*8000*/;
+var segundos = 3 * 60000 /*8000*/;
 
 
 var listado_primera_fase = ['./img/pantalla_negra.png'
     , 'bip'
     , './img/figuras_flechas.png'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
-    , './img/ensayos/F_18.png'
+    , './img/ensayos/F_12.png'
     , './img/ensayos/cruz.png'
     , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_30.png'
-    , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
-    , './img/ensayos/contornos.png'
-    , './img/ensayos/F_03.png'
-    , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
-    , './img/ensayos/contornos.png'
-    , './img/ensayos/F_05.png'
-    , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
-    , './img/ensayos/contornos.png'
-    , './img/ensayos/F_12.png'
     , './img/ensayos/cruz.png'
     , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
@@ -122,6 +110,14 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/cruz.png'
     , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
+    , './img/ensayos/F_18.png'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_05.png'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
     , './img/ensayos/F_25.png'
     , './img/ensayos/cruz.png'
     , './img/ensayos/pantalla_verde.png'
@@ -151,6 +147,10 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_29.png'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_03.png'
     , './img/ensayos/cruz.png'
     , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
@@ -579,10 +579,10 @@ function iniciarSesion(iterador) {
     }
     */
 
-    /*if (iterador < 297) {
-        // console.log('iterador= ' + iterador);
-        segundos = 10;
-    }*/
+    /* if (iterador < 131) {
+         // console.log('iterador= ' + iterador);
+         segundos = 10;
+     }*/
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -1983,12 +1983,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-            '&fase=' + fase +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&fase=' + fase +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -1996,12 +1996,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-            '&fase=' + fase +
-            '&tiempo_respuesta=' + tiempo_respuesta +
-            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&numero_ensayo=' + numero_ensayo +
-            '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&cantidad_respuestas=' + intentosRespuesta,
+        '&fase=' + fase +
+        '&tiempo_respuesta=' + tiempo_respuesta +
+        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+        '&numero_ensayo=' + numero_ensayo +
+        '&tecla_primer_respuesta=' + tecla_respuesta +
+        '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
@@ -2129,6 +2129,7 @@ function revisarIterador(iter) {
             num_imagen = 0;
             /*DURACION INSTRUCCIONES 2 MINUTOS*/
             segundos = 60000;
+            // segundos = 60000;
             /*QUITA LA ULTIMA IMAGEN*/
             label.src = '';
             /*MUESTRA LA ENCUESTA*/
