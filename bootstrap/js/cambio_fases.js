@@ -516,7 +516,7 @@ function iniciarSesion(iterador) {
                 segundos = 1000
                 break;
             case 4:/*ensayo*/
-                /*EXTRACCION IMAGEN FASE 2*/
+                /*CHECA LA IMAGEN DE LA FASE 2*/
                 numero_ensayo++;
                 if (fase === 2) {
                     let aux = listado_primera_fase[iterador];

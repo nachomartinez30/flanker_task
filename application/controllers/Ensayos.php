@@ -5,10 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Ensayos extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('ensayos_model');
+    }
+
     public function index()
     {
-
-        $this->load->model('ensayos_model');
 //        var_dump($_GET);
         $data['sujeto'] = $_SESSION['sujeto'];
         $data['tipo_ensayo'] = $_GET['tipo_ensayo'];
@@ -43,6 +47,14 @@ class Ensayos extends CI_Controller
         fwrite($fp, "numero_ensayo=" . $numero_ensayo . "\n");
         fwrite($fp, "cantidad_respuestas=" . $cantidad_respuestas . "\n");
         fclose($fp);
+
+    }
+
+    function get_ensayos_by_sujetos($subject){
+        
+        $respuesta= $this->ensayos_model->get_ensayos_by_subject($subject);
+        echo json_encode(Array('respuesta'=>$respuesta));
+        // var_dump($respuesta);
 
     }
 
