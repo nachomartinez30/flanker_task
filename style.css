@@ -79,6 +79,10 @@ label {
     font-size: 0.5rem;
 }
 
+.bg-dark-red {
+    background-color: #40100a !important;
+}
+
 .raddio {
     right: 0;
     text-align: right;

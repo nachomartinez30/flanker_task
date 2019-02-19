@@ -54,5 +54,7 @@ $route['sesion'] = 'welcome';
 $route['tutorial'] = 'tutorial';
 //$route['config'] = 'configuracion';
 $route['config/set_sujeto'] = 'configuracion/set_sujeto';
+$route['config_seg_etapa/set_sujeto'] = 'config_segunda_etapa/set_segundo_sujeto';
+$route['config_seg_etapa'] = 'config_segunda_etapa/Index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
