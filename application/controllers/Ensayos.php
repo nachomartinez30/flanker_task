@@ -58,6 +58,14 @@ class Ensayos extends CI_Controller
 
     }
 
+    function get_name_sujeto($subject){
+
+        $respuesta= $this->ensayos_model->get_name_subject($subject);
+        echo json_encode($respuesta);
+        // var_dump($respuesta);
+
+    }
+
 }
 
 /* End of file Ensayos.php */
