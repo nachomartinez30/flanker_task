@@ -1,4 +1,5 @@
 var json_config_etapa_2;
+var etapa = 2;
 var encuesta = document.getElementById('div_encuesta');
 var cuerpo_pagina = document.getElementById('cuerpo_pagina');
 var tecla_respuesta;
@@ -12,6 +13,9 @@ var nombre_ensayo;
 let tiempo_respuesta = 0;
 var fase = 1;
 var numero_ensayo = 0;
+
+/*CONFIGURACION ETAPA 2*/
+setRespuestasSujetoConfigurado();
 
 /*VARIABLES LINEA DE TIEMPO*/
 var time_inicio_sesion = new Date();
@@ -465,7 +469,6 @@ var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
     /*RELLENA JSON CON LA SEGUNDA FASE*/
-    setRespuestasSujetoConfigurado();
     // console.log("***-------INICIO-------***");
     console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
@@ -560,10 +563,10 @@ function iniciarSesion(iterador) {
     }
     */
 
-    /* if (iterador < 131) {
-         // console.log('iterador= ' + iterador);
-         segundos = 10;
-     }*/
+    if (iterador < 132) {
+        // console.log('iterador= ' + iterador);
+        segundos = 10;
+    }
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -1527,7 +1530,6 @@ function checkRespuestasFase1_3(tecla, imagen) {
     return resultado;
 }
 
-
 function checkRespuestasFase2(tecla, imagen) {
     let respuesta = 0;
     switch (imagen) {
@@ -1827,8 +1829,8 @@ function sendData() {
             '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
             '&numero_ensayo=' + numero_ensayo +
             '&tecla_primer_respuesta=' + tecla_respuesta +
-            '&cantidad_respuestas=' + intentosRespuesta,
-
+            '&cantidad_respuestas=' + intentosRespuesta +
+            '&etapa' + etapa,
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
         }
@@ -2231,11 +2233,16 @@ function createNewArray(lista) {
 }
 
 function setRespuestasSujetoConfigurado() {
-    /*asigna el JSON del sujeto que se haya configurado*/
+    /*asigna el JSON del sujeto que se haya configurado en la variable _S['respuestas_sujeto']*/
     $.ajax({
         url: "http://localhost/flanker_task/config_segunda_etapa/get_JOSN_records_by_subject/",
         success: function (arg) {
             json_config_etapa_2 = JSON.parse(arg);
+            console.log("res completed!");
+            console.log(arg);
+        },
+        error: function () {
+            alert("¡sujeto no configurado!");
         }
     });
 

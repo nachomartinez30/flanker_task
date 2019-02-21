@@ -58,7 +58,7 @@
 <script type="text/javascript">
 
 
-    /*AUTOCOMPLETADO*/
+    /*AUTOCOMPLETADO del input*/
     var options = {
         url: "sujetos.json",
         getValue: "sujeto",
