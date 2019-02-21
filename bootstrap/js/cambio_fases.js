@@ -1,3 +1,5 @@
+var json_config_etapa_2;
+var etapa=0;
 var encuesta = document.getElementById('div_encuesta');
 var cuerpo_pagina = document.getElementById('cuerpo_pagina');
 var tecla_respuesta;
@@ -14,28 +16,6 @@ var numero_ensayo = 0;
 
 /*VARIABLES LINEA DE TIEMPO*/
 var time_inicio_sesion = new Date();
-var time_pantalla_negra = new Date();
-var time_recordatorio = new Date();
-var time_cruz = new Date();
-var time_color = new Date();
-var time_contorno = new Date();
-var time_ensayo = new Date();
-var time_intrucciones = new Date();
-var time_encuesta = new Date();
-
-var time_aux_time = new Date();
-var set_aux_time;
-
-var set_inicio_sesion;
-var set_pantalla_negra;
-var set_recordatorio;
-var set_cruz;
-var set_color;
-var set_contorno;
-var set_ensayo;
-var set_intrucciones;
-var set_encuesta;
-/*VARIABLES LINEA DE TIEMPO*/
 
 var intentosRespuesta = 0;
 
@@ -485,6 +465,8 @@ var num_imagen = 0;
 var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
+    /*RELLENA JSON CON LA SEGUNDA FASE*/
+    setRespuestasSujeto();
     // console.log("***-------INICIO-------***");
     console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
@@ -1988,11 +1970,14 @@ function sendData() {
             '&numero_ensayo=' + numero_ensayo +
             '&tiempo_respuesta=' + tiempo_respuesta +
             '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&cantidad_respuestas=' + intentosRespuesta,
+            '&cantidad_respuestas=' + intentosRespuesta+
+        'etapa='+etapa,
         success: function (res) {
             // console.log('log_insertado');
         }
     });
+
+    /*AJAX QUE REGISTRA EN BD*/
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
@@ -2402,4 +2387,15 @@ function createNewArray(lista) {
         console.log(lista[i]);
         i++;
     })
+}
+
+function setRespuestasSujeto() {
+    /*asigna el JSON del sujeto que se haya configurado*/
+    $.ajax({
+        url: "http://localhost/flanker_task/config_segunda_etapa/get_JOSN_records_by_subject/",
+        success: function (arg) {
+            json_config_etapa_2 = JSON.parse(arg);
+        }
+    });
+
 }

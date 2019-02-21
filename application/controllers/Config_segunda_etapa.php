@@ -28,16 +28,23 @@ class Config_segunda_etapa extends CI_Controller
         if ($res) {
             $_SESSION['sujeto_2_etapa'] = $sujeto;
             $respuestas_sujeto = $this->ensayos_model->get_answers_by_subject($sujeto);
-//            var_dump($respuestas_sujeto);
+            $json_array = Array();
+
+            foreach ($respuestas_sujeto as $res) {
+                $json_array[$res->ensayo] = $res->correcto_incorrecto;
+            }
+
+            $_SESSION['respuestas_sujeto'] = json_encode($json_array);
+            echo json_encode($respuestas_sujeto);
             header('Location: http://localhost/flanker_task/config_seg_etapa');
         } else {
-            
-            echo "<div id='div_error' class='alert alert-warning' role='alert' >
-                    ¡El sujeto no cuenta con registros en la base de datos!
-                </div>";
+            $this->load->view('configuracion/no_records_view');
         }
+    }
 
-
+    public function get_JOSN_records_by_subject()
+    {
+        echo $_SESSION['respuestas_sujeto'];
     }
 
 }

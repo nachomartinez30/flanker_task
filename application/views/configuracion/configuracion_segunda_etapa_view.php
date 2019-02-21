@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./bootstrap/js/bootstrap.js"></script>
     <script src="http://localhost/flanker_task/EasyAutocomplete-1.3.5/jquery.easy-autocomplete.js"></script>
-    <script src="./bootstrap/js/auxiliares.js"></script>
     <meta charset="utf-8">
     <title>Configuración</title>
 </head>
@@ -20,7 +19,8 @@
             <div class="p-5 col-lg-6 col-10 mx-auto border">
 
                 <h1 class="mb-4">Configuración segunda etapa</h1>
-                <form action="config_seg_etapa/set_sujeto" method="post">
+                <form action="config_seg_etapa/set_sujeto" method="post"
+                      onsubmit="getRegistros($('#sujeto_config_2_etapa').val())">
                     <div class="form-group">
                         <input name="sujeto_2_etapa" type="text" class="form-control"
                                placeholder="Inserte identificador del sujeto a programar" id="sujeto_config_2_etapa"
@@ -74,16 +74,6 @@
 
     /*AUTOCOMPLETADO*/
 
-    // function checkSubject(subject) {
-    //     $.ajax({
-    //         url: "http://localhost/flanker_task/config_segunda_etapa/is_subject_in_db/" + subject,
-    //         success: function (arg) {
-    //             if (arg === 'false') {
-    //                 $('#div_error').show();
-    //             }
-    //         }
-    //     })
-    // }
 
 </script>
 </html>

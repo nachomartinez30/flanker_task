@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./style.css">
     <script src="./bootstrap/js/bootstrap.js"></script>
+
     <meta charset="utf-8">
     <title>Configuración</title>
 </head>
