@@ -31,7 +31,7 @@ class Config_segunda_etapa extends CI_Controller
             $json_array = Array();
 
             foreach ($respuestas_sujeto as $res) {
-                $json_array[$res->ensayo] = $res->correcto_incorrecto;
+                $json_array[$res->tipo_ensayo] = $res->correcto_incorrecto;
             }
 
             $_SESSION['respuestas_sujeto'] = json_encode($json_array);

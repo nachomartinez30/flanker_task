@@ -1,5 +1,4 @@
 var json_config_etapa_2;
-var etapa=0;
 var encuesta = document.getElementById('div_encuesta');
 var cuerpo_pagina = document.getElementById('cuerpo_pagina');
 var tecla_respuesta;
@@ -466,7 +465,7 @@ var contador_ensayos = 0;
 
 function iniciarSesion(iterador) {
     /*RELLENA JSON CON LA SEGUNDA FASE*/
-    setRespuestasSujeto();
+    setRespuestasSujetoConfigurado();
     // console.log("***-------INICIO-------***");
     console.log("iterador=" + iterador);
     // console.log("--CONTADOR ENSAYO=" + contador_ensayos);
@@ -481,7 +480,7 @@ function iniciarSesion(iterador) {
                 asignarTiempoPorEnsayo(contador_ensayos);
                 /*SI NO ES PANTALLA NEGRA, INSTRUCCION o ENCUESTA*/
                 if (isEncuestaPantallaNegraInstruccion(iterador) === false) {
-                    if (fase != 2) {/*SI NO ES FASE 2*/
+                    if (fase != 2) {/*SI NO ES FASE 2 ASIGNA LA RESPUESTA DE LA FASE 1 O 3*/
                         respuesta_valida_fase1_2_3 = checkRespuestasFase1_3(tecla_respuesta, nombre_ensayo)
                     }
                     // console.log('previo log ='+iterador);
@@ -1528,426 +1527,268 @@ function checkRespuestasFase1_3(tecla, imagen) {
     return resultado;
 }
 
+
 function checkRespuestasFase2(tecla, imagen) {
     let respuesta = 0;
     switch (imagen) {
         case 'F_01.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_02.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_03.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_04.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_05.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_06.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_07.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_08.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_09.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_10.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_11.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_12.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_13.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_14.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_15.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_16.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_17.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_18.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_19.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_20.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_21.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_22.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_23.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_24.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_25.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_26.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_27.png':
             if (tecla === '8') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_28.png':
             if (tecla === '4') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_29.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_30.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_31.png':
             if (tecla === '6') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
         case 'F_32.png':
             if (tecla === '2') {
-//console.log('RESPUESTA CORRECTA!');
-                label.src = './img/palomita.png';
                 respuesta = 1;
             } else {
-                /*MUESTRA X*/
-                label.src = './img/tacha.png'
-                /*RESPRODUCE SONIDO*/
-                sonido_error.play();
                 respuesta = 0;
             }
             break;
+
     }
+    producirSonidoPorImagen(imagen);
     return respuesta;
 }
 
@@ -1970,8 +1811,8 @@ function sendData() {
             '&numero_ensayo=' + numero_ensayo +
             '&tiempo_respuesta=' + tiempo_respuesta +
             '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-            '&cantidad_respuestas=' + intentosRespuesta+
-        'etapa='+etapa,
+            '&cantidad_respuestas=' + intentosRespuesta +
+            'etapa=' + etapa,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -2389,7 +2230,7 @@ function createNewArray(lista) {
     })
 }
 
-function setRespuestasSujeto() {
+function setRespuestasSujetoConfigurado() {
     /*asigna el JSON del sujeto que se haya configurado*/
     $.ajax({
         url: "http://localhost/flanker_task/config_segunda_etapa/get_JOSN_records_by_subject/",
@@ -2398,4 +2239,19 @@ function setRespuestasSujeto() {
         }
     });
 
+}
+
+function producirSonidoPorImagen(imagen) {
+
+    /*SI 1 reproduce BIEN*/
+    if (json_config_etapa_2[imagen] == 0) {
+        label.src = './img/tacha.png';
+        /*RESPRODUCE SONIDO*/
+        sonido_error.play();
+    }
+
+    /*SI 0 reproduce MAL*/
+    if (json_config_etapa_2[imagen] == 1) {
+        label.src = './img/palomita.png';
+    }
 }

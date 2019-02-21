@@ -44,7 +44,7 @@ class Ensayos_model extends CI_Model
 
     public function get_answers_by_subject($subject)
     {
-        $query="select substr(tipo_ensayo,0,5) as ensayo, correcto_incorrecto from ensayos where fase = 2  AND sujeto = '$subject'order by ensayo";
+        $query="select tipo_ensayo, correcto_incorrecto from ensayos where fase = 2  AND sujeto = '$subject' order by tipo_ensayo";
         $respuesta = $this->db->query($query);
         return $respuesta->result();
     }
