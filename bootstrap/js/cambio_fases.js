@@ -1,5 +1,6 @@
 var json_config_etapa_2;
-var etapa = 2;
+var subject_config;
+var etapa = 1;
 var encuesta = document.getElementById('div_encuesta');
 var cuerpo_pagina = document.getElementById('cuerpo_pagina');
 var tecla_respuesta;
@@ -15,6 +16,8 @@ var fase = 1;
 var numero_ensayo = 0;
 
 /*CONFIGURACION ETAPA 2*/
+setEtapaConfigurado();
+setSujetoConfigurado();
 setRespuestasSujetoConfigurado();
 
 /*VARIABLES LINEA DE TIEMPO*/
@@ -563,10 +566,10 @@ function iniciarSesion(iterador) {
     }
     */
 
-    if (iterador < 132) {
-        // console.log('iterador= ' + iterador);
-        segundos = 10;
-    }
+    // if (iterador < 134) {
+    //     // console.log('iterador= ' + iterador);
+    //     segundos = 10;
+    // }
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -1814,7 +1817,8 @@ function sendData() {
             '&tiempo_respuesta=' + tiempo_respuesta +
             '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
             '&cantidad_respuestas=' + intentosRespuesta +
-            'etapa=' + etapa,
+            '&etapa=' + etapa +
+            '&sujeto_configurado=' + subject_config,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -1830,7 +1834,8 @@ function sendData() {
             '&numero_ensayo=' + numero_ensayo +
             '&tecla_primer_respuesta=' + tecla_respuesta +
             '&cantidad_respuestas=' + intentosRespuesta +
-            '&etapa' + etapa,
+            '&etapa=' + etapa +
+            '&sujeto_configurado=' + subject_config,
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
         }
@@ -2245,20 +2250,51 @@ function setRespuestasSujetoConfigurado() {
             alert("¡sujeto no configurado!");
         }
     });
+}
 
+function setSujetoConfigurado() {
+    $.ajax({
+        url: "http://localhost/flanker_task/config_segunda_etapa/get_subject_etapa/",
+        success: function (arg) {
+            subject_config = arg;
+            console.log("subject completed!");
+            console.log(arg);
+        },
+        error: function () {
+            alert("¡sujeto no configurado!");
+        }
+    });
+}
+
+function setEtapaConfigurado() {
+    $.ajax({
+        url: "http://localhost/flanker_task/config_segunda_etapa/get_etapa/",
+        success: function (arg) {
+            etapa = arg;
+            console.log("etapa completed!");
+            console.log(arg);
+        },
+        error: function () {
+            alert("¡sujeto no configurado!");
+        }
+    });
 }
 
 function producirSonidoPorImagen(imagen) {
 
     /*SI 1 reproduce BIEN*/
     if (json_config_etapa_2[imagen] == 0) {
-        label.src = './img/tacha.png';
+        if (etapa != 3) {
+            label.src = './img/tacha.png';
+        }
         /*RESPRODUCE SONIDO*/
         sonido_error.play();
     }
 
     /*SI 0 reproduce MAL*/
     if (json_config_etapa_2[imagen] == 1) {
-        label.src = './img/palomita.png';
+        if (etapa != 3) {
+            label.src = './img/palomita.png';
+        }
     }
 }

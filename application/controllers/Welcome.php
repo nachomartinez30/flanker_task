@@ -6,10 +6,15 @@ class Welcome extends CI_Controller
 
     public function index()
     {
-        if ($_SESSION['sujeto'] == '') {
+        if (!isset($_SESSION['sujeto']) || $_SESSION['sujeto']== '') {
             echo "<h1>Por favor ingrese un sujeto <a href='http://localhost/flanker_task/'>AQUI</a></h1>";
         } else {
             $this->load->view('Index');
         }
+    }
+
+    public function end()
+    {
+        session_destroy();
     }
 }

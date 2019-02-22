@@ -22,6 +22,8 @@ class Ensayos extends CI_Controller
         $data['correcto_incorrecto'] = $_GET['correcto_incorrecto'];
         $data['numero_ensayo'] = $_GET['numero_ensayo'];
         $data['cantidad_respuestas'] = $_GET['cantidad_respuestas'];
+        $data['etapa'] = $_GET['etapa'];
+        $data['sujeto_configurado'] = $_GET['sujeto_configurado'];
         $respuesta = $this->ensayos_model->insert_ensayo($data);
     }
 
@@ -35,6 +37,8 @@ class Ensayos extends CI_Controller
         $tiempo_respuesta = $_GET['tiempo_respuesta'];
         $correcto_incorrecto = $_GET['correcto_incorrecto'];
         $cantidad_respuestas = $_GET['cantidad_respuestas'];
+        $etapa = $_GET['etapa'];
+        $sujeto_configurado = $_GET['sujeto_configurado'];
 
         $fp = fopen('C:\xampp\htdocs\flanker_task\registros\log_' . $sujeto . '.txt', 'a');
         fwrite($fp, "--------------------------------------------------------\n");
@@ -46,24 +50,25 @@ class Ensayos extends CI_Controller
         fwrite($fp, "correcto_incorrecto=" . $correcto_incorrecto . "\n");
         fwrite($fp, "numero_ensayo=" . $numero_ensayo . "\n");
         fwrite($fp, "cantidad_respuestas=" . $cantidad_respuestas . "\n");
+        fwrite($fp, "etapa=" . $etapa . "\n");
+        fwrite($fp, "sujeto_configurado=" . $sujeto_configurado . "\n");
         fclose($fp);
 
     }
 
-    function get_ensayos_by_sujetos($subject){
-        
-        $respuesta= $this->ensayos_model->get_ensayos_by_subject($subject);
-        echo json_encode(Array('respuesta'=>$respuesta));
+    function get_ensayos_by_sujetos($subject)
+    {
+
+        $respuesta = $this->ensayos_model->get_ensayos_by_subject($subject);
+        echo json_encode(Array('respuesta' => $respuesta));
         // var_dump($respuesta);
 
     }
 
-    function get_name_sujeto($subject){
-
-        $respuesta= $this->ensayos_model->get_name_subject($subject);
+    function get_name_sujeto($subject)
+    {
+        $respuesta = $this->ensayos_model->get_name_subject($subject);
         echo json_encode($respuesta);
-        // var_dump($respuesta);
-
     }
 
 }

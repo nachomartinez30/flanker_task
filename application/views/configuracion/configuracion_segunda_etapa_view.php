@@ -24,8 +24,13 @@
                     <div class="form-group">
                         <input name="sujeto_2_etapa" type="text" class="form-control"
                                placeholder="Inserte identificador del sujeto a programar" id="sujeto_config_2_etapa"
-
                                style="">
+                        <label for="etapa">Seleccione una etapa:</label>
+                        <select required name="etapa" type="text" class="form-control" id="etapa">
+                            <option value="">Seleccionar:</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
                     </div>
                     <div class="form-group"></div>
                     <div class="form-group">
@@ -33,8 +38,11 @@
                             sujeto: <?php if (isset($_SESSION['sujeto_2_etapa'])) {
                                 echo '<b>' . $_SESSION['sujeto_2_etapa'];
                             } ?></b></small>
+                        <small class="form-text text-muted text-right">Etapa actual configurada: <?php if (isset($_SESSION['etapa'])) {
+                                echo '<b>' . $_SESSION['etapa'];
+                            } ?></b></small>
                     </div>
-                    <button type="button" class="btn btn-warning" id="btnAsignar">Asignar
+                    <button type="submit" class="btn btn-warning" id="btnAsignar">Asignar
                     </button>
                 </form>
                 <br>
@@ -46,9 +54,9 @@
                 <button class="btn btn-alert" onclick="window.location.href ='http://localhost/flanker_task/'">Config.
                     Inicial
                 </button>
-                <button class="btn btn-success" onclick="window.location.href ='http://localhost/flanker_task/sesion'">
-                    Ir a Sesión
-                </button>
+<!--                <button class="btn btn-success" onclick="window.location.href ='http://localhost/flanker_task/sesion'">-->
+<!--                    Ir a Sesión-->
+<!--                </button>-->
             </div>
         </div>
     </div>

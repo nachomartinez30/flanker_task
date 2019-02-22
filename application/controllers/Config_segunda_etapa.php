@@ -17,6 +17,7 @@ class Config_segunda_etapa extends CI_Controller
 
     public function set_segundo_sujeto()
     {
+
         $sujeto = $_POST['sujeto_2_etapa'];
         $sujeto = str_replace(' ', '_', $sujeto);
 
@@ -26,16 +27,24 @@ class Config_segunda_etapa extends CI_Controller
         /*si existe el sujeto, redirige, si no, envia alerta*/
 
         if ($res) {
-            $_SESSION['sujeto_2_etapa'] = $sujeto;
-            $respuestas_sujeto = $this->ensayos_model->get_answers_by_subject($sujeto);
-            $json_array = Array();
+            /*SI NO EXISTE UNA ETAPA, POR DEFECTO ES LA PRIMERA*/
+            if ($_POST['etapa'] == '') {
+                $_SESSION['etapa'] = 1;
+            } else {
+                $_SESSION['etapa'] = $_POST['etapa'];
 
-            foreach ($respuestas_sujeto as $res) {
-                $json_array[$res->tipo_ensayo] = $res->correcto_incorrecto;
+
+                $_SESSION['sujeto_2_etapa'] = $sujeto;
+                $respuestas_sujeto = $this->ensayos_model->get_answers_by_subject($sujeto);
+                $json_array = Array();
+
+                foreach ($respuestas_sujeto as $res) {
+                    $json_array[$res->tipo_ensayo] = $res->correcto_incorrecto;
+                }
+
+                $_SESSION['respuestas_sujeto'] = json_encode($json_array);
+//            echo json_encode($sujeto = Array($respuestas_sujeto));
             }
-
-            $_SESSION['respuestas_sujeto'] = json_encode($json_array);
-            echo json_encode($respuestas_sujeto);
             header('Location: http://localhost/flanker_task/config_seg_etapa');
         } else {
             $this->load->view('configuracion/no_records_view');
@@ -47,6 +56,15 @@ class Config_segunda_etapa extends CI_Controller
         echo $_SESSION['respuestas_sujeto'];
     }
 
+    public function get_subject_etapa()
+    {
+        echo $_SESSION['sujeto_2_etapa'];
+    }
+
+    public function get_etapa()
+    {
+        echo $_SESSION['etapa'];
+    }
 }
 
 /* End of file Config_segunda_etapa.php */
