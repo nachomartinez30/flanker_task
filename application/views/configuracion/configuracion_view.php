@@ -16,19 +16,27 @@
                 <h1 class="mb-4">Configuración</h1>
                 <form action="config/set_sujeto" method="post">
                     <div class="form-group">
-                        <input name="sujeto" type="text" class="form-control" placeholder="Nombre del sujeto Ej. José Arriaga" id="form13" style="">
+                        <input name="sujeto" type="text" class="form-control"
+                               placeholder="Nombre del sujeto Ej. José Arriaga" id="form13" style="">
                     </div>
                     <div class="form-group"></div>
                     <div class="form-group">
-                        <small class="form-text text-muted text-right">Sujeto actual registrado: <?php echo $_SESSION['sujeto']; ?></small>
+                        <b class="form-text text-muted text-right">Sujeto actual
+                            registrado: <?php if (isset($_SESSION['sujeto'])) {
+                                echo "<b>" . $_SESSION['sujeto'];
+                            } ?></b></small>
                     </div>
                     <button type="submit" class="btn btn-warning">Fijar</button>
                 </form>
                 <br>
                 <br>
                 <br>
-                <button class="btn btn-primary" onclick="window.location.href ='http://localhost/flanker_task/tutorial'">Ir a Tutorial</button>
-                <button class="btn btn-success" onclick="window.location.href ='http://localhost/flanker_task/sesion'">Ir a Sesión</button>
+                <button class="btn btn-primary"
+                        onclick="window.location.href ='http://localhost/flanker_task/tutorial'">Ir a Tutorial
+                </button>
+                <button class="btn btn-success" onclick="window.location.href ='http://localhost/flanker_task/sesion'">
+                    Ir a Sesión
+                </button>
             </div>
         </div>
     </div>

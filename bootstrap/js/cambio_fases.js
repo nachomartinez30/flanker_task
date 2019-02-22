@@ -1983,12 +1983,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos/write_log?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&cantidad_respuestas=' + intentosRespuesta,
         success: function (res) {
             // console.log('log_insertado');
         }
@@ -1996,12 +1996,12 @@ function sendData() {
     $.ajax({
         type: 'get',
         url: 'ensayos?tipo_ensayo=' + nombre_ensayo +
-        '&fase=' + fase +
-        '&tiempo_respuesta=' + tiempo_respuesta +
-        '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
-        '&numero_ensayo=' + numero_ensayo +
-        '&tecla_primer_respuesta=' + tecla_respuesta +
-        '&cantidad_respuestas=' + intentosRespuesta,
+            '&fase=' + fase +
+            '&tiempo_respuesta=' + tiempo_respuesta +
+            '&correcto_incorrecto=' + respuesta_valida_fase1_2_3 +
+            '&numero_ensayo=' + numero_ensayo +
+            '&tecla_primer_respuesta=' + tecla_respuesta +
+            '&cantidad_respuestas=' + intentosRespuesta,
 
         success: function (res) {
             // console.log('ENSAYO REGISTRADO');
