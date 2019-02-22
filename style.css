@@ -31,7 +31,10 @@ label {
 #frm_encuesta {
     width: 100%;
 }
-
+#div_instrucciones
+{
+    padding: 2em 3em;
+}
 .container-flex {
     display: flex;
     flex-flow: row wrap;
@@ -96,4 +99,7 @@ input[type="radio"]{
 
 .fuente_etiquetas{
     font-size: 20px;
+}
+.etiquetas{
+    margin-right:50px;
 }

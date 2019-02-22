@@ -1,4 +1,5 @@
-var cantidad_correctas = 4;
+var cantidad_correctas;
+var segunda_cantidad_correctas;
 var limite_correctas = 5;
 var tecla_respuesta;
 var tecla_presionada;
@@ -16,340 +17,663 @@ var tiempo_fin;
 var segundos = /*10 * 60000*/8000;
 
 var num_imagen = 0;
+var segundo_num_imagen = 0;
 var contador_ensayos = 0;
+var segundo_contador_ensayos = 0;
 
 var label = document.getElementById('imagen_tutorial');
 
 var listado_tutorial = ['./img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_15.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_31.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_17.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_25.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_09.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_03.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_15.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_32.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_29.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_05.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_30.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_24.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_13.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_11.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_20.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_01.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_01.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_19.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_11.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_05.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_03.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_09.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_26.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_28.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_22.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_27.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_07.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_21.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_07.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_23.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_13.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_18.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_17.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_15.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_29.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_22.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_15.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_32.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_31.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_01.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_01.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_28.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_09.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_03.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_05.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_20.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_13.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_11.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_03.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_11.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_25.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_23.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_05.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_09.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_07.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_30.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_18.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_13.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_21.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_19.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_24.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/verdes/V_26.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_azul.png'
+    , './img/tutorial/pantalla_azul.png'
     , './img/1_3_fase/contornos.png'
     , './img/1_3_fase/azul/A_27.png'
     , 'respuesta'
     , './img/1_3_fase/cruz.png'
-    , './img/1_3_fase/pantalla_verde.png'
+    , './img/tutorial/pantalla_verde.png'
     , './img/1_3_fase/contornos.png'
-    , './img/1_3_fase/verdes/V_07.png']
+    , './img/1_3_fase/verdes/V_07.png'];
+
+var listado_segundo_tutorial = ['./img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_01.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_20.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_02.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_24.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_17.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_06.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_09.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_26.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_18.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_03.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_31.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_30.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_08.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_21.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_14.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_13.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_19.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_07.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_10.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_29.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_32.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_15.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_11.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_22.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_27.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_16.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_05.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_25.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_12.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_28.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_23.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_04.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_17.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_28.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_20.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_01.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_29.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_32.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_03.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_04.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_24.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_14.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_21.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_31.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_18.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_13.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_19.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_26.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_12.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_22.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_06.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_02.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_15.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_09.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_27.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_07.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_08.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_23.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_25.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_16.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_11.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_05.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_10.png'
+    , 'respuesta'
+    , './img/ensayos/cruz.png'
+    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/contornos.png'
+    , './img/ensayos/F_30.png'
+    , 'respuesta'];
 
 function tutorialInstruccionVerdes(num_inst) {
     switch (num_inst) {
         case 0:
-            instrucciones.innerHTML = "<h3>A continuación aparecerá una secuencia de pantallas.<br>Primero una pantalla " +
+            instrucciones.innerHTML = "<h3>A continuación aparecerán una secuencia pantallas distintas:<br>Primero una pantalla " +
                 "blanca con una cruz negra al centro;</h3>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(1)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_pantalla_blanca.png';
             break;
         case 1:
-            instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde que te indicarán las figuras que se presentarán a continuación.</h3>" +
+            instrucciones.innerHTML = "<h3>Después una pantalla de color azul o verde .</h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(0)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(2)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_pantalla_colores.png';
@@ -367,78 +691,125 @@ function tutorialInstruccionVerdes(num_inst) {
             label.src = './img/tutorial/tuto_figuras.png';
             break;
         case 4:
-            instrucciones.innerHTML = "<h3>Tu tarea será identificar en cada ensayo donde aparece una figura, la cual puede ser un cuadrado o rombo un  círculo u óvalo.</h3>" +
+            instrucciones.innerHTML = "<h3>Las figuras que pueden aparecer son: un cuadrado, rombo, un círculo y " +
+                "un óvalo. <strong>Independientemente del lugar y del color</strong> cada figura estará asociada a una respuesta específica:</h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(3)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(5)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_ensayos_simples.png';
             break;
+
         case 5:
-            instrucciones.innerHTML = "<h3>A veces solo aparecerá una figura, otras veces puede haber más, pero siempre habrá una figura presente en uno de los contornos circulares (cuadrado, rombo, círculo u óvalo).</h3>" +
+            instrucciones.innerHTML = "<h3>Para el cuadrado la tecla de flecha izquierda <h1>←</h1></h3>" +
                 "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(4)\">Anterior</button>" +
                 "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(6)\">Siguiente</button>"
-            label.src = './img/tutorial/tuto_ensayos_completos.png';
-            break;
-
-        case 6:
-            instrucciones.innerHTML = "<h3>Si un cuadrado aparece dentro de cualquier contorno, oprime la tecla de flecha izquierda <h1>←</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_cuadrado.png';
             break;
-        case 7:
-            instrucciones.innerHTML = "<h3>si aparece un rombo dentro de cualquier contorno, oprime la tecla de flecha derecha <h1>→</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
+        case 6:
+            instrucciones.innerHTML = "<h3>Para el rombo la tecla de flecha derecha <h1>→</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(5)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(7)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_rombo.png';
             break;
-        case 8:
-            instrucciones.innerHTML = "<h3>si aparece un óvalo dentro de cualquier contorno, oprime la tecla de flecha arriba <h1>↑</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
+        case 7:
+            instrucciones.innerHTML = "<h3>Para el óvalo la tecla de flecha arriba <h1>↑</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(6)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(8)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_ovalo.png';
             break;
-        case 9:
-            instrucciones.innerHTML = "<h3>si aparece un círculo dentro de cualquier contorno, oprime la tecla de flecha abajo <h1>↓</h1></h3>" +
-                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
-                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Siguiente</button>"
+        case 8:
+            instrucciones.innerHTML = "<h3>Y para el círculo la tecla de flecha abajo <h1>↓</h1></h3>" +
+                "<button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(7)\">Anterior</button>" +
+                "<button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(9)\">Siguiente</button>"
             label.src = './img/tutorial/tuto_circulo.png';
             break;
 
-        case 10:
+        case 9:
             label.src = '';
-            instrucciones.innerHTML = "<h3>Recuerda que antes de que las figuras aparezcan, la pantalla parpadea de color Azul o Verde. El Verde siempre" +
-                " indicará la presencia del rombo o cuadrado, es decir el uso de las teclas</h3> <h1>←   →</h1>   <h3>y el Azul indicará la presencia del círculo u " +
-                "óvalo, el uso de las teclas <h1>↑   ↓</h1>.</h3><h3> Céntrate únicamente en las figuras dentro de los contornos circulares. Ignora " +
-                "cualquier figura que aparezca fuera de los contornos. Trata de responder lo más rápido posible cometiendo el menor número de errores.</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(9)\">Anterior</button>" +
-                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(11)\">Hacer Prueba</button>";
+            instrucciones.innerHTML = "<h3>A continuación se te presentaran unos pocos ensayos para que\n" +
+                "practiques y aprendas la respuesta asociada a cada figura .</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(8)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(10)\">Hacer Prueba</button>";
             break;
-        case 11:
+        case 10: /*PRUEBA CON ENSAYOS SIMPLES*/
+            cantidad_correctas = 0;
             instrucciones.setAttribute('hidden', 'true');
             cabecera_tutorial.setAttribute('hidden', 'true');
-            iniciarTutorial();
+            iniciarTutorialSimple();
             sesionIniciada = true;
             break;
-        case 12:
-            label.src = ''
+        case 11:
             instrucciones.removeAttribute('hidden');
-            cabecera_tutorial.removeAttribute('hidden');
-            instrucciones.innerHTML = "<h3>Ahora que has comprendido las instrucciones, llama por favor al investigador " +
-                "para comenzar</h3>" +
-                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\window.location.replace('http://localhost/flanker_task/sesion')>INICIO</button>"
+            label.src = '';
+            instrucciones.innerHTML = "<h3>Ahora que haz aprendido la respuesta asociada a cada figura añadiremos un par de\n" +
+                "reglas." +
+                "</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(10)\">Hacer de nuevo</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(12)\">Siguiente</button>";
+            break;
+        case 12:
+            label.src = './img/tutorial/imagen_ejemplo_complejo.png';
+            instrucciones.innerHTML = "<h3>Durante los ensayos aparecerán muchas figuras dentro y fuera de los contornos,\n" +
+                "para saber a cual figura debes responder existirán un par de criterios.</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(11)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(13)\">Siguiente</button>";
+            break;
+        case 13:
+            label.src = './img/tutorial/pareja.png';
+            instrucciones.innerHTML = "<h3>Cuando la pantalla que se presente antes del ensayo sea Azul, responderás a la\n" +
+                "figura que se repita dos veces.</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(12)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(14)\">Siguiente</button>";
+            break;
+        case 14:
+            label.src = './img/tutorial/unica.png';
+            instrucciones.innerHTML = "<h3>Cuando la pantalla sea verde, responderás a la figura que no se repita.</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(13)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(15)\">Siguiente</button>";
+            break;
+        case 15:
+            label.src = '';
+            instrucciones.innerHTML = "<h3>Trata de responder lo más rápido posible cometiendo el menor número de errores.</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(14)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(16)\">Hacer Prueba</button>";
+            break;
+        case 16: /*PRUEBA CON ENSAYOS SIMPLES*/
+            segunda_cantidad_correctas = 0;
+            instrucciones.setAttribute('hidden', 'true');
+            cabecera_tutorial.setAttribute('hidden', 'true');
+            iniciarTutorialComplejo();
+            sesionIniciada = true;
+            break;
+        case 17:
+            label.src = '';
+            instrucciones.removeAttribute('hidden');
+            instrucciones.innerHTML = "<h3>A continuación, se te presentarán 3 bloques de 32 ensayos cada uno.\n" +
+                "Cada bloque estará separado por tres pantallas: una encuesta, unas " +
+                "instrucciones y una pantalla negra. Durante estas pantallas no " +
+                "presiones ninguna tecla ni des clic en el mouse a menos de que se " +
+                "indique. " +
+                "En todos los ensayos de todos los bloques deberás responder tal y " +
+                "como haz aprendido ahora. " +
+                "En seguida verás una pantalla negra con una cruz al centro durante " +
+                "algunos minutos, trata de fijar la mirada en la cruz y estar atento a que " +
+                "la primera fase comience. " +
+                "Una vez que hayas leído las instrucciones llama al investigador.</h3>" +
+                "<br><br><button type=\"button\" class=\"btn btn-primary\" onclick=\"tutorialInstruccionVerdes(16)\">Anterior</button>" +
+                "<br><br><button type=\"button\" class=\"btn btn-success\" onclick=\"tutorialInstruccionVerdes(18)\">Hacer Prueba</button>";
+            break;
+
+        case 18:
+            window.location.replace('http://localhost/flanker_task/sesion');
             break;
     }
 
 }
 
-function iniciarTutorial(iterador) {
-
+function iniciarTutorialSimple(iterador) {
 
     if (iterador != 'undefined')/*CRUZ NEGRA*/{
         segundos = 2000;
         switch (num_imagen) {
             case 0:/*cruz*/
-
                 asignarTiempoPorEnsayo(contador_ensayos);
                 break;
             case 1:/*pantalla color*/
@@ -454,7 +825,7 @@ function iniciarTutorial(iterador) {
                 let aux = listado_tutorial[iterador];
                 nombre_ensayo = aux.substr(aux.length - 8, aux.length);
                 //console.log(nombre_ensayo);
-                segundos = 4000;
+                segundos = 5000;
                 //console.log("***-------FIN ENSAYO-------***");
                 /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
                 intentosRespuesta = 0;
@@ -463,6 +834,7 @@ function iniciarTutorial(iterador) {
                 num_imagen = -1;
                 segundos = 1000;
                 contador_ensayos++;
+
                 break;
         }
         let date_inicio = new Date();
@@ -477,7 +849,7 @@ function iniciarTutorial(iterador) {
 
     setTimeout(function () {
         if (iterador < listado_tutorial.length - 1 && cantidad_correctas < limite_correctas) { // romper la recursión si se llega a la ultima label
-            iniciarTutorial(iterador + 1);
+            iniciarTutorialSimple(iterador + 1);
         }
     }, segundos);
 }
@@ -1676,12 +2048,320 @@ function checkRespuestasFase1_3(tecla, imagen) {
         tecla_respuesta = '';
         console.log('cantidad_correctas=' + cantidad_correctas);
         if (cantidad_correctas === limite_correctas) {
-            tutorialInstruccionVerdes(12)
+            tutorialInstruccionVerdes(11)
         }
     } else {
         console.log('incorrecto');
         label.src = './img/tacha.png';
         cantidad_correctas = 0
+    }
+}
+
+function checkRespuestasFaseCompleja(tecla, imagen) {
+    let resultado = 0;
+    switch (imagen) {
+        case 'F_01.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_02.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_03.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_04.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_05.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_06.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_07.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_08.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_09.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_10.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_11.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_12.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_13.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_14.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_15.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_16.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_17.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_18.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_19.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_20.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_21.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_22.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_23.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_24.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_25.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_26.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_27.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_28.png':
+            if (tecla == '4') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_29.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_30.png':
+            if (tecla == '2') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_31.png':
+            if (tecla == '6') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+        case 'F_32.png':
+            if (tecla == '8') {
+                /*CORRECTO*/
+                resultado = 1;
+            } else {
+                /*INCORRECTO*/
+                resultado = 0;
+            }
+            break;
+    }
+
+    if (resultado === 1) {
+        label.src = './img/palomita.png';
+        segunda_cantidad_correctas++;
+        tecla_respuesta = '';
+
+        if (segunda_cantidad_correctas === limite_correctas) {
+            tutorialInstruccionVerdes(17)
+        }
+    } else {
+        console.log('incorrecto');
+        label.src = './img/tacha.png';
+        segunda_cantidad_correctas = 0
     }
 }
 
@@ -1880,4 +2560,254 @@ function revisarIterador(iter) {
             label.src = listado_tutorial[iter]; // asignar el path al src
             break;
     }
+}
+
+function iniciarTutorialComplejo(segundo_iterador) {
+    console.log('entró');
+    if (segundo_iterador != 'undefined')/*CRUZ NEGRA*/{
+        segundos = 2000;
+        switch (segundo_num_imagen) {
+            case 0:/*cruz*/
+                asignarTiempoPorEnsayo(segundo_contador_ensayos);
+                break;
+            case 1:/*pantalla color*/
+                //console.log('color');
+                segundos = 1000
+                break;
+            case 2:/*pantalla contornos*/
+                //console.log('contornos');
+                segundos = 1000
+                break;
+            case 3:/*ensayo*/
+                numero_ensayo++;
+                let aux = listado_segundo_tutorial[segundo_iterador];
+                nombre_ensayo = aux.substr(aux.length - 8, aux.length);
+                //console.log(nombre_ensayo);
+                segundos = 6000;
+                //console.log("***-------FIN ENSAYO-------***");
+                /*REINICIA EL INTENTO DE RESPUESTA PARA EL SISGUIENTE ENSAYO*/
+                intentosRespuesta = 0;
+                break;
+            case 4:
+                segundo_num_imagen = -1;
+                segundos = 1000;
+                segundo_contador_ensayos++;
+                break;
+        }
+        let date_inicio = new Date();
+        tiempo_inicio = date_inicio.getTime();
+        segundo_num_imagen++;
+    }
+
+    var segundo_iterador = segundo_iterador || 0; // asignar valor de parametro, default 0 (si parametro es undefined)
+
+    /*ENCUESTAS Y PANTALLAS NEGRAS*/
+    revisarIteradorSegundoTutorial(segundo_iterador);
+
+    setTimeout(function () {
+        if (segundo_iterador < listado_segundo_tutorial.length - 1 && segunda_cantidad_correctas < limite_correctas) { // romper la recursión si se llega a la ultima label
+            iniciarTutorialComplejo(segundo_iterador + 1);
+        }
+    }, segundos);
+}
+
+function revisarIteradorSegundoTutorial(iter) {
+    switch (iter) {
+        case 4:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 9:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 14:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 19:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 24:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 29:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 34:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 39:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 44:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 49:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 54:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 59:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 64:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 69:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 74:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 79:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 84:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 89:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 94:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 99:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 104:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 109:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 114:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 119:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 124:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 129:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 134:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 139:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 144:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 149:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 154:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 159:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 164:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 169:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 174:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 179:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 184:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 189:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 194:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 199:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 204:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 209:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 214:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 219:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 224:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 229:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 234:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 239:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 244:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 249:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 254:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 259:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 264:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 269:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 274:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 279:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 284:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 289:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 294:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 299:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 304:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 309:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 314:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        case 319:
+            checkRespuestasFaseCompleja(tecla_respuesta, nombre_ensayo);
+            break;
+        default:
+            label.src = listado_segundo_tutorial[iter]; // asignar el path al src
+            break;
+    }
+    tecla_respuesta = '';
 }
