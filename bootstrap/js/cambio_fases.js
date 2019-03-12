@@ -172,7 +172,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_27.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_02.png'
     , 'respuesta'
@@ -182,27 +182,27 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_12.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_06.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_03.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_24.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_05.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_01.png'
     , 'respuesta'
@@ -217,7 +217,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_14.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_08.png'
     , 'respuesta'
@@ -227,12 +227,12 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_28.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_18.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_04.png'
     , 'respuesta'
@@ -252,12 +252,12 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_10.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_azul.png'
+    , './img/ensayos/pantalla_verde.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_07.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_17.png'
     , 'respuesta'
@@ -272,7 +272,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_16.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_19.png'
     , 'respuesta'
@@ -287,7 +287,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_15.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_21.png'
     , 'respuesta'
@@ -297,12 +297,12 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_25.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_22.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_23.png'
     , 'respuesta'
@@ -317,7 +317,7 @@ var listado_primera_fase = ['./img/pantalla_negra.png'
     , './img/ensayos/F_31.png'
     , 'respuesta'
     , './img/ensayos/cruz.png'
-    , './img/ensayos/pantalla_verde.png'
+    , './img/ensayos/pantalla_azul.png'
     , './img/ensayos/contornos.png'
     , './img/ensayos/F_20.png'
     , 'respuesta'
@@ -566,10 +566,10 @@ function iniciarSesion(iterador) {
     }
     */
 
-    // if (iterador < 134) {
-    //     // console.log('iterador= ' + iterador);
-    //     segundos = 10;
-    // }
+    if (iterador < 132) {
+        // console.log('iterador= ' + iterador);
+        segundos = 10;
+    }
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
@@ -1991,7 +1991,7 @@ function revisarIterador(iter) {
         /***************************************************************ENCUESTAS*******************************************************/
 
         /*************************************************************INSTRUCCIONES*****************************************************/
-        case 132:/*INSTRUCCIONES 1 DE FASE 2*/
+        case 132:/*INSTRUCCIONES DE FASE 2*/
             num_imagen = 0;
             /*ENVIAR DATOS ENCUESTA MANEKIN*/
             enviarEncuesta(fase);
@@ -2001,15 +2001,25 @@ function revisarIterador(iter) {
             /*ESCONDE ENCUESTA MANEKINS*/
             encuesta.setAttribute('hidden', 'true');
             /*MUESTRA INSTRUCCIONES FASE 2*/
-            instrucciones.innerHTML = ' <h2> A continuación iniciará una nueva fase, deberás seguir contestando como ' +
-                'hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un segundo y una ' +
-                'cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.' +
-                '<br>Trata de responder lo más rápido posible.' +
-                '</h2>' +
-                '<br><br><p><h3>Antes de que la fase inicie aparecerá una pantalla negra y una cruz al centro, trata de ' +
-                'fijar la mirada en la cruz y estar atento. Un pequeño tono te avisará cuando la nueva fase comience, ' +
-                'mientras tanto espera paciente y no pulses ninguna tecla.' +
-                '</h3></p>';
+            if (etapa == 3) {
+                instrucciones.innerHTML = '<h3>A continuación iniciará una nueva fase, deberás seguir contestando como ' +
+                    'hasta ahora. Esta vez, después de que emitas la respuesta, escucharás de manera aleatoria un ' +
+                    'sonido por un segundo. De esta manera, después de cada ensayo podrá escucharse o no el ' +
+                    'sonido.</h3><br>' +
+                    '<p><h3>Antes de que la fase inicie aparecerá una pantalla negra y una cruz al centro, trata de fijar ' +
+                    'la mirada en la cruz y estar atento. Un pequeño tono te avisará cuando la nueva fase comience, ' +
+                    'mientras tanto espera paciente y no pulses ninguna tecla</h3></p>';
+            } else {
+                instrucciones.innerHTML = ' <h2> A continuación iniciará una nueva fase, deberás seguir contestando como ' +
+                    'hasta ahora. Esta vez, cuando tu respuesta sea incorrecta escucharás un sonido por un segundo y una ' +
+                    'cruz aparecerá; cuando tu respuesta sea correcta verás una señal que así te lo indicará.' +
+                    '<br>Trata de responder lo más rápido posible.' +
+                    '</h2>' +
+                    '<br><br><p><h3>Antes de que la fase inicie aparecerá una pantalla negra y una cruz al centro, trata de ' +
+                    'fijar la mirada en la cruz y estar atento. Un pequeño tono te avisará cuando la nueva fase comience, ' +
+                    'mientras tanto espera paciente y no pulses ninguna tecla.' +
+                    '</h3></p>';
+            }
             instrucciones.removeAttribute('hidden');
             break;
 
