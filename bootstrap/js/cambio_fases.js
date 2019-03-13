@@ -566,10 +566,10 @@ function iniciarSesion(iterador) {
     }
     */
 
-    if (iterador < 134) {
-        // console.log('iterador= ' + iterador);
-        segundos = 10;
-    }
+    // if (iterador < 134) {
+    //     // console.log('iterador= ' + iterador);
+    //     segundos = 10;
+    // }
 
 
     console.log('***DURACION SEGUNDOS =' + segundos);
