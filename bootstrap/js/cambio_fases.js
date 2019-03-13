@@ -2295,7 +2295,7 @@ function producirSonidoPorImagen(imagen) {
     *SI EL SUJETO CONFIGURADO ESTA BIEN
     * Y EL SUJETO ACTUAL NO REPONDIO, SOLO MUESTRA TACHA
     * SIN SONIDO*/
-    if (json_config_etapa_2[imagen] == 1 && tecla_respuesta == '') {
+    if (json_config_etapa_2[imagen] == 1 && tecla_respuesta == '' && etapa == 2) {
         label.src = './img/tacha.png';
     } else {
         /*SI 1 reproduce BIEN*/
